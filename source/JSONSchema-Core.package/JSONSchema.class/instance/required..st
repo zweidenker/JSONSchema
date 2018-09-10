@@ -1,3 +1,4 @@
 accessing
 required: anObject
-	required := anObject
+	self beObject.
+	type required: anObject

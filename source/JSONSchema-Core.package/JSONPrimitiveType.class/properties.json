@@ -1,7 +1,7 @@
 {
 	"commentStamp" : "",
 	"super" : "JSONType",
-	"category" : "JSONSchema-Core-Types",
+	"category" : "JSONSchema-Core-Model",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],

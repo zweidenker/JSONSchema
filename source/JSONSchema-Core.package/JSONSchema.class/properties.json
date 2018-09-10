@@ -1,7 +1,7 @@
 {
 	"commentStamp" : "",
 	"super" : "Object",
-	"category" : "JSONSchema-Core",
+	"category" : "JSONSchema-Core-Model",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
@@ -9,8 +9,7 @@
 		"title",
 		"type",
 		"className",
-		"description",
-		"required"
+		"description"
 	],
 	"name" : "JSONSchema",
 	"type" : "normal"
