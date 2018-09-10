@@ -1,4 +1,4 @@
-as yet unclassified
+examples
 exampleSchema1
 	^ '{
   "$id": "https://example.com/person.schema.json",

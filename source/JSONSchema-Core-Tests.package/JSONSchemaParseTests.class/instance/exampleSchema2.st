@@ -1,4 +1,4 @@
-as yet unclassified
+examples
 exampleSchema2
 	^ '{
   "id": "https://example.com/geographical-location.schema.json",

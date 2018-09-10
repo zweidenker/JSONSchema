@@ -1,4 +1,4 @@
-as yet unclassified
+examples
 exampleSchema3
 	^ '{
   "id": "https://example.com/arrays.schema.json",

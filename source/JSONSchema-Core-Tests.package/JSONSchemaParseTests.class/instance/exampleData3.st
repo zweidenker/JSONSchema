@@ -1,4 +1,4 @@
-as yet unclassified
+examples
 exampleData3
 	^ '{
   "fruits": [ "apple", "orange", "pear" ],

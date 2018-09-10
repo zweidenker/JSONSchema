@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "JSONSchema",
+	"category" : "JSONSchema-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"definitions"
+	],
+	"name" : "JSONSchemaDocument",
+	"type" : "normal"
+}
