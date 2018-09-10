@@ -9,7 +9,8 @@
 		"title",
 		"type",
 		"className",
-		"description"
+		"description",
+		"required"
 	],
 	"name" : "JSONSchema",
 	"type" : "normal"

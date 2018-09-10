@@ -1,3 +1,3 @@
 accessing
 required: anObject
-	type required: anObject
+	required := anObject
