@@ -1,6 +1,6 @@
 {
 	"commentStamp" : "",
-	"super" : "OpenAPITests",
+	"super" : "TestCase",
 	"category" : "JSONSchema-Core-Tests",
 	"classinstvars" : [ ],
 	"pools" : [ ],
