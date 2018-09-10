@@ -1,0 +1,16 @@
+{
+	"commentStamp" : "",
+	"super" : "Object",
+	"category" : "JSONSchema-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"title",
+		"type",
+		"className",
+		"description"
+	],
+	"name" : "JSONSchema",
+	"type" : "normal"
+}
