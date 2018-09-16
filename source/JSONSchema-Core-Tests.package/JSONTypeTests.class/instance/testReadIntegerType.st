@@ -1,5 +1,5 @@
 tests
 testReadIntegerType
 	self 
-		shouldnt: [ JSONTypeInteger read: 123 ]
+		shouldnt: [ JSONSchemaInteger read: 123 ]
 		raise: Exception 

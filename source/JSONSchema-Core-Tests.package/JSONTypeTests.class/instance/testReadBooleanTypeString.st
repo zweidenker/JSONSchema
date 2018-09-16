@@ -1,5 +1,5 @@
 tests
 testReadBooleanTypeString
 	self 
-		shouldnt: [ JSONTypeBoolean readString: 'true' ]
+		shouldnt: [ JSONSchemaBoolean readString: 'true' ]
 		raise: Exception 

@@ -1,0 +1,3 @@
+testing
+isReference
+	^ reference notNil

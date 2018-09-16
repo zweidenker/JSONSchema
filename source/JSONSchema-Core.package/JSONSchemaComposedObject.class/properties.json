@@ -1,11 +1,13 @@
 {
 	"commentStamp" : "",
-	"super" : "Object",
+	"super" : "JSONSchemaBasicObject",
 	"category" : "JSONSchema-Core-Model",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
-	"instvars" : [ ],
-	"name" : "JSONSchema",
+	"instvars" : [
+		"schemas"
+	],
+	"name" : "JSONSchemaComposedObject",
 	"type" : "normal"
 }

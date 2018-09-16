@@ -1,5 +1,5 @@
 tests
 testParseExample1
 	| schema |
-	schema := JSONSchemaDocument fromString: self exampleSchema1.
+	schema := (JSONSchemaDocument fromString: self exampleSchema1) schema.
 	schema validate: (NeoJSONReader fromString: self exampleData1)

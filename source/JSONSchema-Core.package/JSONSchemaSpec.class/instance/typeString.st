@@ -1,0 +1,3 @@
+accessing
+typeString
+	^ schema typeName

@@ -1,3 +1,3 @@
 as yet unclassified
-readFrom: anObject 
-	^ type read: anObject
+readFrom: anObject
+	^ self read: anObject

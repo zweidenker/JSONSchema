@@ -1,3 +1,3 @@
-as yet unclassified
-readString: aString 
-	^ type readString: aString
+reading
+readString: collection
+	self subclassResponsibility 

@@ -1,4 +1,3 @@
-as yet unclassified
+accessing
 integer
-	^ self new
-		typeString: 'integer'
+	^ (self typeNamed: 'integer') new

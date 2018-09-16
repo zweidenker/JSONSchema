@@ -1,4 +1,3 @@
 accessing
 string
-	^ self new
-		typeString: 'string'
+	^ (self typeNamed: 'string') new
