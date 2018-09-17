@@ -7,7 +7,6 @@
 	"classvars" : [ ],
 	"instvars" : [
 		"title",
-		"className",
 		"description",
 		"allOf",
 		"schemaClass",
@@ -16,6 +15,6 @@
 		"items",
 		"reference"
 	],
-	"name" : "JSONSchemaSpec",
+	"name" : "JSONSchemaDefinition",
 	"type" : "normal"
 }

@@ -2,4 +2,4 @@ decoration
 resolve
 	^ JSONSchemaReferenceResolveVisitor new
 		resolver: self;
-		read: (self as: JSONSchemaSpec)
+		read: (self as: JSONSchemaDefinition)

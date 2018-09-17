@@ -1,0 +1,2 @@
+initialization
+initializeFromDefinition: aDefinition

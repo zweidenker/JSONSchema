@@ -1,7 +1,7 @@
 tests
 testSimpleObjectSchema
 	| schemaSpec object |
-	schemaSpec := JSONSchemaSpec new 
+	schemaSpec := JSONSchemaDefinition new 
 		typeString: 'object';
 		properties: { 
 			#foo -> JSONSchema string.

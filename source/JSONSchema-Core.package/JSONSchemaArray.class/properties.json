@@ -6,7 +6,6 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"schema",
 		"items"
 	],
 	"name" : "JSONSchemaArray",

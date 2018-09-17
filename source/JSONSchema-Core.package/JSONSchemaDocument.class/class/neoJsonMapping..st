@@ -5,5 +5,5 @@ neoJsonMapping: mapper
 		(mapping mapInstVar: #definitions) valueSchema: #SchemaMap ].
 		
 	mapper for: #SchemaMap customDo: [ :mapping |
-		mapping mapWithValueSchema: JSONSchemaSpec ].
+		mapping mapWithValueSchema: JSONSchemaDefinition ].
 
