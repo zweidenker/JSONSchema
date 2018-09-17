@@ -1,4 +1,3 @@
-accessing
-schema
-	self prepare.
-	^ super schema.
+decoration
+schema	 
+	^ self resolve

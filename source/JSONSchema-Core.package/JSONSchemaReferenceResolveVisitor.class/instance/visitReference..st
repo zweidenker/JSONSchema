@@ -1,3 +1,3 @@
 visiting
 visitReference: aReference 
-	^ resolver resolveReference: aReference 
+	^ self visit: (resolver resolveReference: aReference) 

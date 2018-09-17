@@ -5,9 +5,7 @@
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
-	"instvars" : [
-		"schema"
-	],
+	"instvars" : [ ],
 	"name" : "JSONSchemaVisitor",
 	"type" : "normal"
 }
