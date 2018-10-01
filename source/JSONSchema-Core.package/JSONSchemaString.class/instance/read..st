@@ -1,3 +1,3 @@
 reading
 read: aString
-	^ aString
+	^ self readFormatted: aString

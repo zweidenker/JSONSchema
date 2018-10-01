@@ -13,7 +13,8 @@
 		"properties",
 		"required",
 		"items",
-		"reference"
+		"reference",
+		"format"
 	],
 	"name" : "JSONSchemaDefinition",
 	"type" : "normal"

@@ -1,13 +1,14 @@
 {
 	"commentStamp" : "",
-	"super" : "JSONSchema",
+	"super" : "JSONSchemaConstraint",
 	"category" : "JSONSchema-Core-Model",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"format"
+		"minimum",
+		"maximum"
 	],
-	"name" : "JSONPrimitiveSchema",
+	"name" : "JSONSchemaIntervalConstraint",
 	"type" : "normal"
 }

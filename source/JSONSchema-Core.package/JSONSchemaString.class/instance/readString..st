@@ -1,3 +1,3 @@
 reading
 readString: aString
-	^ aString
+	^ self read: aString

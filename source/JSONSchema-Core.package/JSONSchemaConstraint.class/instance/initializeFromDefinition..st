@@ -1,0 +1,3 @@
+initialization
+initializeFromDefinition: aDefinition 
+	self subclassResponsibility 

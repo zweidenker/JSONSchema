@@ -1,5 +1,5 @@
 tests
-testReadNumberypeWithString
+testReadNumberTypeWithString
 	self 
 		should: [ JSONSchemaNumber read: '123' ]
 		raise: JSONTypeErrror  
