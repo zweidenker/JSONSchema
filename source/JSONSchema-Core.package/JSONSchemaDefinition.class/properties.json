@@ -14,7 +14,11 @@
 		"required",
 		"items",
 		"reference",
-		"format"
+		"format",
+		"minimum",
+		"maximum",
+		"exclusiveMinimum",
+		"exclusiveMaximum"
 	],
 	"name" : "JSONSchemaDefinition",
 	"type" : "normal"

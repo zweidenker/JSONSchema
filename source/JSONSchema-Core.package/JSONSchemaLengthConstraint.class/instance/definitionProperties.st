@@ -1,0 +1,3 @@
+accessing
+definitionProperties
+	self shouldBeImplemented.

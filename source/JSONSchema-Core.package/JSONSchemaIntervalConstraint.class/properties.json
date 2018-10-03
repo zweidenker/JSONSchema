@@ -7,7 +7,9 @@
 	"classvars" : [ ],
 	"instvars" : [
 		"minimum",
-		"maximum"
+		"maximum",
+		"minimumExclusive",
+		"maximumExclusive"
 	],
 	"name" : "JSONSchemaIntervalConstraint",
 	"type" : "normal"

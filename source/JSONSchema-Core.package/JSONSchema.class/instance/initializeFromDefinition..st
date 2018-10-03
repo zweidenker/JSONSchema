@@ -1,6 +1,7 @@
 initialization
 initializeFromDefinition: aDefinition
 	self constraintKeywords do: [ :keyword | | constraint |
-		constraint := aDefinition as: (JSONSchemaConstraint named: keyword).
-		constraint validate ifTrue: [  
+		constraint := (JSONSchemaConstraint named: keyword) new 
+			initializeFromDefinition: aDefinition.
+		constraint validate ifTrue: [ 
 			self addConstraint: constraint ] ]

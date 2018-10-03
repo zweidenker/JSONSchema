@@ -1,3 +1,0 @@
-initialization
-initializeFromDefinition: aJSONSchemaDefinition 
-	self shouldBeImplemented.
