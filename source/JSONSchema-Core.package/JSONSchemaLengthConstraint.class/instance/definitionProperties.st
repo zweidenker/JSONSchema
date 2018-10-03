@@ -1,3 +1,3 @@
 accessing
 definitionProperties
-	self shouldBeImplemented.
+	^ #( minLength maxLength )
