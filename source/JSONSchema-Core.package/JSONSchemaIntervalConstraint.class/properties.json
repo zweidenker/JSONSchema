@@ -1,7 +1,7 @@
 {
 	"commentStamp" : "",
 	"super" : "JSONSchemaConstraint",
-	"category" : "JSONSchema-Core-Model",
+	"category" : "JSONSchema-Core-Constraints",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],

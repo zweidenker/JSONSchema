@@ -6,9 +6,8 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"minLength",
-		"maxLength"
+		"options"
 	],
-	"name" : "JSONSchemaLengthConstraint",
+	"name" : "JSONSchemaEnumConstraint",
 	"type" : "normal"
 }
