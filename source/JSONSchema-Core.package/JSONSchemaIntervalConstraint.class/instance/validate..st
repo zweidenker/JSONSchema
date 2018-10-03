@@ -1,9 +1,5 @@
 validation
 validate: anInteger 
-	
-	(minimum notNil & maximum notNil) ifTrue: [ 
-		(anInteger between: minimum and: maximum) ifFalse: [ 
-		 	JSONConstraintError signal: anInteger asString,' must be between ', minimum asString, ' and ', maximum asString ] ].
  
 	minimum notNil ifTrue: [ 
 		minimumExclusive 
@@ -22,4 +18,3 @@ validate: anInteger
 			ifFalse: [ 
 				(anInteger <= maximum) ifFalse: [ 
 					JSONConstraintError signal: anInteger asString,' must be less than or equal to ', maximum asString ] ]].
-
