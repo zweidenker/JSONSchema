@@ -19,7 +19,8 @@
 		"maximum",
 		"exclusiveMinimum",
 		"exclusiveMaximum",
-		"enum"
+		"enum",
+		"additionalProperties"
 	],
 	"name" : "JSONSchemaDefinition",
 	"type" : "normal"
