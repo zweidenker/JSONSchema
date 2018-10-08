@@ -9,6 +9,6 @@ read: dict object: object
 					with: (schema readString: value)" 
 				object 
 					instVarNamed: name asSymbol 
-					put: (schema readFrom: value) ]
+					put: (schema read: value) ]
 			ifAbsent: [ "do nothing for now. Needs to check if required" ] ].
 	^ object
