@@ -1,14 +1,13 @@
 as yet unclassified
-read: dict object: object
-	properties keysAndValuesDo: [ :name :schema |
-		dict 
-			at: name
-			ifPresent: [ :value | 
-				"object 
-					perform: name asMutator 
-					with: (schema readString: value)" 
-				object 
-					instVarNamed: name asSymbol 
-					put: (schema read: value) ]
-			ifAbsent: [ "do nothing for now. Needs to check if required" ] ].
+read: string object: object
+	| reader |
+	reader := (NeoJSONReader on: string readStream).
+	reader parseMapKeysDo: [ :key | | schema value |
+		schema :=	properties 
+			at: key 
+			ifAbsent: [Error signal: 'no property ', key asString, ' defined']. 
+		value := schema readUsing: reader.
+		object 
+			perform: key asSymbol asMutator 
+			with: value ].
 	^ object
