@@ -6,6 +6,8 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
+		"title",
+		"description",
 		"constraints"
 	],
 	"name" : "JSONSchema",
