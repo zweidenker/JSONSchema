@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "NeoJSONWriter",
+	"category" : "JSONSchema-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "JSONSchemaWriter",
+	"type" : "normal"
+}

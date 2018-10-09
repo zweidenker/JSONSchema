@@ -3,6 +3,6 @@ testReadEnumNotIncluded
 	| schema |
 	schema := { #foo -> (JSONSchema enum: { 'one' . 'two' . 'three' }) } asJSONSchema.
 	self 
-		should: [ schema readString: '{ "foo" : "four" }' ]
+		should: [ schema read: '{ "foo" : "four" }' ]
 		raise: JSONConstraintError.
 		

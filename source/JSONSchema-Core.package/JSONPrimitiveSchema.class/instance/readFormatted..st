@@ -1,5 +1,5 @@
 formatting
 readFormatted: anObject
 	^ format
-		ifNotNil: [ format readType: anObject ]
+		ifNotNil: [ format read: anObject ]
 		ifNil: [ anObject ]
