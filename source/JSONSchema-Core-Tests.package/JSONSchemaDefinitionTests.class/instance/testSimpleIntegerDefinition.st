@@ -1,8 +1,7 @@
 tests
 testSimpleIntegerDefinition
-	| definition schema string |
+	|  schema string |
 	string := '{"type":"integer"}'.
-	definition := JSONSchemaDefinition fromString: string.
-	schema := definition schema.
+	schema := self parse: string.
 	self assert: schema class equals: JSONSchemaInteger.
 	self assert: schema jsonString equals: string

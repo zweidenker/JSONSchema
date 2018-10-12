@@ -1,8 +1,7 @@
 tests
 testSimpleBooleanDefinition
-	| definition schema string |
+	| schema string |
 	string := '{"type":"boolean"}'.
-	definition := JSONSchemaDefinition fromString: string.
-	schema := definition schema.
+	schema := self parse: string.
 	self assert: schema class equals: JSONSchemaBoolean.
 	self assert: schema jsonString equals: string

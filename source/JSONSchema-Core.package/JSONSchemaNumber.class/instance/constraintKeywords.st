@@ -1,3 +1,3 @@
 as yet unclassified
 constraintKeywords
-	^ #( interval )
+	^ #( interval multipleOf )

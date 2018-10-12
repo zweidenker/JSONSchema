@@ -1,8 +1,7 @@
 tests
 testSimpleArrayDefinition
-	| definition schema string |
+	|  schema string |
 	string := '{"type":"array"}'.
-	definition := JSONSchemaDefinition fromString: string.
-	schema := definition schema.
+	schema := self parse: string.
 	self assert: schema class equals: JSONSchemaArray.
 	self assert: schema jsonString equals: string

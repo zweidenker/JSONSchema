@@ -1,8 +1,7 @@
 tests
 testSimpleNullDefinition
-	| definition schema string |
+	| schema string |
 	string := '{"type":"null"}'.
-	definition := JSONSchemaDefinition fromString: string.
-	schema := definition schema.
+	schema := self parse: string.
 	self assert: schema class equals: JSONSchemaNull.
 	self assert: schema jsonString equals: string

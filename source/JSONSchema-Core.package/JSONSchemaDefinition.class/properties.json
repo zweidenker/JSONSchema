@@ -20,7 +20,8 @@
 		"exclusiveMinimum",
 		"exclusiveMaximum",
 		"enum",
-		"additionalProperties"
+		"additionalProperties",
+		"multipleOf"
 	],
 	"name" : "JSONSchemaDefinition",
 	"type" : "normal"
