@@ -1,6 +1,6 @@
 tests
 testReadObjectRequiredPropertiesMet
-	| schema value |
+	| schema value string |
 	schema := { 
 		#foo -> #string.
 		#bar -> #string } asJSONSchema.
@@ -10,4 +10,11 @@ testReadObjectRequiredPropertiesMet
 		raise: JSONTypeErrror.
 		
 	self assert: (value includesKey: #foo).
-	self assert: (value includesKey: #bar) 
+	self assert: (value includesKey: #bar).
+	
+	self 
+		shouldnt: [ string := schema write: value ]
+	 	raise: JSONTypeErrror.
+		
+	self assert: (string includesSubstring: 'one').
+	self assert: (string includesSubstring: 'two')
