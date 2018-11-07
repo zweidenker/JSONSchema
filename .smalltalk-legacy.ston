@@ -1,10 +1,10 @@
 SmalltalkCISpec {
+  #preLoading : 'scripts/pre-loading-61.st',
   #loading : [
       SCIMetacelloLoadSpec {
           #baseline : 'JSONSchema',
           #directory : 'source',
           #load : [ 'Tests' ],
-          #useLatestMetacello: true,
           #platforms : [ #pharo ]
       }
   ]
