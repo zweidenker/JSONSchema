@@ -1,10 +1,11 @@
 as yet unclassified
 readKey: key reader: reader
-	properties 
-		at: key
-		ifPresent: [ :propertySchema |
-			"schema for property is existing using it to read the value"
-			^ propertySchema readUsing: reader ].
+	properties ifNotNil: [  
+		properties 
+			at: key
+			ifPresent: [ :propertySchema |
+				"schema for property is existing using it to read the value"
+				^ propertySchema readUsing: reader ] ].
 		
 	(additionalProperties isNil | (additionalProperties = true)) 
 		ifTrue: [ 

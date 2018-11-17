@@ -1,5 +1,5 @@
 decoration
 resolve
 	^ JSONSchemaReferenceResolveVisitor new
-		resolver: self;
+		schemaRepository: self;
 		read: (self as: JSONSchemaDefinition)

@@ -1,3 +1,3 @@
 visiting
 visitReference: aReference 
-	^ self visit: (resolver resolveReference: aReference) 
+	^ schemaRepository resolveReference: aReference continueOn: self
