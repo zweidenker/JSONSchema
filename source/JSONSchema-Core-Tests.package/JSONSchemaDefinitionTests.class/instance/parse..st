@@ -1,3 +1,3 @@
 tests
 parse: aString
-	^ (JSONSchemaDefinition fromString: aString) schema.
+	^ (JSONSchemaDefinition fromString: aString) asJSONSchema.

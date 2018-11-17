@@ -6,7 +6,8 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"definitions"
+		"definitions",
+		"schemasByPath"
 	],
 	"name" : "JSONSchemaDocument",
 	"type" : "normal"
