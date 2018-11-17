@@ -21,7 +21,8 @@
 		"exclusiveMaximum",
 		"enum",
 		"additionalProperties",
-		"multipleOf"
+		"multipleOf",
+		"uniqueItems"
 	],
 	"name" : "JSONSchemaDefinition",
 	"type" : "normal"
