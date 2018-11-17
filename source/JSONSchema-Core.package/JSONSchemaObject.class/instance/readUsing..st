@@ -1,7 +1,7 @@
 as yet unclassified
 readUsing: reader
 	| object |
-	object := NeoJSONObject new.
+	object := self newInstance.
 	
 	reader parseMapKeysDo: [ :key | 
 		object 

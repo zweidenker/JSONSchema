@@ -1,3 +1,3 @@
 as yet unclassified
 acceptJSONSchema: aVisitor 
-	^ aVisitor visitTypeObject: self 
+	^ aVisitor visitTypeObject: self
