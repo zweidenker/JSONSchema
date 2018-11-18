@@ -5,8 +5,8 @@ readUsing: reader
 	
 	reader parseMapKeysDo: [ :key | 
 		object 
-			at: key 
+			jsonSchemaAt: key 
 			put: (self readKey: key reader: reader) ].
 		
-	self checkRequiredKeys: object keys.
+	self checkRequiredKeys: object jsonSchemaKeys.
 	^ object
