@@ -1,5 +1,5 @@
 instance creation
-validate: anObject
+validateType: anObject
 	(anObject isKindOf: Integer) ifFalse: [ 
 		JSONTypeErrror signal: anObject asString, ' is not an integer ' ].
 

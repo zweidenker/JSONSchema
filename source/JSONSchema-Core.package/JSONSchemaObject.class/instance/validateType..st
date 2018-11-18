@@ -1,5 +1,5 @@
 validation
-validate: aDictionary 
+validateType: aDictionary 
 	self required do: [ :requiredProperty |
 		(aDictionary includesKey: requiredProperty) ifFalse: [ 
 			JSONSchemaMissingRequiredProperty new

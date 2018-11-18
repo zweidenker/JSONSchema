@@ -1,0 +1,2 @@
+validation
+validateType: anObject
