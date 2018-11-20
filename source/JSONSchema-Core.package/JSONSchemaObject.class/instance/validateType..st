@@ -1,10 +1,11 @@
 validation
 validateType: aDictionary 
-	self required do: [ :requiredProperty |
-		(aDictionary includesKey: requiredProperty) ifFalse: [ 
-			JSONSchemaMissingRequiredProperty new
-				property: requiredProperty;
-				signal: 'Property not found' ] ].
+	required ifNotNil: [
+		self required do: [ :requiredProperty |
+			(aDictionary includesKey: requiredProperty) ifFalse: [ 
+				JSONSchemaMissingRequiredProperty new
+					property: requiredProperty;
+					signal: 'Property not found' ] ] ].
 	properties associationsDo: [ :property | 
 		aDictionary 
 			at: property key 
