@@ -1,6 +1,6 @@
 as yet unclassified
 writePropertiesOn: mapWriter
-	mapWriter writeKey: 'type' value: self typeString.
+	"mapWriter writeKey: 'type' value: self typeString."
 	constraints ifNil: [ ^ self ].
 	constraints do: [ :constraint |
 			constraint definitionProperties do: [ :property | | value |
