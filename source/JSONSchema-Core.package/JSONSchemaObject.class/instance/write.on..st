@@ -1,9 +1,9 @@
 as yet unclassified
 write: anObject on: writer
-	self checkRequiredKeys: anObject keys.
+	self checkRequiredKeys: anObject jsonSchemaKeys.
 	writer writeMapStreamingDo: [ :streamWriter |
 		properties keysAndValuesDo: [ :key :schema | 
-			(anObject includesKey: key) ifTrue: [  
+			(anObject jsonSchemaKeys includes: key) ifTrue: [  
 				streamWriter
 					writeKey: key 
 					value: (anObject perform: key)
