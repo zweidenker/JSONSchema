@@ -20,7 +20,9 @@ These are the expression to create a schema model inside pharo.
 schema := {
   #name -> JSONSchema string.
   #dateAndTime -> (JSONSchema stringWithFormat: 'date-time').
-  #numberOfPets -> JSONSchema number } asJSONSchema.```
+  #numberOfPets -> JSONSchema number } asJSONSchema.
+
+```
 
 defines as schema that can parse the following JSON:
 
@@ -29,7 +31,8 @@ jsonString := '{
   "name" : "John Doe",
   "dateAndTime" : "1970-01-01T14:00:00",
   "numberOfPets" : 3
-}'. ```
+}'.
+```
 
 ## Reading/Writing a value using a schema
 
