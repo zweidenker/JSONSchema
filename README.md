@@ -72,7 +72,9 @@ gives
 			"format" : "date-time"
 		}
 	}
-} ```
+}
+```
+
 
 If we would get a schema as string we can instantiate by invoking
 
