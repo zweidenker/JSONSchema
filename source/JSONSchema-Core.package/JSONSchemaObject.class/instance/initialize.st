@@ -1,4 +1,4 @@
 initialization
 initialize 
 	super initialize.
-	"additionalProperties := true"
+	additionalProperties := true
