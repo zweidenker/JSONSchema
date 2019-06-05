@@ -1,3 +1,5 @@
 as yet unclassified
 isAnyObject
-	^ properties isEmpty 
+	self flag: #todo.
+	"Should properties be nil???"
+	^ properties isNil or: [ properties isEmpty ]
