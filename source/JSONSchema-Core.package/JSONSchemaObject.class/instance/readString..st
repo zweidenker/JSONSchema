@@ -1,3 +1,3 @@
 as yet unclassified
 readString: aString
-	^ self read: aString
+	^ self readFrom: aString readStream
