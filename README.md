@@ -42,7 +42,7 @@ jsonString := '{
 To parse the value from JSON we only need to invoke:
 
 ```
-value := schema read: jsonString
+value := schema readString: jsonString
 ```
 
 The object in ```value``` will have name as a string, dateAndTime as a DateAndTime object and numberOfPets as a SmallInteger object.
