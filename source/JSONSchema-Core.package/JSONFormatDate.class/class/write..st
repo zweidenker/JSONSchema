@@ -1,4 +1,4 @@
 writing
-write: aDateAndTime 
+write: aDate 
 	"convert to DateaAndTime without the sub-second precision"
-	^ aDateAndTime rounded printString
+	^ aDate yyyymmdd 

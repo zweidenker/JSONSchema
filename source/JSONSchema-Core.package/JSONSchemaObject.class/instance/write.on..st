@@ -6,5 +6,5 @@ write: anObject on: writer
 			(anObject jsonSchemaKeys includes: key) ifTrue: [  
 				streamWriter
 					writeKey: key 
-					value: (anObject perform: key)
+					value: (anObject jsonSchemaAt: key)
 					as: schema ] ] ]

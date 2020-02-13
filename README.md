@@ -1,7 +1,7 @@
 # JSONSchema
 
 [![Build Status](https://travis-ci.org/zweidenker/JSONSchema.svg?branch=master)](https://travis-ci.org/zweidenker/JSONSchema)
-[![Test Status](https://api.bob-bench.org/v1/badgeByUrl?branch=master&hosting=github&ci=travis-ci&repo=bob-bench%2Fbenchupload&subNumber=1)](https://bob-bench.org/r/gh/bob-bench/benchupload)
+[![Test Status](https://api.bob-bench.org/v1/badgeByUrl?branch=master&hosting=github&ci=travis-ci&repo=zweidenker%2FJSONSchema&subNumber=1)](https://bob-bench.org/r/gh/zweidenker/JSONSchema)
 
 This is an implementation of [JSON Schema](https://json-schema.org/) for the [pharo](http://pharo.org) language. It is used to define the structure and values of a JSON string and to validate it. The schema itself can be externalized for being consumed by a third party.
 
@@ -42,7 +42,7 @@ jsonString := '{
 To parse the value from JSON we only need to invoke:
 
 ```
-value := schema read: jsonString
+value := schema readString: jsonString
 ```
 
 The object in ```value``` will have name as a string, dateAndTime as a DateAndTime object and numberOfPets as a SmallInteger object.
