@@ -4,9 +4,6 @@ sudo: required
 os:
 - linux
 
-matrix:
-  include:
-    - smalltalk: Pharo-7.0
-      smalltalk_config: .smalltalk.ston
-    - smalltalk: Pharo-6.1
-      smalltalk_config: .smalltalk-legacy.ston
+smalltalk:
+- Pharo64-8.0
+- Pharo64-7.0
