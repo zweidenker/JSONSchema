@@ -5,7 +5,7 @@ validateType: aDictionary
 			(aDictionary includesKey: requiredProperty) ifFalse: [ 
 				JSONSchemaMissingRequiredProperty new
 					property: requiredProperty;
-					signal: 'Property not found' ] ] ].
+					signal ] ] ].
 	properties associationsDo: [ :property | 
 		aDictionary 
 			at: property key 

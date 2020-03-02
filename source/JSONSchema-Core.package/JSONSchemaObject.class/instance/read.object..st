@@ -1,6 +1,7 @@
 as yet unclassified
 read: string object: object
-	| reader |
+	| reader readKeys |
+	self validate: (NeoJSONObject fromString: string). 
 	reader := (NeoJSONReader on: string readStream).
 	reader parseMapKeysDo: [ :key | | schema value |
 		schema :=	properties 
@@ -9,5 +10,5 @@ read: string object: object
 		value := schema readUsing: reader.
 		object 
 			perform: key asSymbol asMutator 
-			with: value ].
+			with: value.].
 	^ object

@@ -5,7 +5,9 @@
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
-	"instvars" : [ ],
+	"instvars" : [
+		"property"
+	],
 	"name" : "JSONSchemaMissingRequiredProperty",
 	"type" : "normal"
 }
