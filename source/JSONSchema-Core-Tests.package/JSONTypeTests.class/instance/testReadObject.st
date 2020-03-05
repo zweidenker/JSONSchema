@@ -7,6 +7,6 @@ testReadObject
 	schema := { #foo -> #string } asJSONSchema.
 	self 
 		shouldnt: [ value := schema readString: '{ "foo" : "bar" }' ]
-		raise: JSONTypeErrror.
+		raise: JSONTypeError.
 		
 	self assert: (value includesKey: #foo) 

@@ -6,4 +6,4 @@ testReadObjectAdditonalPropertiesFalse
 	schema additionalProperties: false.
 	self 
 		should: [ schema readString: '{ "foo" : "one", "bar" : "two" }' ]
-		raise: JSONTypeErrror.
+		raise: JSONTypeError.

@@ -5,6 +5,6 @@ testReadEnum
 	schema := { #foo -> (JSONSchema enum: { 'one' . 'two' . 'three' }) } asJSONSchema.
 	self 
 		shouldnt: [ value := schema readString: '{ "foo" : "two" }' ]
-		raise: JSONTypeErrror.
+		raise: JSONTypeError.
 		
 	self assert: (value includesKey: #foo) 

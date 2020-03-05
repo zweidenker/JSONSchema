@@ -8,8 +8,8 @@ testReadObjectRequiredPropertiesNotMet
 
 	self 
 		should: [ schema readString: '{ "bar" : "two" }' ]
-		raise: JSONTypeErrror.
+		raise: JSONTypeError.
 		
 	self 
 		should: [ schema write: { #bar -> #two } asDictionary ]
-		raise: JSONTypeErrror		
+		raise: JSONTypeError		

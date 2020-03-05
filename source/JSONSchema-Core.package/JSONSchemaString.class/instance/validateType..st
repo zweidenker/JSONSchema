@@ -1,4 +1,4 @@
 validating
 validateType: aString 
 	aString isString ifFalse: [ 
-		JSONTypeErrror signal: aString asString, ' is not a string ' ]
+		JSONTypeError signal: aString asString, ' is not a string ' ]

@@ -1,4 +1,4 @@
 validation
 validateType: anObject
 	(anObject isKindOf: Boolean) ifFalse: [ 
-		JSONTypeErrror signal: anObject asString, ' is not a boolean ' ]
+		JSONTypeError signal: anObject asString, ' is not a boolean ' ]

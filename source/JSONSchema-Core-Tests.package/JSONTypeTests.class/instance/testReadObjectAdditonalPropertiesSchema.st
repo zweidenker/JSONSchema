@@ -6,6 +6,6 @@ testReadObjectAdditonalPropertiesSchema
 	schema additionalProperties: JSONSchema number.
 	self 
 		shouldnt: [ value := schema readString: '{ "foo" : "one", "bar" : 3 }' ]
-		raise: JSONTypeErrror.
+		raise: JSONTypeError.
 		
 	self assert: (value includesKey: #bar)

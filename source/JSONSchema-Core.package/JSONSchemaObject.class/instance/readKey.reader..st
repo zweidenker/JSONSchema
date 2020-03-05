@@ -16,7 +16,7 @@ readKey: key reader: reader
 	(additionalProperties = false) 
 		ifTrue: [
 			"addtional properties are disallowed" 											
-			JSONTypeErrror signal: 'additional properties are not allowed' ].
+			JSONTypeError signal: 'additional properties are not allowed' ].
 				
 	"if additionalProperty is present and not a boolean it is a
 	schema defining the type of the addtional properties"

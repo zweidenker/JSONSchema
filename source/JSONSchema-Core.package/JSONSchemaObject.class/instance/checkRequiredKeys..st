@@ -4,4 +4,4 @@ checkRequiredKeys: keys
 	required ifNotNil: [  
 		containedKeys := keys intersection: properties keys.
 		(containedKeys includesAll: required) ifFalse: [ 
-			 JSONTypeErrror signal: 'object is missing required properties ', ($, join: (required difference: containedKeys)) ] ]
+			 JSONTypeError signal: 'object is missing required properties ', ($, join: (required difference: containedKeys)) ] ]

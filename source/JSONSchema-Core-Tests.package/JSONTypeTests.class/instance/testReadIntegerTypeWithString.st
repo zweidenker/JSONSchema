@@ -2,4 +2,4 @@ tests
 testReadIntegerTypeWithString
 	self 
 		should: [ JSONSchemaInteger read: '123' ]
-		raise: JSONTypeErrror  
+		raise: JSONTypeError  

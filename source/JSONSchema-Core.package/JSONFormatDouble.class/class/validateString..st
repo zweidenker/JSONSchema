@@ -8,5 +8,5 @@ validateString: aString
 				allSatisfy:
 					[ :eachSubstring | eachSubstring allSatisfy: [ :eachChar | eachChar isDigit ] ])
 				ifTrue: [ ^ self ] ].
-	^ JSONTypeErrror
+	^ JSONTypeError
 		signal: aString printString , ' is not a valid double value'
