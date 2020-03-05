@@ -1,6 +1,6 @@
 reading
-read: aString
+read: anObject
 	| value |
-	value := self readFormatted: aString.
+	value := self readFormatted: anObject.
 	self constraints do: [ :each | each validate: value ].
 	^ value

@@ -5,9 +5,7 @@
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
-	"instvars" : [
-		"property"
-	],
-	"name" : "JSONSchemaMissingRequiredProperty",
+	"instvars" : [ ],
+	"name" : "JSONFormatError",
 	"type" : "normal"
 }

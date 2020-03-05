@@ -9,5 +9,5 @@ read: string object: object
 		value := schema readUsing: reader.
 		object 
 			perform: key asSymbol asMutator 
-			with: value ].
+			with: value.].
 	^ object
