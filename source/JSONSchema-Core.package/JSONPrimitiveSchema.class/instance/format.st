@@ -1,3 +1,4 @@
 accessing
 format
-	^ format
+	^ format ifNil: [ 
+		format := self defaultFormat ]

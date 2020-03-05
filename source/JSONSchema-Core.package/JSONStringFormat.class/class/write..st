@@ -1,0 +1,3 @@
+writing
+write: aString 
+	^ aString
