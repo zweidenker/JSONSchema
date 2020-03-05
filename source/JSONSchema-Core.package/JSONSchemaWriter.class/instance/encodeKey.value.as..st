@@ -4,4 +4,6 @@ encodeKey: key value: value as: schema
 	self prettyPrintSpace.
 	writeStream nextPut: $:.
 	self prettyPrintSpace.
-	schema write: value on: self
+	value 
+		ifNotNil: [ schema write: value on: self ]
+		ifNil: [ self writeNull ]
