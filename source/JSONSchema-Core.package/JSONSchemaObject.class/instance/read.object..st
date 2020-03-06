@@ -2,7 +2,7 @@ as yet unclassified
 read: string object: object
 	| reader neededKeys |
 	reader := (NeoJSONReader on: string readStream).
-	neededKeys := required asOrderedCollection.
+	neededKeys := self neededKeys.
 	reader parseMapKeysDo: [ :key | | schema value |
 		schema :=	properties 
 			at: key 
