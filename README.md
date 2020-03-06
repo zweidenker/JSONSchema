@@ -5,7 +5,7 @@
 
 This is an implementation of [JSON Schema](https://json-schema.org/) for the [pharo](http://pharo.org) language. It is used to define the structure and values of a JSON string and to validate it. The schema itself can be externalized for being consumed by a third party.
 
-**DISCLAIMER**: This is not a full implementation of the json schema spec. Basic types and constraints should work. If you need support for something not implemented you are invited to provide a pull request for it. If you cannot develop it you sill can open a ticket in this repository
+**DISCLAIMER**: This is not a full implementation of the json schema spec. Basic types and constraints should work. If you need support for something not implemented you are invited to provide a pull request for it. If you cannot develop it you still can open a ticket in this repository
 
 It can be loaded by downloading it in pharo via
 
