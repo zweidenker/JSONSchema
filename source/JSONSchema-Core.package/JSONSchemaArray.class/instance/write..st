@@ -1,11 +1,10 @@
 as yet unclassified
 write: aCollection
-	| writer |
-	^ String streamContents: [ :stream |
-		writer := (JSONSchemaWriter on: stream).
-		stream nextPut: $[.
-		aCollection do: [ :eachObject |
-			self items write: eachObject on: writer
-			 	] separatedBy: [ stream nextPut: $,.  ].
-		stream nextPut: $].
-		 ]
+	^ String
+		streamContents: [ :stream | 
+			stream nextPut: $[.
+			aCollection
+				do:
+					[ :eachObject | stream nextPutAll: (self items write: eachObject) ]
+				separatedBy: [ stream nextPut: $, ].
+			stream nextPut: $] ]
