@@ -1,4 +1,4 @@
-as yet unclassified
+meta-object-protocol
 read: jsonObject
 		| object |
 	object := NeoJSONObject new.

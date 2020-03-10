@@ -1,4 +1,4 @@
-as yet unclassified
+writing
 write: anObject on: writer
 	self checkRequiredKeys: anObject jsonSchemaKeys.
 	writer writeMapStreamingDo: [ :streamWriter |

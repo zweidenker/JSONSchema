@@ -1,4 +1,4 @@
-as yet unclassified
+writing
 writePropertiesOn: mapWriter
 	"mapWriter writeKey: 'type' value: self typeString."
 	constraints ifNil: [ ^ self ].

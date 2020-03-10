@@ -1,5 +1,7 @@
 tests
 testReadBooleanTypeString
+	| value |
 	self 
-		shouldnt: [ JSONSchemaBoolean readString: 'true' ]
-		raise: JSONTypeError  
+		shouldnt: [ value := JSONSchemaBoolean readString: 'true' ]
+		raise: JSONTypeError.
+	self assert: value equals: true 

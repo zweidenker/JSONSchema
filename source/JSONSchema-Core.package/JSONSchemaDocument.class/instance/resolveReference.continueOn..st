@@ -1,4 +1,4 @@
-as yet unclassified
+initialization
 resolveReference: aReference continueOn: aVisitor
 	| schema |
 	schemasByPath 
