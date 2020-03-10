@@ -1,4 +1,4 @@
-as yet unclassified
+writing
 writePropertiesOn: mapWriter
 	super writePropertiesOn: mapWriter.
 	format ifNotNil: [  

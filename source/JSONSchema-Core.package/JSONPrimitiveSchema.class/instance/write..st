@@ -1,3 +1,3 @@
-as yet unclassified
+writing
 write: anObject
 	^ self format write: anObject

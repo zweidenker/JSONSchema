@@ -1,3 +1,5 @@
 services
-convertString: anObject
-	self subclassResponsibility 
+convertString: aString
+	^ [ self basicConvertString: aString ]
+		on: Error 
+		do: [ :error | JSONTypeError signal: error description ]

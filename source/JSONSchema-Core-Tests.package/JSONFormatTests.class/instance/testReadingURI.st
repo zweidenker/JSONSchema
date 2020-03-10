@@ -1,6 +1,6 @@
 tests
 testReadingURI
-	| object string |
-	string := 'http://www.sampledomain.org/some/path?and=arguments'.
-	object := JSONFormatURI read: string.
+	| object url |
+	url := 'http://www.sampledomain.org/some/path?and=arguments' asZnUrl.
+	object := JSONFormatURI read: url.
 	self assert: object equals: ('http://www.sampledomain.org/some/path?and=arguments' asZnUrl)

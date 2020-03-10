@@ -1,3 +1,3 @@
-as yet unclassified
+accessing
 schemas: aCollection 
 	schemas := aCollection

@@ -1,3 +1,3 @@
 as yet unclassified
-convertString: aString 
+basicConvertString: aString 
 	^ aString asNumber

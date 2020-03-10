@@ -1,3 +1,3 @@
-as yet unclassified
+writing
 write: anObject on: writer
 	^ writer writeString: (self write: anObject)

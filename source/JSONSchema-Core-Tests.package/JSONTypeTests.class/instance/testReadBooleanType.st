@@ -1,5 +1,7 @@
 tests
 testReadBooleanType
+	| value |
 	self 
-		shouldnt: [ JSONSchemaBoolean read: true ]
-		raise: Exception 
+		shouldnt: [ value := JSONSchemaBoolean read: true ]
+		raise: Exception.
+	self assert: value equals: true

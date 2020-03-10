@@ -1,4 +1,4 @@
-as yet unclassified
+accessing
 neededKeys
 	^ required 
 		ifNotNil: [ required asOrderedCollection copy ]
