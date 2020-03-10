@@ -1,5 +1,4 @@
 as yet unclassified
 write: aCollection on: writer
 	^ writer
-		writeListWith: [ aCollection
-				do: [ :eachObject | self items write: eachObject on: writer ] ]
+		writeList: aCollection with: [ :eachObject | self items write: eachObject on: writer ] 
