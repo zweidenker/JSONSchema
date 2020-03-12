@@ -1,4 +1,4 @@
-as yet unclassified
+testing
 isAnyObject
 	self flag: #todo.
 	"Should properties be nil???"

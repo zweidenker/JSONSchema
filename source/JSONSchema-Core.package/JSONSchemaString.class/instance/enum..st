@@ -1,3 +1,3 @@
-as yet unclassified
+accessing
 enum: aCollection
 	self addConstraint: ( JSONSchemaEnumConstraint options: aCollection )

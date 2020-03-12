@@ -1,3 +1,3 @@
-as yet unclassified
+accessing
 maximum: anInteger 
 	maximum := anInteger 

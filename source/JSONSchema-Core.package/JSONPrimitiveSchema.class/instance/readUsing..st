@@ -1,3 +1,3 @@
-as yet unclassified
+private
 readUsing: aReader 
 	^ self read: aReader parseValue

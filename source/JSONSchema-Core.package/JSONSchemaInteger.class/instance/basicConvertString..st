@@ -1,3 +1,3 @@
 instance creation
-convertString: aString
+basicConvertString: aString
 	^ aString asInteger 

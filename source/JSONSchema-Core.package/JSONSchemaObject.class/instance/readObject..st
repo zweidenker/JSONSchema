@@ -1,4 +1,4 @@
-as yet unclassified
+accessing
 readObject: jsonObject 
 	| object |
 	object := NeoJSONObject new.

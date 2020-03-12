@@ -1,4 +1,4 @@
-as yet unclassified
+private
 readUsing: reader
 	| object |
 	object := self newInstance.
