@@ -1,8 +1,10 @@
 services
 validateString: aString
-
-	| numberParts |
-	numberParts := aString findTokens: (Array with: $.) escapedBy: #().
+	| numberParts absolute |
+	absolute := aString trim.
+	(absolute beginsWith: '-')
+		ifTrue: [ absolute := absolute allButFirst ].
+	numberParts := absolute findTokens: (Array with: $.) escapedBy: #().
 	numberParts size <= 2
 		ifTrue: [ (numberParts
 				allSatisfy:
