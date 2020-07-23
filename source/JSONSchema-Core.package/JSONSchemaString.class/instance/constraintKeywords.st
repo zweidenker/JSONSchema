@@ -1,3 +1,3 @@
 accessing
 constraintKeywords 
-	^ super constraintKeywords asOrderedCollection addAll: #( enum )
+	^ super constraintKeywords asOrderedCollection addAll: #( enum length)

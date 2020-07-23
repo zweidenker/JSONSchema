@@ -22,7 +22,9 @@
 		"enum",
 		"additionalProperties",
 		"multipleOf",
-		"uniqueItems"
+		"uniqueItems",
+		"minLength",
+		"maxLength"
 	],
 	"name" : "JSONSchemaDefinition",
 	"type" : "normal"
