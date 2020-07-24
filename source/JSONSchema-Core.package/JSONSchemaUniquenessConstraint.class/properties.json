@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "JSONSchemaConstraint",
+	"category" : "JSONSchema-Core-Constraints",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"uniqueItems"
+	],
+	"name" : "JSONSchemaUniquenessConstraint",
+	"type" : "normal"
+}
