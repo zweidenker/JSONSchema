@@ -11,4 +11,4 @@ validate: aString
 	
 	maxLength notNil ifTrue: [ 
 		(aString size <= maxLength) ifFalse: [ 
-			 JSONConstraintError signal: aString, ' must have a maximum length of ', minLength asString ]  ]
+			 JSONConstraintError signal: aString, ' must have a maximum length of ', maxLength asString ]  ]
