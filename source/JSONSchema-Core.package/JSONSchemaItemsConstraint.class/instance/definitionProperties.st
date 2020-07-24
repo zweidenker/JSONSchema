@@ -1,0 +1,3 @@
+accessing
+definitionProperties
+	^ #( minItems maxItems )

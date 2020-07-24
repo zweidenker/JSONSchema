@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "",
+	"super" : "JSONSchemaConstraint",
+	"category" : "JSONSchema-Core-Constraints",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"minProperties",
+		"maxProperties"
+	],
+	"name" : "JSONSchemaSizeConstraint",
+	"type" : "normal"
+}
