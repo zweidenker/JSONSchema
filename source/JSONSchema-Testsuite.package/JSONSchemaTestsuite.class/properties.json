@@ -1,0 +1,16 @@
+{
+	"commentStamp" : "",
+	"super" : "Object",
+	"category" : "JSONSchema-Testsuite-Builder",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"archiveFile",
+		"archive",
+		"files",
+		"version"
+	],
+	"name" : "JSONSchemaTestsuite",
+	"type" : "normal"
+}

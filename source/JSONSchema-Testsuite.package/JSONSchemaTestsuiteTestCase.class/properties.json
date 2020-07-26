@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "TestCase",
+	"category" : "JSONSchema-Testsuite-Builder",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"schema"
+	],
+	"name" : "JSONSchemaTestsuiteTestCase",
+	"type" : "normal"
+}

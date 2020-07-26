@@ -1,0 +1,3 @@
+asserting
+schemaString
+	self subclassResponsibility
