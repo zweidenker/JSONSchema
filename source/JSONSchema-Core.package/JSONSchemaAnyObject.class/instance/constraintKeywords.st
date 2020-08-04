@@ -1,0 +1,3 @@
+accessing
+constraintKeywords 
+	^ JSONSchemaConstraint allNames

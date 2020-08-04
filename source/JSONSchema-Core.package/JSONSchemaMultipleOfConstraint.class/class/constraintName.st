@@ -1,3 +1,3 @@
 accessing
 constraintName 	
-	^ 'multipleOf'
+	^ #multipleOf
