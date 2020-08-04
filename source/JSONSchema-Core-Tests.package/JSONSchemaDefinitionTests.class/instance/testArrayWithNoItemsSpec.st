@@ -1,5 +1,5 @@
 tests
-testReadArrayWithEmptyItems
+testArrayWithNoItemsSpec
 	| schema value |
 	schema := JSONSchema fromString: '{"type": "array"}'.
 	self 
