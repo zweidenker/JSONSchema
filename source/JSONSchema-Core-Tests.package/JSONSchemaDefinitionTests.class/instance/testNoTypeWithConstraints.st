@@ -1,5 +1,5 @@
 tests
-testReadNoTypeWithConstraints
+testNoTypeWithConstraints
 	| schema |
 	schema := JSONSchema fromString: '{"exclusiveMaximum":10}'.
 
