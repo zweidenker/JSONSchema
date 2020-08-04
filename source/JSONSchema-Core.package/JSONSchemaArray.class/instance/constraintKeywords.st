@@ -1,3 +1,3 @@
 accessing
 constraintKeywords 
-	^ super constraintKeywords asOrderedCollection addAll: #( items )
+	^ super constraintKeywords asOrderedCollection addAll: #( items unique )
