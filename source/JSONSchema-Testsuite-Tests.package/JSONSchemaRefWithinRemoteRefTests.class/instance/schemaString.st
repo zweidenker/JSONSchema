@@ -1,0 +1,3 @@
+accessing
+schemaString
+	^ '{"$ref":"http://localhost:1234/subSchemas.json#/refToInteger"}'

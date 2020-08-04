@@ -1,0 +1,3 @@
+accessing
+schemaString
+	^ '{"oneOf":[{"properties":{"bar":{"type":"integer"}},"required":["bar"]},{"properties":{"foo":{"type":"string"}},"required":["foo"]}]}'

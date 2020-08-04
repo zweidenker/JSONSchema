@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "JSONSchemaTestsuiteTestCase",
+	"category" : "JSONSchema-Testsuite-Tests-Const",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "JSONSchemaConstWithArrayTests",
+	"type" : "normal"
+}
