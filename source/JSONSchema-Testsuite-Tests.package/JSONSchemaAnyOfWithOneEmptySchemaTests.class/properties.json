@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "JSONSchemaTestsuiteTestCase",
+	"category" : "JSONSchema-Testsuite-Tests-AnyOf",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "JSONSchemaAnyOfWithOneEmptySchemaTests",
+	"type" : "normal"
+}

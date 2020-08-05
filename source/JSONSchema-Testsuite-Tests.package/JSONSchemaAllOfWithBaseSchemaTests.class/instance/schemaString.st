@@ -1,0 +1,3 @@
+accessing
+schemaString
+	^ '{"allOf":[{"properties":{"foo":{"type":"string"}},"required":["foo"]},{"properties":{"baz":{"type":"null"}},"required":["baz"]}],"properties":{"bar":{"type":"integer"}},"required":["bar"]}'

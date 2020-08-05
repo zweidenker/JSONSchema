@@ -1,0 +1,16 @@
+{
+	"commentStamp" : "UdoSchneider 8/4/2020 20:47",
+	"super" : "Object",
+	"category" : "JSONSchema-Testsuite-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"archiveFile",
+		"archive",
+		"files",
+		"version"
+	],
+	"name" : "JSONSchemaTestsuite",
+	"type" : "normal"
+}

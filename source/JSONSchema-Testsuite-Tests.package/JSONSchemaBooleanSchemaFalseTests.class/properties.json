@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "JSONSchemaTestsuiteTestCase",
+	"category" : "JSONSchema-Testsuite-Tests-BooleanSchema",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "JSONSchemaBooleanSchemaFalseTests",
+	"type" : "normal"
+}

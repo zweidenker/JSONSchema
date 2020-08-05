@@ -1,0 +1,3 @@
+accessing
+schemaString
+	^ '{"oneOf":[{"minLength":2},{"maxLength":4}],"type":"string"}'

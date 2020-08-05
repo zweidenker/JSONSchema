@@ -1,0 +1,17 @@
+{
+	"commentStamp" : "",
+	"super" : "Object",
+	"category" : "JSONSchema-Testsuite-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"description",
+		"comment",
+		"data",
+		"valid",
+		"testMethodName"
+	],
+	"name" : "JSONSchemaTestsuiteTest",
+	"type" : "normal"
+}
