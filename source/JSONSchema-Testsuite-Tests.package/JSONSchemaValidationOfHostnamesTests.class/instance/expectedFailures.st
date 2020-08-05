@@ -1,0 +1,3 @@
+as yet unclassified
+expectedFailures
+	^ #(#testAHostNameWithAComponentTooLong #testAHostNameStartingWithAnIllegalCharacter #testEndsWithHyphen #testAHostNameContainingIllegalCharacters #testAValidHostName #testContainsUnderscore #testStartsWithHyphen #testStartsWithUnderscore #testAValidPunycodedIDNHostname #testExceedsMaximumLabelLength #testEndsWithUnderscore #testMaximumLabelLength)

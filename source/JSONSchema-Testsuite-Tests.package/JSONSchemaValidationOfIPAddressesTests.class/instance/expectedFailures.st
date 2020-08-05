@@ -1,0 +1,3 @@
+as yet unclassified
+expectedFailures
+	^ #(#testAnIPAddressWithTooManyComponents #testIgnoresNull #testAValidIPAddress #testIgnoresArrays #testAnIPAddressWithout4Components #testAnIPAddressAsAnIntegerDecimal #testIgnoresBooleans #testAnIPAddressWithOutOfRangeValues #testAnIPAddressAsAnInteger #testIgnoresObjects #testIgnoresIntegers #testIgnoresFloats)

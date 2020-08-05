@@ -1,0 +1,3 @@
+as yet unclassified
+expectedFailures
+	^ #(#testAllOfFalseAnyOfTrueOneOfTrue #testAllOfTrueAnyOfFalseOneOfFalse #testAllOfTrueAnyOfFalseOneOfTrue #testAllOfTrueAnyOfTrueOneOfTrue #testAllOfFalseAnyOfTrueOneOfFalse #testAllOfTrueAnyOfTrueOneOfFalse #testAllOfFalseAnyOfFalseOneOfFalse #testAllOfFalseAnyOfFalseOneOfTrue)

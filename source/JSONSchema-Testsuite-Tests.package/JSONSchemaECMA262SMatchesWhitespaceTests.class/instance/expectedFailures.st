@@ -1,0 +1,3 @@
+as yet unclassified
+expectedFailures
+	^ #(#testParagraphSeparatorMatchesLineTerminator #testCharacterTabulationMatches #testFormFeedMatches #testLatin1NonBreakingSpaceMatches #testLineTabulationMatches #testASCIISpaceMatches #testZeroWidthWhitespaceMatches #testEMSPACEMatchesSpaceSeparator #testLineFeedMatchesLineTerminator #testNonWhitespaceDoesNotMatch #testNonWhitespaceControlDoesNotMatch)

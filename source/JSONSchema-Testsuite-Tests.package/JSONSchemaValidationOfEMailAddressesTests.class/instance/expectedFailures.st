@@ -1,0 +1,3 @@
+as yet unclassified
+expectedFailures
+	^ #(#testDotAfterLocalPartIsNotValid #testAnInvalidEMailAddress #testTwoSubsequentDotsInsideLocalPartAreNotValid #testDotBeforeLocalPartIsNotValid)

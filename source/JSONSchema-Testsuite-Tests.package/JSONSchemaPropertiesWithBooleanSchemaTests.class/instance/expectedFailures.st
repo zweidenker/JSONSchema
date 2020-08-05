@@ -1,0 +1,3 @@
+as yet unclassified
+expectedFailures
+	^ #(#testNoPropertyPresentIsValid #testOnlyFalsePropertyPresentIsInvalid #testBothPropertiesPresentIsInvalid #testOnlyTruePropertyPresentIsValid)
