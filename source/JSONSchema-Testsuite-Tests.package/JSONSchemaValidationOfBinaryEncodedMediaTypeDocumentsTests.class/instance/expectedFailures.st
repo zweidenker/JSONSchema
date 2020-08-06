@@ -1,3 +1,3 @@
-as yet unclassified
+testing
 expectedFailures
-        ^ #(#testAValidlyEncodedInvalidJSONDocument #testAnInvalidBase64StringThatIsValidJSON)
+	^ #(#testAValidlyEncodedInvalidJSONDocument #testAnInvalidBase64StringThatIsValidJSON)

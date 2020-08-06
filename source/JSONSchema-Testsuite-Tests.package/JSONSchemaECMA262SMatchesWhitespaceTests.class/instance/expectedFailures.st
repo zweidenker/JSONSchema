@@ -1,3 +1,3 @@
-as yet unclassified
+testing
 expectedFailures
-        ^ #(#testParagraphSeparatorMatchesLineTerminator #testCharacterTabulationMatches #testFormFeedMatches #testLineTabulationMatches #testLatin1NonBreakingSpaceMatches #testASCIISpaceMatches #testZeroWidthWhitespaceMatches #testNonWhitespaceDoesNotMatch #testEMSPACEMatchesSpaceSeparator #testLineFeedMatchesLineTerminator #testNonWhitespaceControlDoesNotMatch)
+	^ #(#testParagraphSeparatorMatchesLineTerminator #testCharacterTabulationMatches #testLineTabulationMatches #testLatin1NonBreakingSpaceMatches #testFormFeedMatches #testASCIISpaceMatches #testZeroWidthWhitespaceMatches #testNonWhitespaceDoesNotMatch #testLineFeedMatchesLineTerminator #testEMSPACEMatchesSpaceSeparator #testNonWhitespaceControlDoesNotMatch)

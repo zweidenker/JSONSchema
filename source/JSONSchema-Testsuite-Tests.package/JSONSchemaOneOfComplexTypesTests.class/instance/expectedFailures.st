@@ -1,3 +1,3 @@
-as yet unclassified
+testing
 expectedFailures
-        ^ #(#testFirstOneOfValidComplex #testSecondOneOfValidComplex #testBothOneOfValidComplex #testNeitherOneOfValidComplex)
+	^ #(#testFirstOneOfValidComplex #testBothOneOfValidComplex #testSecondOneOfValidComplex #testNeitherOneOfValidComplex)

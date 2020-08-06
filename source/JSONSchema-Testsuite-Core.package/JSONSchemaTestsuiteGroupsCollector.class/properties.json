@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "JSONSchemaTestsuiteVisitor",
+	"category" : "JSONSchema-Testsuite-Core-Builder",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"groups"
+	],
+	"name" : "JSONSchemaTestsuiteGroupsCollector",
+	"type" : "normal"
+}

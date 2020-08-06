@@ -1,3 +1,3 @@
-as yet unclassified
+testing
 expectedFailures
-        ^ #(#testArrayWithoutItem5IsInvalid)
+	^ #(#testArrayWithoutItem5IsInvalid)

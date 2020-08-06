@@ -1,3 +1,3 @@
-as yet unclassified
+testing
 expectedFailures
-        ^ #(#testIgnoresArrays #testIgnoresStrings #testIgnoresOtherNonObjects)
+	^ #(#testIgnoresArrays #testIgnoresStrings #testIgnoresOtherNonObjects)

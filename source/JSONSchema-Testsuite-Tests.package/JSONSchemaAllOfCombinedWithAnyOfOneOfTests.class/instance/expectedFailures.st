@@ -1,3 +1,3 @@
-as yet unclassified
+testing
 expectedFailures
-        ^ #(#testAllOfTrueAnyOfTrueOneOfTrue #testAllOfFalseAnyOfTrueOneOfTrue #testAllOfTrueAnyOfFalseOneOfTrue #testAllOfFalseAnyOfFalseOneOfTrue #testAllOfFalseAnyOfTrueOneOfFalse #testAllOfTrueAnyOfTrueOneOfFalse #testAllOfFalseAnyOfFalseOneOfFalse #testAllOfTrueAnyOfFalseOneOfFalse)
+	^ #(#testAllOfTrueAnyOfFalseOneOfFalse #testAllOfFalseAnyOfTrueOneOfTrue #testAllOfTrueAnyOfFalseOneOfTrue #testAllOfTrueAnyOfTrueOneOfTrue #testAllOfFalseAnyOfTrueOneOfFalse #testAllOfTrueAnyOfTrueOneOfFalse #testAllOfFalseAnyOfFalseOneOfTrue #testAllOfFalseAnyOfFalseOneOfFalse)

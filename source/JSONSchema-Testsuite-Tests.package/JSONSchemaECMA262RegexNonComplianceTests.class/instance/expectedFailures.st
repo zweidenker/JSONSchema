@@ -1,3 +1,3 @@
-as yet unclassified
+testing
 expectedFailures
-        ^ #(#testECMA262HasNoSupportForZAnchorFromNET)
+	^ #(#testECMA262HasNoSupportForZAnchorFromNET)

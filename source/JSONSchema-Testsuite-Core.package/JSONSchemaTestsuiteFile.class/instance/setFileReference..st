@@ -1,3 +1,3 @@
 initialization
-setFileReference: anObject
-	fileReference := anObject
+setFileReference: aFileReference
+	fileReference := aFileReference

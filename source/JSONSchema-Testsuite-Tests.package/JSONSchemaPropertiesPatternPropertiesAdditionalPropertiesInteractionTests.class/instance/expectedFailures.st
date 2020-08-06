@@ -1,3 +1,3 @@
-as yet unclassified
+testing
 expectedFailures
-        ^ #(#testPatternPropertyInvalidatesProperty #testAdditionalPropertyInvalidatesOthers #testPatternPropertyInvalidatesNonproperty)
+	^ #(#testPatternPropertyInvalidatesProperty #testAdditionalPropertyInvalidatesOthers #testPatternPropertyInvalidatesNonproperty)

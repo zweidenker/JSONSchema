@@ -1,0 +1,16 @@
+{
+	"commentStamp" : "",
+	"super" : "JSONSchemaTestsuiteVisitor",
+	"category" : "JSONSchema-Testsuite-Core-Builder",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"groupClassMapping",
+		"taggedPackageName",
+		"testCaseClass",
+		"testSelectorMapping"
+	],
+	"name" : "JSONSchemaTestsuiteTestCaseGenerator",
+	"type" : "normal"
+}

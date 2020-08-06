@@ -1,3 +1,3 @@
-as yet unclassified
+testing
 expectedFailures
-        ^ #(#testTildeInvalid #testPercentInvalid #testPercentValid #testTildeValid #testSlashValid #testSlashInvalid)
+	^ #(#testTildeInvalid #testPercentValid #testPercentInvalid #testTildeValid #testSlashValid #testSlashInvalid)

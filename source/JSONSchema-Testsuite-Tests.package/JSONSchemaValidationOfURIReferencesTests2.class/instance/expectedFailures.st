@@ -1,0 +1,3 @@
+testing
+expectedFailures
+	^ #(#testAnInvalidURIFragment #testAnInvalidURIReference #testAValidURIFragment #testAValidURI #testAValidProtocolRelativeURIReference #testAValidRelativeURIReference #testAValidURIReference)

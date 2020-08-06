@@ -1,3 +1,3 @@
-as yet unclassified
+testing
 expectedFailures
-        ^ #(#testValidItems #testWrongItem #testFewerItemsIsValid #testTooManyItems #testTooManySubItems #testWrongSubItem)
+	^ #(#testValidItems #testWrongItem #testFewerItemsIsValid #testTooManyItems #testTooManySubItems #testWrongSubItem)

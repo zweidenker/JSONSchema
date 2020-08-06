@@ -1,3 +1,3 @@
-as yet unclassified
+testing
 expectedFailures
-        ^ #(#testAnInvalidBase64StringIsNotAValidCharacter)
+	^ #(#testAnInvalidBase64StringIsNotAValidCharacter)

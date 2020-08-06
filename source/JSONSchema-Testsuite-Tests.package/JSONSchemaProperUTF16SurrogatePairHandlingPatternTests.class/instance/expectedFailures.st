@@ -1,3 +1,3 @@
-as yet unclassified
+testing
 expectedFailures
-        ^ #(#testMatchesSingle #testDoesnTMatchOne #testMatchesTwo #testDoesnTMatchOneASCII #testMatchesEmpty #testDoesnTMatchTwo #testDoesnTMatchTwoASCII)
+	^ #(#testMatchesSingle #testMatchesTwo #testDoesnTMatchOneASCII #testDoesnTMatchTwoASCII #testDoesnTMatchTwo #testMatchesEmpty #testDoesnTMatchOne)

@@ -1,0 +1,3 @@
+testing
+expectedFailures
+	^ #(#testAValidIRIFragment #testAnInvalidIRIReference #testAValidRelativeIRIReference #testAValidIRIReference #testAnInvalidIRIFragment #testAValidProtocolRelativeIRIReference #testAValidIRI)

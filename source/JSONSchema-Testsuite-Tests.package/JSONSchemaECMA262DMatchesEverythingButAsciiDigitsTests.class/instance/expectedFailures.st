@@ -1,3 +1,3 @@
-as yet unclassified
+testing
 expectedFailures
-        ^ #(#testNKODIGITZEROMatchesUnlikeEGPython #testNKODIGITZEROAsUEscapeMatches #testASCIIZeroDoesNotMatch)
+	^ #(#testNKODIGITZEROMatchesUnlikeEGPython #testNKODIGITZEROAsUEscapeMatches #testASCIIZeroDoesNotMatch)

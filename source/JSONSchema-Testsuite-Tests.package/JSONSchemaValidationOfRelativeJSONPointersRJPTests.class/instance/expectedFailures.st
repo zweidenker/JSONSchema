@@ -1,3 +1,3 @@
-as yet unclassified
+testing
 expectedFailures
-        ^ #(#testAValidDownwardsRJP #testAValidRJPTakingTheMemberOrIndexName #testAValidUpAndThenDownRJPWithArrayIndex #testNegativePrefix #testAnInvalidRJPThatIsAValidJSONPointer #testAValidUpwardsRJP)
+	^ #(#testAValidUpwardsRJP #testAValidDownwardsRJP #testAValidUpAndThenDownRJPWithArrayIndex #testNegativePrefix #testAnInvalidRJPThatIsAValidJSONPointer #testAValidRJPTakingTheMemberOrIndexName)

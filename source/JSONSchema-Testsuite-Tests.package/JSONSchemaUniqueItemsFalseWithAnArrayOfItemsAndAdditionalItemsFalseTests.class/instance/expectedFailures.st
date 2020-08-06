@@ -1,3 +1,3 @@
-as yet unclassified
+testing
 expectedFailures
-        ^ #(#testTrueFalseFromItemsArrayIsValid #testTrueTrueFromItemsArrayIsValid #testFalseTrueFromItemsArrayIsValid #testFalseFalseFromItemsArrayIsValid #testExtraItemsAreInvalidEvenIfUnique)
+	^ #(#testTrueFalseFromItemsArrayIsValid #testTrueTrueFromItemsArrayIsValid #testFalseTrueFromItemsArrayIsValid #testFalseFalseFromItemsArrayIsValid #testExtraItemsAreInvalidEvenIfUnique)

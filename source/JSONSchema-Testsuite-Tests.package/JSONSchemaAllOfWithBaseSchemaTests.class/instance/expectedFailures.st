@@ -1,3 +1,3 @@
-as yet unclassified
+testing
 expectedFailures
-        ^ #(#testMismatchSecondAllOf #testMismatchBoth #testMismatchFirstAllOf #testMismatchBaseSchema #testValid)
+	^ #(#testMismatchSecondAllOf #testMismatchBaseSchema #testMismatchBoth #testMismatchFirstAllOf #testValid)

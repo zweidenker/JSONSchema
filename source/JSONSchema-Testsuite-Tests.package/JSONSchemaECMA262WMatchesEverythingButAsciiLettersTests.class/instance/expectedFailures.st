@@ -1,3 +1,3 @@
-as yet unclassified
+testing
 expectedFailures
-        ^ #(#testLatin1EAcuteMatchesUnlikeEGPython #testASCIIADoesNotMatch)
+	^ #(#testLatin1EAcuteMatchesUnlikeEGPython #testASCIIADoesNotMatch)

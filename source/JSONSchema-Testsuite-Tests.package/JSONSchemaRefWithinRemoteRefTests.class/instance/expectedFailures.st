@@ -1,3 +1,3 @@
-as yet unclassified
+testing
 expectedFailures
-        ^ #(#testRefWithinRefInvalid #testRefWithinRefValid)
+	^ #(#testRefWithinRefInvalid #testRefWithinRefValid)

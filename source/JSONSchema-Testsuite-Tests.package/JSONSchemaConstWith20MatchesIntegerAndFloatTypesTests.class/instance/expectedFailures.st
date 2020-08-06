@@ -1,3 +1,3 @@
-as yet unclassified
+testing
 expectedFailures
-        ^ #(#testInteger2IsInvalid #testFloat20IsInvalid #testFloat200001IsInvalid)
+	^ #(#testInteger2IsInvalid #testFloat20IsInvalid #testFloat200001IsInvalid)

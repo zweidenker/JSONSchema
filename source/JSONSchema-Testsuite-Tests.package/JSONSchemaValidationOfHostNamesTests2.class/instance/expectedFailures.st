@@ -1,0 +1,3 @@
+testing
+expectedFailures
+	^ #(#testAHostNameContainingIllegalCharacters #testEndsWithHyphen #testMaximumLabelLength #testAHostNameStartingWithAnIllegalCharacter #testAValidHostName #testContainsUnderscore #testStartsWithHyphen #testStartsWithUnderscore #testAValidPunycodedIDNHostname #testExceedsMaximumLabelLength #testEndsWithUnderscore #testAHostNameWithAComponentTooLong)

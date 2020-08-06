@@ -1,3 +1,3 @@
-as yet unclassified
+testing
 expectedFailures
-        ^ #(#testBothInvalidInvalid #testFirstValidValid #testBothValidInvalid #testSecondValidValid)
+	^ #(#testBothValidInvalid #testFirstValidValid #testSecondValidValid #testBothInvalidInvalid)

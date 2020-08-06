@@ -1,3 +1,3 @@
-as yet unclassified
+testing
 expectedFailures
-        ^ #(#testObjectWithBothPropertiesIsInvalid #testObjectWithPropertyHavingSchemaFalseIsInvalid)
+	^ #(#testObjectWithBothPropertiesIsInvalid #testObjectWithPropertyHavingSchemaFalseIsInvalid)
