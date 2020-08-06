@@ -1,0 +1,3 @@
+as yet unclassified
+expectedFailures
+        ^ #(#testIgnoresIntegers #testAnInvalidIRI #testIgnoresNull #testAnInvalidIRIThoughValidIRIReference #testIgnoresFloats #testAValidIRIWithManySpecialCharacters #testAnInvalidIRIBasedOnIPv6 #testIgnoresBooleans #testAValidIRIWithAnchorTag #testAValidIRIWithAnchorTagAndParantheses #testIgnoresArrays #testAValidIRIWithURLEncodedStuff #testAValidIRIBasedOnIPv6 #testAnInvalidRelativeIRIReference #testIgnoresObjects)

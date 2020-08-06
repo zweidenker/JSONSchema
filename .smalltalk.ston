@@ -3,7 +3,7 @@ SmalltalkCISpec {
       SCIMetacelloLoadSpec {
           #baseline : 'JSONSchema',
           #directory : 'source',
-          #load : [ 'Tests' ],
+          #load : [ 'Tests', 'Testsuite' ],
           #platforms : [ #pharo ]
       }
   ]

@@ -1,0 +1,3 @@
+as yet unclassified
+expectedFailures
+        ^ #(#testTrueFalseFromItemsArrayIsValid #testNonUniqueArrayExtendedFromTrueFalseIsNotValid #testFalseFalseFromItemsArrayIsNotValid #testFalseTrueFromItemsArrayIsValid #testUniqueArrayExtendedFromTrueFalseIsValid #testUniqueArrayExtendedFromFalseTrueIsValid #testNonUniqueArrayExtendedFromFalseTrueIsNotValid #testTrueTrueFromItemsArrayIsNotValid)
