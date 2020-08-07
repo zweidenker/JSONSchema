@@ -1,3 +1,3 @@
-as yet unclassified
+testing
 expectedFailures
-        ^ #(#testEqualNumberOfItemsPresent #testEmptyArray #testFewerNumberOfItemsPresent1 #testFewerNumberOfItemsPresent2 #testAdditionalItemsAreNotPermitted)
+	^ #(#testEqualNumberOfItemsPresent #testEmptyArray #testFewerNumberOfItemsPresent1 #testFewerNumberOfItemsPresent2 #testAdditionalItemsAreNotPermitted)

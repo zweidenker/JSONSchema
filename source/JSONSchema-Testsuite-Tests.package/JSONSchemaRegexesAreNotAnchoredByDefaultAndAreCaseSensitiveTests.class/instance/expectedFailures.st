@@ -1,3 +1,3 @@
-as yet unclassified
+testing
 expectedFailures
-        ^ #(#testRegexesAreCaseSensitive2 #testRecognizedMembersAreAccountedFor)
+	^ #(#testRecognizedMembersAreAccountedFor #testRegexesAreCaseSensitive2)

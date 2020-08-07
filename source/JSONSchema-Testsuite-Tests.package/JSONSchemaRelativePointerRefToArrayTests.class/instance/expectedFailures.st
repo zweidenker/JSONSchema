@@ -1,3 +1,3 @@
-as yet unclassified
+testing
 expectedFailures
-        ^ #(#testMismatchArray #testMatchArray)
+	^ #(#testMatchArray #testMismatchArray)

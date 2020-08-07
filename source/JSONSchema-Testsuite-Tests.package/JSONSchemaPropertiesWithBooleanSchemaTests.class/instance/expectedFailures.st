@@ -1,3 +1,3 @@
-as yet unclassified
+testing
 expectedFailures
-        ^ #(#testOnlyTruePropertyPresentIsValid #testOnlyFalsePropertyPresentIsInvalid #testBothPropertiesPresentIsInvalid #testNoPropertyPresentIsValid)
+	^ #(#testOnlyTruePropertyPresentIsValid #testOnlyFalsePropertyPresentIsInvalid #testBothPropertiesPresentIsInvalid #testNoPropertyPresentIsValid)

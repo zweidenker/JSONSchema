@@ -1,3 +1,3 @@
-as yet unclassified
+testing
 expectedFailures
-        ^ #(#testPropertyPresent #testPropertyAbsent)
+	^ #(#testPropertyPresent #testPropertyAbsent)

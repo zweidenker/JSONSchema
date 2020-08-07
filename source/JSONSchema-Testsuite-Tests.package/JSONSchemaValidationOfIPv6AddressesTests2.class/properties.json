@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "JSONSchemaTestsuiteTestCase",
+	"category" : "JSONSchema-Testsuite-Tests-Ipv6",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "JSONSchemaValidationOfIPv6AddressesTests2",
+	"type" : "normal"
+}

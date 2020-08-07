@@ -1,3 +1,3 @@
-as yet unclassified
+testing
 expectedFailures
-        ^ #(#testAnIntegerIsNotAnObject #testAnObjectIsAnObject #testAFloatIsNotAnObject #testAStringIsNotAnObject #testABooleanIsNotAnObject #testNullIsNotAnObject #testAnArrayIsNotAnObject)
+	^ #(#testNullIsNotAnObject #testAnObjectIsAnObject #testAnIntegerIsNotAnObject #testAStringIsNotAnObject #testAFloatIsNotAnObject #testABooleanIsNotAnObject #testAnArrayIsNotAnObject)

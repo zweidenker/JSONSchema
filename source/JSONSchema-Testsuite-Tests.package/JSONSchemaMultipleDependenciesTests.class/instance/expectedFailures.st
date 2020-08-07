@@ -1,3 +1,3 @@
-as yet unclassified
+testing
 expectedFailures
-        ^ #(#testMissingDependency #testMissingBothDependencies #testMissingOtherDependency)
+	^ #(#testMissingBothDependencies #testMissingDependency #testMissingOtherDependency)

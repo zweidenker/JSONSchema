@@ -1,3 +1,3 @@
-as yet unclassified
+testing
 expectedFailures
-        ^ #(#testIncompleteArrayOfItems #testWrongTypes #testEmptyArray #testCorrectTypes #testArrayWithAdditionalItems #testJavaScriptPseudoArrayIsValid)
+	^ #(#testIncompleteArrayOfItems #testWrongTypes #testJavaScriptPseudoArrayIsValid #testEmptyArray #testArrayWithAdditionalItems #testCorrectTypes)

@@ -1,0 +1,3 @@
+visiting
+visitTest: aJSONSchemaTestsuiteTest
+	self generateTestMethod: aJSONSchemaTestsuiteTest

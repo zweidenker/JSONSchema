@@ -1,3 +1,3 @@
-as yet unclassified
+testing
 expectedFailures
-        ^ #(#testObjectIsInvalid #testNullIsValid #testStringIsValid)
+	^ #(#testObjectIsInvalid #testNullIsValid #testStringIsValid)

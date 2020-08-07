@@ -1,3 +1,3 @@
-as yet unclassified
+testing
 expectedFailures
-        ^ #(#testARegularExpressionWithUnclosedParensIsInvalid #testAValidRegularExpression)
+	^ #(#testARegularExpressionWithUnclosedParensIsInvalid #testAValidRegularExpression)

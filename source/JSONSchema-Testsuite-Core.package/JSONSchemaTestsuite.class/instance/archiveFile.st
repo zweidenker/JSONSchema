@@ -1,4 +1,3 @@
-private
+accessing
 archiveFile
-	^ archiveFile ifNil:
-		[ self download ]
+	^ archiveFile ifNil: [ archiveFile := self downloadArchiveFile ]

@@ -1,3 +1,3 @@
-as yet unclassified
+testing
 expectedFailures
-        ^ #(#testAValidUriTemplate #testAnInvalidUriTemplate #testAValidUriTemplateWithoutVariables #testAValidRelativeUriTemplate)
+	^ #(#testAValidUriTemplate #testAValidRelativeUriTemplate #testAValidUriTemplateWithoutVariables #testAnInvalidUriTemplate)

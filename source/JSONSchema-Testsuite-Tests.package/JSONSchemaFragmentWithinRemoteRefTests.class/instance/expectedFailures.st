@@ -1,3 +1,3 @@
-as yet unclassified
+testing
 expectedFailures
-        ^ #(#testRemoteFragmentValid #testRemoteFragmentInvalid)
+	^ #(#testRemoteFragmentValid #testRemoteFragmentInvalid)

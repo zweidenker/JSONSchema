@@ -1,6 +1,6 @@
 private
 removeTestsPackage
 	(RPackageOrganizer default
-		includesPackageNamed: self testsPackageName)
+		includesPackageNamed: JSONSchemaTestsuiteTestCaseGenerator testsPackageName)
 		ifTrue: [ RPackageOrganizer default
-				unregisterPackageNamed: self testsPackageName ]
+				unregisterPackageNamed: JSONSchemaTestsuiteTestCaseGenerator testsPackageName ]

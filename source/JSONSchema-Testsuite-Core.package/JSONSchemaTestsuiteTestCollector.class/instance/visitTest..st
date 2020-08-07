@@ -1,0 +1,3 @@
+visiting
+visitTest: aJSONSchemaTestsuiteTest
+	tests nextPut: aJSONSchemaTestsuiteTest

@@ -1,3 +1,3 @@
-as yet unclassified
+testing
 expectedFailures
-        ^ #(#testNullIsInvalid #testAnIntegerIsValid #testABooleanIsInvalid #testAFloatIsInvalid #testAStringIsValid #testAnObjectIsInvalid #testAnArrayIsInvalid)
+	^ #(#testNullIsInvalid #testABooleanIsInvalid #testAnIntegerIsValid #testAFloatIsInvalid #testAStringIsValid #testAnObjectIsInvalid #testAnArrayIsInvalid)

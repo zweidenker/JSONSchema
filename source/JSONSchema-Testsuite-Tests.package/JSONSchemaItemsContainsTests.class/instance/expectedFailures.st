@@ -1,3 +1,3 @@
-as yet unclassified
+testing
 expectedFailures
-        ^ #(#testDoesNotMatchItemsMatchesContains #testMatchesItemsDoesNotMatchContains #testMatchesNeitherItemsNorContains)
+	^ #(#testDoesNotMatchItemsMatchesContains #testMatchesItemsDoesNotMatchContains #testMatchesNeitherItemsNorContains)

@@ -1,3 +1,3 @@
-as yet unclassified
+testing
 expectedFailures
-        ^ #(#testAnInvalidIdnEMailAddress #testAValidEMailAddress #testAnInvalidEMailAddress #testAValidIdnEMailExampleExampleTestInHangul)
+	^ #(#testAnInvalidIdnEMailAddress #testAValidEMailAddress #testAnInvalidEMailAddress #testAValidIdnEMailExampleExampleTestInHangul)
