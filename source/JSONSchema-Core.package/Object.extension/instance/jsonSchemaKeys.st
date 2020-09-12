@@ -1,3 +1,3 @@
 *JSONSchema-Core
 jsonSchemaKeys
-	^ self class instVarNames
+	^ self class allInstVarNames
