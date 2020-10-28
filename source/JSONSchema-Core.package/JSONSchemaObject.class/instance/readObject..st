@@ -1,7 +1,7 @@
 accessing
 readObject: jsonObject 
 	| object |
-	object := NeoJSONObject new.
+	object := self instanceClass new.
 	self 
 		readProperties: properties
 		from: jsonObject
