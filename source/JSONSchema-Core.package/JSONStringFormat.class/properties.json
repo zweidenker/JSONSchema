@@ -1,6 +1,6 @@
 {
 	"commentStamp" : "",
-	"super" : "JSONFormat",
+	"super" : "JSONBasicStringFormat",
 	"category" : "JSONSchema-Core-Formats",
 	"classinstvars" : [ ],
 	"pools" : [ ],

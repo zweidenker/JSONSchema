@@ -1,11 +1,11 @@
 {
 	"commentStamp" : "",
-	"super" : "JSONBasicStringFormat",
+	"super" : "JSONFormat",
 	"category" : "JSONSchema-Core-Formats",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [ ],
-	"name" : "JSONFormatDate",
+	"name" : "JSONBasicStringFormat",
 	"type" : "normal"
 }
