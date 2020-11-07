@@ -1,4 +1,9 @@
 meta-object-protocol
 read: aCollection
-	^ aCollection collect: [ :item | 
-		items read: item ]
+	items isCollection 
+		ifTrue: [ 
+			items withIndexCollect: [ :item :idx |
+				(items at: idx) read: item ] ]
+		ifFalse: [ 
+			aCollection collect: [ :item | 
+				items read: item ] ]
