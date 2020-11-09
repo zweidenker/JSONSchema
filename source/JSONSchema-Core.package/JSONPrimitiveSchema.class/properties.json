@@ -6,7 +6,8 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"format"
+		"format",
+		"nullable"
 	],
 	"name" : "JSONPrimitiveSchema",
 	"type" : "normal"

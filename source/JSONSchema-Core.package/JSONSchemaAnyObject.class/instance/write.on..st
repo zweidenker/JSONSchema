@@ -1,3 +1,3 @@
-as yet unclassified
+writing
 write: anObject on: aWriter 
 	aWriter nextPut: anObject
