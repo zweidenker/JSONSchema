@@ -1,3 +1,7 @@
 private
 readUsing: aReader 
-	^ self read: aReader parseValue
+	| value |
+	value := aReader parseValue.
+	value ifNil: [ 
+		nullable ifTrue: [ ^ nil ] ].
+	^ self read: value
