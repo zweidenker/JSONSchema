@@ -6,6 +6,6 @@ read: string object: object
 		JSONTypeError signal: 'json type is not object' ].
 	json keysAndValuesDo: [ :key :value | 
 		object 
-			perform: key asSymbol asMutator 
-			with: value ].
+			jsonSchemaAt: key asSymbol 
+			put: value ].
 	^ object

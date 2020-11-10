@@ -4,4 +4,4 @@ readUsing: aReader
 	value := aReader parseValue.
 	value ifNil: [ 
 		nullable ifTrue: [ ^ nil ] ].
-	^ self readString: aReader parseValue
+	^ self readString: value
