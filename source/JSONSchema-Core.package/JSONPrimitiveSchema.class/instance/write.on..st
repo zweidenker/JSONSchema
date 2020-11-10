@@ -1,7 +1,7 @@
 writing
-write: aNumber on: aWriter 
-	aNumber ifNil: [ 
+write: anObject on: aWriter 
+	anObject ifNil: [ 
 		nullable ifTrue: [ 
 			^ aWriter writeNull ] ].
-	self validate: aNumber.
-	aWriter nextPut: aNumber
+	self validate: anObject.
+	aWriter nextPut: anObject
