@@ -8,7 +8,7 @@ Class {
 
 { #category : 'testing' }
 JSONSchemaASchemaGivenForItemsTests >> expectedFailures [
-	^ #(#testWrongTypeOfItems)
+	^ #(  )
 ]
 
 { #category : 'accessing' }

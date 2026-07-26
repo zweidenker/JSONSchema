@@ -8,7 +8,7 @@ Class {
 
 { #category : 'testing' }
 JSONSchemaNotMoreComplexSchemaTests >> expectedFailures [
-	^ #(#testMismatch #testMatch #testOtherMatch)
+	^ #(  )
 ]
 
 { #category : 'accessing' }

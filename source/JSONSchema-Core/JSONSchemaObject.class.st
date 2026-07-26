@@ -233,14 +233,10 @@ JSONSchemaObject >> schemaProperties [
 
 { #category : 'validation' }
 JSONSchemaObject >> validateType: aDictionary [
+	"required is checked generically by JSONSchemaRequiredConstraint (applies to any
+	object-shaped value, not just schemas with an explicit type:object) - not duplicated here."
 	aDictionary isDictionary ifFalse: [
 		JSONTypeError signal: aDictionary printString, ' is not an object' ].
-	required ifNotNil: [
-		self required do: [ :requiredProperty |
-			(aDictionary includesKey: requiredProperty) ifFalse: [
-				JSONSchemaMissingRequiredProperty new
-					property: requiredProperty;
-					signal ] ] ].
 	properties ifNotNil: [
 		properties associationsDo: [ :property |
 			aDictionary

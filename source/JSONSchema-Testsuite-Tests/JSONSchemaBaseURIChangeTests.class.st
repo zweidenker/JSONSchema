@@ -8,7 +8,7 @@ Class {
 
 { #category : 'testing' }
 JSONSchemaBaseURIChangeTests >> expectedFailures [
-	^ #(#testBaseURIChangeRefInvalid)
+	^ #(#testBaseURIChangeRefInvalid #testBaseURIChangeRefValid)
 ]
 
 { #category : 'accessing' }

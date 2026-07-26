@@ -8,7 +8,7 @@ Class {
 
 { #category : 'testing' }
 JSONSchemaRequiredWithEscapedCharactersTests >> expectedFailures [
-	^ #(#testObjectWithSomePropertiesMissingIsInvalid)
+	^ #(  )
 ]
 
 { #category : 'accessing' }

@@ -8,7 +8,7 @@ Class {
 
 { #category : 'testing' }
 JSONSchemaECMA262RegexEscapesControlCodesWithCAndUpperLetterTests >> expectedFailures [
-	^ #(#testMatches #testDoesNotMatch)
+	^ #(#testMatches)
 ]
 
 { #category : 'accessing' }

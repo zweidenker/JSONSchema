@@ -8,7 +8,7 @@ Class {
 
 { #category : 'testing' }
 JSONSchemaPatternValidationTests >> expectedFailures [
-	^ #(#testIgnoresBooleans #testIgnoresArrays #testIgnoresNull #testIgnoresFloats #testAMatchingPatternIsValid #testANonMatchingPatternIsInvalid #testIgnoresIntegers #testIgnoresObjects)
+	^ #(  )
 ]
 
 { #category : 'accessing' }

@@ -8,7 +8,7 @@ Class {
 
 { #category : 'testing' }
 JSONSchemaProperUTF16SurrogatePairHandlingPatternTests >> expectedFailures [
-	^ #(#testMatchesSingle #testMatchesTwo #testDoesnTMatchOneASCII #testDoesnTMatchTwoASCII #testDoesnTMatchTwo #testMatchesEmpty #testDoesnTMatchOne)
+	^ #(  )
 ]
 
 { #category : 'accessing' }

@@ -8,7 +8,7 @@ Class {
 
 { #category : 'testing' }
 JSONSchemaNotTests >> expectedFailures [
-	^ #(#testDisallowed #testAllowed)
+	^ #(  )
 ]
 
 { #category : 'accessing' }

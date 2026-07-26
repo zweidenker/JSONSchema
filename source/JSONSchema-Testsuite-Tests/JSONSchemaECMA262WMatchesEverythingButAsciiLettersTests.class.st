@@ -8,7 +8,7 @@ Class {
 
 { #category : 'testing' }
 JSONSchemaECMA262WMatchesEverythingButAsciiLettersTests >> expectedFailures [
-	^ #(#testLatin1EAcuteMatchesUnlikeEGPython #testASCIIADoesNotMatch)
+	^ #(#testLatin1EAcuteMatchesUnlikeEGPython)
 ]
 
 { #category : 'accessing' }

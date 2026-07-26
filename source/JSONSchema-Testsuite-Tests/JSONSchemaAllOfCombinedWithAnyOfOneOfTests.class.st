@@ -8,7 +8,7 @@ Class {
 
 { #category : 'testing' }
 JSONSchemaAllOfCombinedWithAnyOfOneOfTests >> expectedFailures [
-	^ #(#testAllOfTrueAnyOfFalseOneOfFalse #testAllOfFalseAnyOfTrueOneOfTrue #testAllOfTrueAnyOfFalseOneOfTrue #testAllOfTrueAnyOfTrueOneOfTrue #testAllOfFalseAnyOfTrueOneOfFalse #testAllOfTrueAnyOfTrueOneOfFalse #testAllOfFalseAnyOfFalseOneOfTrue #testAllOfFalseAnyOfFalseOneOfFalse)
+	^ #(  )
 ]
 
 { #category : 'accessing' }

@@ -25,7 +25,11 @@ Class {
 		'maxItems',
 		'minProperties',
 		'maxProperties',
-		'booleanValue'
+		'booleanValue',
+		'oneOf',
+		'anyOf',
+		'not',
+		'pattern'
 	],
 	#category : 'JSONSchema-Core-Model',
 	#package : 'JSONSchema-Core',
@@ -42,12 +46,15 @@ JSONSchemaDefinition class >> neoJsonMapping: mapper [
 	mapper for: self do: [ :mapping |
 		mapping mapAccessor: #reference to: '$ref'.
 		mapping mapInstVars: #( title ).
-		mapping mapAccessors: #( required description enum ).
+		mapping mapAccessors: #( required description enum pattern ).
 		mapping mapAccessor: #formatString mutator: #formatString: to: #format.
 		(mapping mapAccessor: #properties) valueSchema: #PropertiesDictionary.
 		(mapping mapAccessor: #items) valueSchema: #SingleSchema.
-		mapping mapAccessors: #( oneOf anyOf not additionalProperties multipleOf maximum exclusiveMaximum minimum exclusiveMinimum maxLength minLength pattern maxItems minItems uniqueItems maxProperties minProperties  ).
+		(mapping mapAccessor: #not) valueSchema: #SingleSchema.
+		mapping mapAccessors: #( additionalProperties multipleOf maximum exclusiveMaximum minimum exclusiveMinimum maxLength minLength maxItems minItems uniqueItems maxProperties minProperties  ).
 		(mapping mapAccessor: #allOf) valueSchema: #SchemaList.
+		(mapping mapAccessor: #anyOf) valueSchema: #SchemaList.
+		(mapping mapAccessor: #oneOf) valueSchema: #SchemaList.
 		mapping mapAccessor: #typeString mutator: #typeString: to: #type.
 		 ].
 	mapper for: #PropertiesDictionary customDo: [ :mapping |
@@ -81,8 +88,8 @@ JSONSchemaDefinition class >> neoJsonMapping: mapper [
 						ifFalse: [ jsonReader nextAs: JSONSchemaDefinition ].
 					stream nextPut: element ] ] ] ].
 	mapper for: #SingleSchema customDo: [ :mapping |
-		"A single nested schema slot (currently only #items) that can be a bare
-		true/false, not just an object (e.g. items:false)."
+		"A single nested schema slot (items, not) that can be a bare
+		true/false, not just an object (e.g. items:false, not:true)."
 		mapping reader: [ :jsonReader | | matched value |
 			matched := false.
 			value := nil.
@@ -326,8 +333,48 @@ JSONSchemaDefinition >> multipleOf [
 ]
 
 { #category : 'accessing' }
-JSONSchemaDefinition >> multipleOf: anInteger [ 
-	multipleOf := anInteger 
+JSONSchemaDefinition >> multipleOf: anInteger [
+	multipleOf := anInteger
+]
+
+{ #category : 'accessing' }
+JSONSchemaDefinition >> not [
+	^ not
+]
+
+{ #category : 'accessing' }
+JSONSchemaDefinition >> not: aDefinition [
+	not := aDefinition
+]
+
+{ #category : 'accessing' }
+JSONSchemaDefinition >> oneOf [
+	^ oneOf
+]
+
+{ #category : 'accessing' }
+JSONSchemaDefinition >> oneOf: aCollection [
+	oneOf := aCollection
+]
+
+{ #category : 'accessing' }
+JSONSchemaDefinition >> anyOf [
+	^ anyOf
+]
+
+{ #category : 'accessing' }
+JSONSchemaDefinition >> anyOf: aCollection [
+	anyOf := aCollection
+]
+
+{ #category : 'accessing' }
+JSONSchemaDefinition >> pattern [
+	^ pattern
+]
+
+{ #category : 'accessing' }
+JSONSchemaDefinition >> pattern: aString [
+	pattern := aString
 ]
 
 { #category : 'accessing' }

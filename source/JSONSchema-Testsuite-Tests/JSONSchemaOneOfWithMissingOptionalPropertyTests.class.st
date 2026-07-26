@@ -8,7 +8,7 @@ Class {
 
 { #category : 'testing' }
 JSONSchemaOneOfWithMissingOptionalPropertyTests >> expectedFailures [
-	^ #(#testFirstOneOfValid #testSecondOneOfValid #testBothOneOfValid #testNeitherOneOfValid)
+	^ #(  )
 ]
 
 { #category : 'accessing' }
