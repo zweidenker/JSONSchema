@@ -1,3 +1,3 @@
 testing
 expectedFailures
-	^ #(#testNullIsNotAnObject #testAnObjectIsAnObject #testAnIntegerIsNotAnObject #testAStringIsNotAnObject #testAFloatIsNotAnObject #testABooleanIsNotAnObject #testAnArrayIsNotAnObject)
+	^ #(  )
