@@ -1,11 +1,10 @@
 SmalltalkCISpec {
   #loading : [
-      SCIMetacelloLoadSpec {
-          #baseline : 'JSONSchema',
-          #directory : 'source',
-          #load : [ 'Tests', 'Testsuite' ],
-          #platforms : [ #pharo ]
-      }
+    SCIMetacelloLoadSpec {
+      #baseline : 'JSONSchema',
+      #platforms : [ #pharo ],
+      #directory : 'source',
+      #onConflict : #useIncoming
+    }
   ]
 }
-
