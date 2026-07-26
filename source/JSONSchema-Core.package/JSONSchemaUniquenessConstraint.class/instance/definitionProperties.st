@@ -1,3 +1,0 @@
-accessing
-definitionProperties
-	^ #( uniqueItems )

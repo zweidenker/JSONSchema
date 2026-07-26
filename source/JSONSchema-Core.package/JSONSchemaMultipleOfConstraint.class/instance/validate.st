@@ -1,3 +1,0 @@
-validation
-validate
-	^ number notNil

@@ -1,3 +1,0 @@
-accessing
-formatString
-	^ format formatName

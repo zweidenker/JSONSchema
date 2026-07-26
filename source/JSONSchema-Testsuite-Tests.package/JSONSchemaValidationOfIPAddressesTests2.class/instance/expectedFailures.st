@@ -1,3 +1,0 @@
-testing
-expectedFailures
-	^ #(#testAnIPAddressWithout4Components #testAValidIPAddress #testAnIPAddressAsAnIntegerDecimal #testAnIPAddressWithTooManyComponents #testAnIPAddressWithOutOfRangeValues #testAnIPAddressAsAnInteger)

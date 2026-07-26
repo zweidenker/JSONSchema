@@ -1,3 +1,0 @@
-services
-basicConvertString: aString
-	^ nil

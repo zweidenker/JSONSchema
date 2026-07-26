@@ -1,3 +1,0 @@
-testing
-expectedFailures
-	^ #(#testOnlyTruePropertyPresentIsValid #testOnlyFalsePropertyPresentIsInvalid #testBothPropertiesPresentIsInvalid #testNoPropertyPresentIsValid)

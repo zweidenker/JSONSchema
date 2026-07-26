@@ -1,3 +1,0 @@
-constants
-defaultVersion
-	^ 'draft7'

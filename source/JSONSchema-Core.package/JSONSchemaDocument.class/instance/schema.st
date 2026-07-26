@@ -1,3 +1,0 @@
-decoration
-schema	 
-	^ self resolve

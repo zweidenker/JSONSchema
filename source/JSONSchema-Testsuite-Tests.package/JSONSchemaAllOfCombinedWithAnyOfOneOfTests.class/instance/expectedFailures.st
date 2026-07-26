@@ -1,3 +1,0 @@
-testing
-expectedFailures
-	^ #(#testAllOfTrueAnyOfFalseOneOfFalse #testAllOfFalseAnyOfTrueOneOfTrue #testAllOfTrueAnyOfFalseOneOfTrue #testAllOfTrueAnyOfTrueOneOfTrue #testAllOfFalseAnyOfTrueOneOfFalse #testAllOfTrueAnyOfTrueOneOfFalse #testAllOfFalseAnyOfFalseOneOfTrue #testAllOfFalseAnyOfFalseOneOfFalse)

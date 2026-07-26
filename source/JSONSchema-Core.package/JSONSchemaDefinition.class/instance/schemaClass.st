@@ -1,3 +1,0 @@
-accessing
-schemaClass
-	^ schemaClass

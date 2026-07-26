@@ -1,3 +1,0 @@
-accessing
-schemaString
-	^ '{"$ref":"http://localhost:1234/integer.json"}'

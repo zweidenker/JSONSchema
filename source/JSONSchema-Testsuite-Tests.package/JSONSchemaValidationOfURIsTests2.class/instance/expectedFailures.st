@@ -1,3 +1,0 @@
-testing
-expectedFailures
-	^ #(#testAnInvalidURIWithSpaces #testAnInvalidRelativeURIReference #testAnInvalidProtocolRelativeURIReference #testAnInvalidURIThoughValidURIReference #testAnInvalidURIWithCommaInScheme #testAnInvalidURI #testAnInvalidURIWithSpacesAndMissingScheme)

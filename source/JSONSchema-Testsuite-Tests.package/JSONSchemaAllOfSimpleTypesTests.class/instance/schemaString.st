@@ -1,3 +1,0 @@
-accessing
-schemaString
-	^ '{"allOf":[{"maximum":30},{"minimum":20}]}'

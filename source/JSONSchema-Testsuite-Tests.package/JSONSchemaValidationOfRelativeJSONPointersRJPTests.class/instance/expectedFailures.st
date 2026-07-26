@@ -1,3 +1,0 @@
-testing
-expectedFailures
-	^ #(#testAValidUpwardsRJP #testAValidDownwardsRJP #testAValidUpAndThenDownRJPWithArrayIndex #testNegativePrefix #testAnInvalidRJPThatIsAValidJSONPointer #testAValidRJPTakingTheMemberOrIndexName)

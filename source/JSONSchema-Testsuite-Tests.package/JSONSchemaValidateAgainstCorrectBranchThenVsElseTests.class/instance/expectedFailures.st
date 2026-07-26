@@ -1,3 +1,0 @@
-testing
-expectedFailures
-	^ #(#testInvalidThroughThen #testInvalidThroughElse)

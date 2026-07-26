@@ -1,3 +1,0 @@
-testing
-expectedFailures
-	^ #(#testEqualNumberOfItemsPresent #testEmptyArray #testFewerNumberOfItemsPresent1 #testFewerNumberOfItemsPresent2 #testAdditionalItemsAreNotPermitted)

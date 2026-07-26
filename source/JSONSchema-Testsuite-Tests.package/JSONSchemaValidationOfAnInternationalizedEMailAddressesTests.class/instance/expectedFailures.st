@@ -1,3 +1,0 @@
-testing
-expectedFailures
-	^ #(#testAnInvalidIdnEMailAddress #testAValidEMailAddress #testAnInvalidEMailAddress #testAValidIdnEMailExampleExampleTestInHangul)

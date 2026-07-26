@@ -1,3 +1,0 @@
-accessing
-schemaString
-	^ '{"additionalItems":false}'

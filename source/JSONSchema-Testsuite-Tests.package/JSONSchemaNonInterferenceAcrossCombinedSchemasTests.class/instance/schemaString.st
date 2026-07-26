@@ -1,3 +1,0 @@
-accessing
-schemaString
-	^ '{"allOf":[{"if":{"exclusiveMaximum":0}},{"then":{"minimum":-10}},{"else":{"multipleOf":2}}]}'

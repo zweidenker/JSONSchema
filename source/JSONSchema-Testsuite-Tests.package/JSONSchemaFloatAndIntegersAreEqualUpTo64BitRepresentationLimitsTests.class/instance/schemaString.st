@@ -1,3 +1,0 @@
-accessing
-schemaString
-	^ '{"const":9007199254740992}'

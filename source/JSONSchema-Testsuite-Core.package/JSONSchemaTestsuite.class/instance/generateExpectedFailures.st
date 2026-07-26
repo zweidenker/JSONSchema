@@ -1,3 +1,0 @@
-actions
-generateExpectedFailures
-	JSONSchemaTestsuiteTestCase generateExpectedFailures

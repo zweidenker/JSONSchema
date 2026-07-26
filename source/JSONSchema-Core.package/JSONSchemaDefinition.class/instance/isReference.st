@@ -1,3 +1,0 @@
-testing
-isReference
-	^ reference notNil

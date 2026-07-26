@@ -1,3 +1,0 @@
-accessing
-schemaString
-	^ '{"description":"tree of nodes","required":["meta","nodes"],"definitions":{"node":{"description":"node","required":["value"],"$id":"http://localhost:1234/node","type":"object","properties":{"value":{"type":"number"},"subtree":{"$ref":"tree"}}}},"$id":"http://localhost:1234/tree","type":"object","properties":{"nodes":{"items":{"$ref":"node"},"type":"array"},"meta":{"type":"string"}}}'

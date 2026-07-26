@@ -1,3 +1,0 @@
-actions
-generateTestCases
-	JSONSchemaTestsuiteTestCaseGenerator visit: self

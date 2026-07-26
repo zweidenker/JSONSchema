@@ -1,3 +1,0 @@
-testing
-expectedFailures
-	^ #(#testMatchArray #testMismatchArray)

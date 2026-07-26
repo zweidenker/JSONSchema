@@ -1,3 +1,0 @@
-testing
-expectedFailures
-	^ #(#testAnInvalidDueToBothIsInvalid #testAnInvalidDueToTheOtherIsInvalid #testAnInvalidDueToOneIsInvalid)

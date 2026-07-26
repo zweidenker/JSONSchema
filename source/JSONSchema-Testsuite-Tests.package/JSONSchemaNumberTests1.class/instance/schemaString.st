@@ -1,3 +1,0 @@
-accessing
-schemaString
-	^ '{"type":"number"}'

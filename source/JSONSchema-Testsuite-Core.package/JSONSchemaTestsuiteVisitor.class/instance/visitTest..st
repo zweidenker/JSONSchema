@@ -1,3 +1,0 @@
-visiting
-visitTest: aJSONSchemaTestsuiteTest
-	^ aJSONSchemaTestsuiteTest

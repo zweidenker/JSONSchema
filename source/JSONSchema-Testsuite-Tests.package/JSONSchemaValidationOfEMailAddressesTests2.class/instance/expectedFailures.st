@@ -1,3 +1,0 @@
-testing
-expectedFailures
-	^ #(#testAnInvalidEMailAddress #testDotAfterLocalPartIsNotValid #testTwoSubsequentDotsInsideLocalPartAreNotValid #testDotBeforeLocalPartIsNotValid)

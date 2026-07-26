@@ -1,3 +1,0 @@
-testing
-isLocalPath
-	^ path beginsWith: '#'

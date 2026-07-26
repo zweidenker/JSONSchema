@@ -1,3 +1,0 @@
-testing
-expectedFailures
-	^ #(#testDoesNotMatchItemsMatchesContains #testMatchesItemsDoesNotMatchContains #testMatchesNeitherItemsNorContains)

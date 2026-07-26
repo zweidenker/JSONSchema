@@ -1,3 +1,0 @@
-testing
-expectedFailures
-	^ #(#testMatches #testDoesNotMatch)

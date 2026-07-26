@@ -1,3 +1,0 @@
-validation
-validateType: anObject
-	^ true

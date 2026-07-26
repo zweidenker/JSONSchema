@@ -1,3 +1,0 @@
-testing
-expectedFailures
-	^ #(#testPatternPropertyInvalidatesProperty #testAdditionalPropertyInvalidatesOthers #testPatternPropertyInvalidatesNonproperty)

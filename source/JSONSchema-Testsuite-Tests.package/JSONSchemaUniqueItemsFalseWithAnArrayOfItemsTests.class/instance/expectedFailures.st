@@ -1,3 +1,0 @@
-testing
-expectedFailures
-	^ #(#testNonUniqueArrayExtendedFromTrueFalseIsValid #testUniqueArrayExtendedFromFalseTrueIsValid #testFalseFalseFromItemsArrayIsValid #testFalseTrueFromItemsArrayIsValid #testUniqueArrayExtendedFromTrueFalseIsValid #testTrueTrueFromItemsArrayIsValid #testTrueFalseFromItemsArrayIsValid #testNonUniqueArrayExtendedFromFalseTrueIsValid)

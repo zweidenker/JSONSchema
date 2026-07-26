@@ -1,3 +1,0 @@
-testing
-expectedFailures
-	^ #(#testFloatZeroIsInvalid #testIntegerZeroIsInvalid)

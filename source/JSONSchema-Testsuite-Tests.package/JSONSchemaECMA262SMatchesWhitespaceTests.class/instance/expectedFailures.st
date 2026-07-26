@@ -1,3 +1,0 @@
-testing
-expectedFailures
-	^ #(#testParagraphSeparatorMatchesLineTerminator #testCharacterTabulationMatches #testLineTabulationMatches #testLatin1NonBreakingSpaceMatches #testFormFeedMatches #testASCIISpaceMatches #testZeroWidthWhitespaceMatches #testNonWhitespaceDoesNotMatch #testLineFeedMatchesLineTerminator #testEMSPACEMatchesSpaceSeparator #testNonWhitespaceControlDoesNotMatch)
