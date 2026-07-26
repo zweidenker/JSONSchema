@@ -28,7 +28,8 @@
 		"minItems",
 		"maxItems",
 		"minProperties",
-		"maxProperties"
+		"maxProperties",
+		"booleanValue"
 	],
 	"name" : "JSONSchemaDefinition",
 	"type" : "normal"
