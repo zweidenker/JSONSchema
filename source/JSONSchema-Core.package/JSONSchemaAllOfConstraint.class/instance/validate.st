@@ -1,0 +1,3 @@
+validation
+validate
+	^ allOf notNil
