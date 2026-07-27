@@ -32,7 +32,7 @@ JSONSchemaOneOfConstraint >> validate [
 { #category : 'validation' }
 JSONSchemaOneOfConstraint >> validate: anObject [
 	| visitor count |
-	visitor := JSONSchemaReferenceResolveVisitor new.
+	visitor := self resolveVisitor.
 	count := 0.
 	oneOf do: [ :definition |
 		[ (visitor visitSchemaSpec: definition) validate: anObject.

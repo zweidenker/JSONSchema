@@ -32,7 +32,7 @@ JSONSchemaNotConstraint >> validate [
 { #category : 'validation' }
 JSONSchemaNotConstraint >> validate: anObject [
 	| visitor matches |
-	visitor := JSONSchemaReferenceResolveVisitor new.
+	visitor := self resolveVisitor.
 	matches := true.
 	[ (visitor visitSchemaSpec: not) validate: anObject ]
 		on: JSONSchemaError do: [ :e | matches := false ].

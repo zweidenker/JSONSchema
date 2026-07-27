@@ -31,9 +31,8 @@ JSONSchemaSingleItemSchemaConstraint >> validate [
 
 { #category : 'validation' }
 JSONSchemaSingleItemSchemaConstraint >> validate: anArray [
-	| visitor resolved |
-	visitor := JSONSchemaReferenceResolveVisitor new.
-	resolved := visitor visitSchemaSpec: items.
+	| resolved |
+	resolved := self resolveVisitor visitSchemaSpec: items.
 	anArray do: [ :each | resolved validate: each ]
 ]
 

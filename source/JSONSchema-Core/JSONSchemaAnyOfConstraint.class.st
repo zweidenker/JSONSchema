@@ -32,7 +32,7 @@ JSONSchemaAnyOfConstraint >> validate [
 { #category : 'validation' }
 JSONSchemaAnyOfConstraint >> validate: anObject [
 	| visitor matched |
-	visitor := JSONSchemaReferenceResolveVisitor new.
+	visitor := self resolveVisitor.
 	matched := false.
 	anyOf do: [ :definition |
 		matched ifFalse: [
