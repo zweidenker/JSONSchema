@@ -81,14 +81,18 @@ JSONSchemaArray >> schemaProperties [
 
 { #category : 'validating' }
 JSONSchemaArray >> validateType: aCollection [
+	"Array type check plus positional element type-checking for the DSL path
+	(JSONSchemaArray built directly, without constraints). Spec-compliant tuples:
+	a single-schema items applies to every element; an array (tuple) applies
+	positionally, and a shorter or longer instance is allowed here (additionalItems
+	is enforced by JSONSchemaSingleItemSchemaConstraint on parsed schemas)."
 	aCollection isArray ifFalse: [
 		JSONTypeError signal: aCollection printString, ' is not an array' ].
+	items ifNil: [ ^ self ].
 	items isCollection
 		ifTrue: [
-			(aCollection size = items size) ifFalse: [
-				JSONTypeError signal: aCollection asString, ' has different size than schema' ].
-			aCollection withIndexDo: [:item :idx |
-				(items at: idx) validateType: item ] ]
+			aCollection withIndexDo: [ :item :idx |
+				idx <= items size ifTrue: [ (items at: idx) validateType: item ] ] ]
 		ifFalse: [
 			aCollection do: [ :each |
 				items validateType: each ] ]

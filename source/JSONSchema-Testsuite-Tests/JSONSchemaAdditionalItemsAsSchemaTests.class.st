@@ -6,11 +6,6 @@ Class {
 	#tag : 'AdditionalItems'
 }
 
-{ #category : 'testing' }
-JSONSchemaAdditionalItemsAsSchemaTests >> expectedFailures [
-	^ #(#testAdditionalItemsMatchSchema #testAdditionalItemsDoNotMatchSchema)
-]
-
 { #category : 'accessing' }
 JSONSchemaAdditionalItemsAsSchemaTests >> schemaString [
 	^ '{"items":[{}],"additionalItems":{"type":"integer"}}'

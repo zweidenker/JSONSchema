@@ -39,7 +39,8 @@ Class {
 		'patternProperties',
 		'ifSchema',
 		'thenSchema',
-		'elseSchema'
+		'elseSchema',
+		'additionalItems'
 	],
 	#category : 'JSONSchema-Core-Model',
 	#package : 'JSONSchema-Core',
@@ -69,6 +70,30 @@ JSONSchemaDefinition class >> readDependencyValueFrom: jsonReader [
 		  jsonReader matchChar: $, ] whileTrue.
 		jsonReader expectChar: $] ].
 	^ names asArray
+]
+
+{ #category : 'instance creation' }
+JSONSchemaDefinition class >> readItemsValueFrom: jsonReader [
+	"items is either a single schema (object or bare true/false) or an array of
+	schemas (tuple/positional validation). Returns a JSONSchemaDefinition for the
+	former, an Array of JSONSchemaDefinition for the latter."
+	| matched value |
+	matched := false.
+	value := nil.
+	jsonReader parseConstantDo: [ :v | matched := true. value := v ].
+	matched ifTrue: [ ^ JSONSchemaDefinition new booleanValue: value; yourself ].
+	(jsonReader matchChar: $[) ifFalse: [ ^ jsonReader nextAs: JSONSchemaDefinition ].
+	^ Array streamContents: [ :stream |
+		(jsonReader matchChar: $]) ifFalse: [
+			[ | m v elem |
+			  m := false. v := nil.
+			  jsonReader parseConstantDo: [ :x | m := true. v := x ].
+			  elem := (m and: [ v isKindOf: Boolean ])
+				ifTrue: [ JSONSchemaDefinition new booleanValue: v; yourself ]
+				ifFalse: [ jsonReader nextAs: JSONSchemaDefinition ].
+			  stream nextPut: elem.
+			  jsonReader matchChar: $, ] whileTrue.
+			jsonReader expectChar: $] ] ]
 ]
 
 { #category : 'accessing' }
@@ -126,7 +151,8 @@ JSONSchemaDefinition class >> neoJsonMapping: mapper [
 		mapping mapAccessors: #( required description enum pattern ).
 		mapping mapAccessor: #formatString mutator: #formatString: to: #format.
 		(mapping mapAccessor: #properties) valueSchema: #PropertiesDictionary.
-		(mapping mapAccessor: #items) valueSchema: #SingleSchema.
+		(mapping mapAccessor: #items) valueSchema: #ItemsSchema.
+		(mapping mapAccessor: #additionalItems) valueSchema: #SingleSchema.
 		(mapping mapAccessor: #not) valueSchema: #SingleSchema.
 		(mapping mapAccessor: #additionalProperties) valueSchema: #SingleSchema.
 		mapping mapAccessors: #( multipleOf maximum exclusiveMaximum minimum exclusiveMinimum maxLength minLength maxItems minItems uniqueItems maxProperties minProperties  ).
@@ -193,7 +219,13 @@ JSONSchemaDefinition class >> neoJsonMapping: mapper [
 			map := jsonReader mapClass new.
 			jsonReader parseMapKeysDo: [ :key |
 				map at: key put: (JSONSchemaDefinition readDependencyValueFrom: jsonReader) ].
-			map ] ]
+			map ] ].
+	mapper for: #ItemsSchema customDo: [ :mapping |
+		"items is either a single schema (object or bare true/false) or an array of
+		schemas (tuple/positional validation). Read polymorphically by
+		JSONSchemaDefinition class>>readItemsValueFrom:."
+		mapping reader: [ :jsonReader |
+			JSONSchemaDefinition readItemsValueFrom: jsonReader ] ]
 ]
 
 { #category : 'instance creation' }
@@ -379,6 +411,18 @@ JSONSchemaDefinition >> initialize [
 { #category : 'testing' }
 JSONSchemaDefinition >> isReference [
 	^ reference notNil
+]
+
+{ #category : 'accessing' }
+JSONSchemaDefinition >> additionalItems [
+	^ additionalItems
+]
+
+{ #category : 'accessing' }
+JSONSchemaDefinition >> additionalItems: anObject [
+	"Mapped via #SingleSchema (a bare true/false becomes a booleanValue definition);
+	asJSONSchema resolves it. nil = absent = extra items allowed."
+	additionalItems := anObject ifNotNil: [ anObject asJSONSchema ]
 ]
 
 { #category : 'accessing' }

@@ -6,11 +6,6 @@ Class {
 	#tag : 'AdditionalItems'
 }
 
-{ #category : 'testing' }
-JSONSchemaAdditionalItemsShouldNotLookInApplicatorsInvalidCaseTests >> expectedFailures [
-	^ #(#testItemsDefinedInAllOfAreNotExamined)
-]
-
 { #category : 'accessing' }
 JSONSchemaAdditionalItemsShouldNotLookInApplicatorsInvalidCaseTests >> schemaString [
 	^ '{"allOf":[{"items":[{"type":"integer"},{"type":"string"}]}],"items":[{"type":"integer"}],"additionalItems":{"type":"boolean"}}'

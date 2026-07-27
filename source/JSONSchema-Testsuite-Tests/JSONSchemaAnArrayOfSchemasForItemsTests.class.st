@@ -6,11 +6,6 @@ Class {
 	#tag : 'Items'
 }
 
-{ #category : 'testing' }
-JSONSchemaAnArrayOfSchemasForItemsTests >> expectedFailures [
-	^ #(#testIncompleteArrayOfItems #testWrongTypes #testJavaScriptPseudoArrayIsValid #testEmptyArray #testArrayWithAdditionalItems #testCorrectTypes)
-]
-
 { #category : 'accessing' }
 JSONSchemaAnArrayOfSchemasForItemsTests >> schemaString [
 	^ '{"items":[{"type":"integer"},{"type":"string"}]}'

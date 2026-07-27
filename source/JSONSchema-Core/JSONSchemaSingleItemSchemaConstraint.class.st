@@ -2,7 +2,8 @@ Class {
 	#name : 'JSONSchemaSingleItemSchemaConstraint',
 	#superclass : 'JSONSchemaConstraint',
 	#instVars : [
-		'items'
+		'items',
+		'additionalItems'
 	],
 	#category : 'JSONSchema-Core-Constraints',
 	#package : 'JSONSchema-Core',
@@ -19,9 +20,12 @@ JSONSchemaSingleItemSchemaConstraint >> items: aDefinition [
 	items := aDefinition
 ]
 
-{ #category : 'accessing' }
-JSONSchemaSingleItemSchemaConstraint >> definitionProperties [
-	^ #( items )
+{ #category : 'initialization' }
+JSONSchemaSingleItemSchemaConstraint >> initializeFromDefinition: aDefinition [
+	"items may be a single schema or an array of schemas (tuple); additionalItems
+	governs positions beyond a tuple."
+	items := aDefinition items.
+	additionalItems := aDefinition additionalItems
 ]
 
 { #category : 'validation' }
@@ -31,9 +35,24 @@ JSONSchemaSingleItemSchemaConstraint >> validate [
 
 { #category : 'validation' }
 JSONSchemaSingleItemSchemaConstraint >> validate: anArray [
-	| resolved |
-	resolved := self resolveVisitor visitSchemaSpec: items.
-	anArray do: [ :each | resolved validate: each ]
+	items isCollection
+		ifTrue: [ self validateTuple: anArray ]
+		ifFalse: [ | resolved |
+			resolved := self resolveVisitor visitSchemaSpec: items.
+			anArray do: [ :each | resolved validate: each ] ]
+]
+
+{ #category : 'validation' }
+JSONSchemaSingleItemSchemaConstraint >> validateTuple: anArray [
+	"Positional validation: element i against items[i]. Elements beyond the tuple are
+	validated against additionalItems when it is an actual schema (nil/absent = allowed;
+	additionalItems:false resolves to JSONSchemaBooleanFalse = no extra items)."
+	| resolvedTuple |
+	resolvedTuple := items collect: [ :def | self resolveVisitor visitSchemaSpec: def ].
+	anArray withIndexDo: [ :each :i |
+		i <= resolvedTuple size
+			ifTrue: [ (resolvedTuple at: i) validate: each ]
+			ifFalse: [ (additionalItems isKindOf: JSONSchema) ifTrue: [ additionalItems validate: each ] ] ]
 ]
 
 { #category : 'validation' }

@@ -6,11 +6,6 @@ Class {
 	#tag : 'Items'
 }
 
-{ #category : 'testing' }
-JSONSchemaItemsWithBooleanSchemasTests >> expectedFailures [
-	^ #(#testArrayWithOneItemIsValid #testArrayWithTwoItemsIsInvalid #testEmptyArrayIsValid)
-]
-
 { #category : 'accessing' }
 JSONSchemaItemsWithBooleanSchemasTests >> schemaString [
 	^ '{"items":[true,false]}'

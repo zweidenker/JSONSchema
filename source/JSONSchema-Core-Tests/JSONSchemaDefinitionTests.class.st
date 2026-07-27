@@ -35,14 +35,17 @@ JSONSchemaDefinitionTests >> testArrayMultipleItemsDefinition [
 
 { #category : 'tests' }
 JSONSchemaDefinitionTests >> testArrayMultipleItemsDefinitionDifferentSizes [
+	"Per JSON-Schema spec a tuple (items as an array of schemas) applies positionally;
+	an instance shorter than the tuple is valid (the missing positions are simply
+	unconstrained), and extra items are governed by additionalItems. So a 2-element
+	array against a 3-schema tuple validates as long as the present positions match."
 	| schema |
 	schema := JSONSchemaArray new
 		items: { JSONSchema integer . JSONSchema string . JSONSchema boolean }.
-	
-	self 
-		should: [ 
-		 schema validate: { 3 . #foo } ]
-		raise: JSONTypeError 
+
+	self shouldnt: [ schema validate: { 3 . 'foo' } ] raise: JSONTypeError.
+	"a wrong type at a present position still fails"
+	self should: [ schema validate: { 'bar' . 'foo' } ] raise: JSONTypeError
 ]
 
 { #category : 'tests' }
