@@ -6,11 +6,6 @@ Class {
 	#tag : 'Type'
 }
 
-{ #category : 'testing' }
-JSONSchemaTypeArrayOrObjectTests >> expectedFailures [
-	^ #(#testStringIsInvalid #testObjectIsValid #testNullIsInvalid #testArrayIsValid #testNumberIsInvalid)
-]
-
 { #category : 'accessing' }
 JSONSchemaTypeArrayOrObjectTests >> schemaString [
 	^ '{"type":["array","object"]}'
