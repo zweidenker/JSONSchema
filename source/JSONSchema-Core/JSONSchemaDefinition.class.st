@@ -29,7 +29,8 @@ Class {
 		'oneOf',
 		'anyOf',
 		'not',
-		'pattern'
+		'pattern',
+		'dependencies'
 	],
 	#category : 'JSONSchema-Core-Model',
 	#package : 'JSONSchema-Core',
@@ -38,7 +39,37 @@ Class {
 
 { #category : 'instance creation' }
 JSONSchemaDefinition class >> fromString: aString [
-	^ self readFrom: aString readStream 
+	^ self readFrom: aString readStream
+]
+
+{ #category : 'instance creation' }
+JSONSchemaDefinition class >> readDependencyValueFrom: jsonReader [
+	"A dependencies-map value is either an array of required property names
+	(property dependency) or a schema (schema dependency, which may itself be a
+	bare true/false). Returns an Array of Strings for the former, a
+	JSONSchemaDefinition for the latter."
+	| matched value names |
+	matched := false.
+	value := nil.
+	jsonReader parseConstantDo: [ :v | matched := true. value := v ].
+	matched ifTrue: [ ^ JSONSchemaDefinition new booleanValue: value; yourself ].
+	(jsonReader matchChar: $[) ifFalse: [ ^ jsonReader nextAs: JSONSchemaDefinition ].
+	names := OrderedCollection new.
+	(jsonReader matchChar: $]) ifFalse: [
+		[ names add: jsonReader parseString.
+		  jsonReader matchChar: $, ] whileTrue.
+		jsonReader expectChar: $] ].
+	^ names asArray
+]
+
+{ #category : 'accessing' }
+JSONSchemaDefinition >> dependencies [
+	^ dependencies
+]
+
+{ #category : 'accessing' }
+JSONSchemaDefinition >> dependencies: aDictionary [
+	dependencies := aDictionary
 ]
 
 { #category : 'accessing' }
@@ -55,6 +86,7 @@ JSONSchemaDefinition class >> neoJsonMapping: mapper [
 		(mapping mapAccessor: #allOf) valueSchema: #SchemaList.
 		(mapping mapAccessor: #anyOf) valueSchema: #SchemaList.
 		(mapping mapAccessor: #oneOf) valueSchema: #SchemaList.
+		(mapping mapAccessor: #dependencies) valueSchema: #DependenciesMap.
 		mapping mapAccessor: #typeString mutator: #typeString: to: #type.
 		 ].
 	mapper for: #PropertiesDictionary customDo: [ :mapping |
@@ -96,7 +128,18 @@ JSONSchemaDefinition class >> neoJsonMapping: mapper [
 			jsonReader parseConstantDo: [ :v | matched := true. value := v ].
 			(matched and: [ value isKindOf: Boolean ])
 				ifTrue: [ JSONSchemaDefinition new booleanValue: value; yourself ]
-				ifFalse: [ jsonReader nextAs: JSONSchemaDefinition ] ] ]
+				ifFalse: [ jsonReader nextAs: JSONSchemaDefinition ] ] ].
+	mapper for: #DependenciesMap customDo: [ :mapping |
+		"The dependencies keyword maps each property name to EITHER an array of
+		required property names (property dependency) OR a schema the whole object
+		must satisfy (schema dependency, possibly a bare true/false). Each value is
+		read polymorphically by JSONSchemaDefinition class>>readDependencyValueFrom:."
+		mapping mapWithValueSchema: JSONSchemaDefinition.
+		mapping reader: [ :jsonReader | | map |
+			map := jsonReader mapClass new.
+			jsonReader parseMapKeysDo: [ :key |
+				map at: key put: (JSONSchemaDefinition readDependencyValueFrom: jsonReader) ].
+			map ] ]
 ]
 
 { #category : 'instance creation' }

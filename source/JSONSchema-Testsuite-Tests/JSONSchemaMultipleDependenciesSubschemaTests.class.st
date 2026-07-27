@@ -8,7 +8,7 @@ Class {
 
 { #category : 'testing' }
 JSONSchemaMultipleDependenciesSubschemaTests >> expectedFailures [
-	^ #(#testWrongType #testWrongTypeOther #testWrongTypeBoth)
+	^ #()
 ]
 
 { #category : 'accessing' }

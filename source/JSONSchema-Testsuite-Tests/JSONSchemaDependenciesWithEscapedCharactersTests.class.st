@@ -8,7 +8,7 @@ Class {
 
 { #category : 'testing' }
 JSONSchemaDependenciesWithEscapedCharactersTests >> expectedFailures [
-	^ #(#testInvalidObject4 #testInvalidObject1 #testInvalidObject2 #testInvalidObject3)
+	^ #()
 ]
 
 { #category : 'accessing' }
