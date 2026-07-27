@@ -6,11 +6,6 @@ Class {
 	#tag : 'JsonPointer'
 }
 
-{ #category : 'testing' }
-JSONSchemaValidationOfJSONPointersJSONStringRepresentationTests >> expectedFailures [
-	^ #(#testNotAValidJSONPointerIsnTEmptyNorStartsWith1 #testNotAValidJSONPointerIsnTEmptyNorStartsWith2 #testNotAValidJSONPointerIsnTEmptyNorStartsWith3 #testNotAValidJSONPointerMultipleCharactersNotEscaped #testNotAValidJSONPointerNotEscaped #testNotAValidJSONPointerSomeEscapedButNotAll1 #testNotAValidJSONPointerSomeEscapedButNotAll2 #testNotAValidJSONPointerURIFragmentIdentifier1 #testNotAValidJSONPointerURIFragmentIdentifier2 #testNotAValidJSONPointerURIFragmentIdentifier3 #testNotAValidJSONPointerWrongEscapeCharacter1 #testNotAValidJSONPointerWrongEscapeCharacter2)
-]
-
 { #category : 'accessing' }
 JSONSchemaValidationOfJSONPointersJSONStringRepresentationTests >> schemaString [
 	^ '{"format":"json-pointer"}'

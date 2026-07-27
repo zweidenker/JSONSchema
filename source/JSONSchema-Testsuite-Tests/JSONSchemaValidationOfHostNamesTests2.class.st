@@ -6,11 +6,6 @@ Class {
 	#tag : 'Hostname'
 }
 
-{ #category : 'testing' }
-JSONSchemaValidationOfHostNamesTests2 >> expectedFailures [
-	^ #(#testAHostNameContainingIllegalCharacters #testAHostNameStartingWithAnIllegalCharacter #testAHostNameWithAComponentTooLong #testContainsUnderscore #testEndsWithHyphen #testEndsWithUnderscore #testExceedsMaximumLabelLength #testStartsWithHyphen #testStartsWithUnderscore)
-]
-
 { #category : 'accessing' }
 JSONSchemaValidationOfHostNamesTests2 >> schemaString [
 	^ '{"format":"hostname"}'

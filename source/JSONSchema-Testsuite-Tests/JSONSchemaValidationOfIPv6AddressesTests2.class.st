@@ -6,11 +6,6 @@ Class {
 	#tag : 'Ipv6'
 }
 
-{ #category : 'testing' }
-JSONSchemaValidationOfIPv6AddressesTests2 >> expectedFailures [
-	^ #(#testALongInvalidIpv6BelowLengthLimitFirst #testALongInvalidIpv6BelowLengthLimitSecond #testAnIPv6AddressContainingIllegalCharacters #testAnIPv6AddressWithOutOfRangeValues #testAnIPv6AddressWithTooManyComponents #testInsufficientOctetsWithoutDoubleColons #testIpv4IsNotIpv6 #testIpv4SegmentMustHave4Octets #testLeadingWhitespaceIsInvalid #testMissingLeadingOctetIsInvalid #testMissingLeadingOctetWithOmittedOctetsLater #testMissingTrailingOctetIsInvalid #testMixedFormatWithIpv4SectionWithAHexOctet #testMixedFormatWithIpv4SectionWithOctetOutOfRange #testNetmaskIsNotAPartOfIpv6Address #testNoColonsIsInvalid #testTrailingWhitespaceIsInvalid #testTripleColonsIsInvalid #testTwoSetsOfDoubleColonsIsInvalid #testZoneIdIsNotAPartOfIpv6Address)
-]
-
 { #category : 'accessing' }
 JSONSchemaValidationOfIPv6AddressesTests2 >> schemaString [
 	^ '{"format":"ipv6"}'
