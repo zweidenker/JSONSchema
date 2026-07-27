@@ -6,11 +6,6 @@ Class {
 	#tag : 'Type'
 }
 
-{ #category : 'testing' }
-JSONSchemaMultipleTypesCanBeSpecifiedInAnArrayTests >> expectedFailures [
-	^ #(#testNullIsInvalid #testABooleanIsInvalid #testAnIntegerIsValid #testAFloatIsInvalid #testAStringIsValid #testAnObjectIsInvalid #testAnArrayIsInvalid)
-]
-
 { #category : 'accessing' }
 JSONSchemaMultipleTypesCanBeSpecifiedInAnArrayTests >> schemaString [
 	^ '{"type":["integer","string"]}'
