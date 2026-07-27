@@ -6,11 +6,6 @@ Class {
 	#tag : 'Not'
 }
 
-{ #category : 'testing' }
-JSONSchemaNotMultipleTypesTests >> expectedFailures [
-	^ #(#testMismatch #testOtherMismatch #testValid)
-]
-
 { #category : 'accessing' }
 JSONSchemaNotMultipleTypesTests >> schemaString [
 	^ '{"not":{"type":["integer","boolean"]}}'
