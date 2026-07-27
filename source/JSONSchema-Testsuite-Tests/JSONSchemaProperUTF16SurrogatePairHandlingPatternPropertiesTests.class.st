@@ -6,11 +6,6 @@ Class {
 	#tag : 'NonBmpRegex'
 }
 
-{ #category : 'testing' }
-JSONSchemaProperUTF16SurrogatePairHandlingPatternPropertiesTests >> expectedFailures [
-	^ #(#testDoesnTMatchTwo #testDoesnTMatchOne)
-]
-
 { #category : 'accessing' }
 JSONSchemaProperUTF16SurrogatePairHandlingPatternPropertiesTests >> schemaString [
 	^ '{"patternProperties":{"^🐲*$":{"type":"integer"}}}'

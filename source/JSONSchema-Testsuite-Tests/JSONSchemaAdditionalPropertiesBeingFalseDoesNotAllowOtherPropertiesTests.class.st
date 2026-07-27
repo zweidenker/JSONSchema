@@ -8,7 +8,7 @@ Class {
 
 { #category : 'testing' }
 JSONSchemaAdditionalPropertiesBeingFalseDoesNotAllowOtherPropertiesTests >> expectedFailures [
-	^ #(#testIgnoresStrings #testIgnoresArrays #testAnAdditionalPropertyIsInvalid #testIgnoresOtherNonObjects)
+	^ #(#testIgnoresStrings #testIgnoresArrays #testIgnoresOtherNonObjects)
 ]
 
 { #category : 'accessing' }

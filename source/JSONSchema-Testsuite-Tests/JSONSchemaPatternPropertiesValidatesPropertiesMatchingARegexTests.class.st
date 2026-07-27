@@ -6,11 +6,6 @@ Class {
 	#tag : 'PatternProperties'
 }
 
-{ #category : 'testing' }
-JSONSchemaPatternPropertiesValidatesPropertiesMatchingARegexTests >> expectedFailures [
-	^ #(#testMultipleInvalidMatchesIsInvalid #testASingleInvalidMatchIsInvalid)
-]
-
 { #category : 'accessing' }
 JSONSchemaPatternPropertiesValidatesPropertiesMatchingARegexTests >> schemaString [
 	^ '{"patternProperties":{"f.*o":{"type":"integer"}}}'
