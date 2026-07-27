@@ -33,7 +33,8 @@ Class {
 		'dependencies',
 		'const',
 		'constSpecified',
-		'typeArray'
+		'typeArray',
+		'propertyNames'
 	],
 	#category : 'JSONSchema-Core-Model',
 	#package : 'JSONSchema-Core',
@@ -93,6 +94,16 @@ JSONSchemaDefinition >> dependencies: aDictionary [
 ]
 
 { #category : 'accessing' }
+JSONSchemaDefinition >> propertyNames [
+	^ propertyNames
+]
+
+{ #category : 'accessing' }
+JSONSchemaDefinition >> propertyNames: aDefinition [
+	propertyNames := aDefinition
+]
+
+{ #category : 'accessing' }
 JSONSchemaDefinition class >> neoJsonMapping: mapper [
 	mapper for: self do: [ :mapping |
 		mapping mapAccessor: #reference to: '$ref'.
@@ -107,6 +118,7 @@ JSONSchemaDefinition class >> neoJsonMapping: mapper [
 		(mapping mapAccessor: #anyOf) valueSchema: #SchemaList.
 		(mapping mapAccessor: #oneOf) valueSchema: #SchemaList.
 		(mapping mapAccessor: #dependencies) valueSchema: #DependenciesMap.
+		(mapping mapAccessor: #propertyNames) valueSchema: #SingleSchema.
 		mapping mapAccessor: #const.
 		mapping mapAccessor: #typeString mutator: #typeString: to: #type.
 		 ].

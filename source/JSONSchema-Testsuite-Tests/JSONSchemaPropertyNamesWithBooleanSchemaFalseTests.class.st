@@ -6,11 +6,6 @@ Class {
 	#tag : 'PropertyNames'
 }
 
-{ #category : 'testing' }
-JSONSchemaPropertyNamesWithBooleanSchemaFalseTests >> expectedFailures [
-	^ #(#testObjectWithAnyPropertiesIsInvalid)
-]
-
 { #category : 'accessing' }
 JSONSchemaPropertyNamesWithBooleanSchemaFalseTests >> schemaString [
 	^ '{"propertyNames":false}'
