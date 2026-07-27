@@ -6,11 +6,6 @@ Class {
 	#tag : 'IdnEmail'
 }
 
-{ #category : 'testing' }
-JSONSchemaValidationOfAnInternationalizedEMailAddressesTests >> expectedFailures [
-	^ #(#testAnInvalidEMailAddress #testAnInvalidIdnEMailAddress)
-]
-
 { #category : 'accessing' }
 JSONSchemaValidationOfAnInternationalizedEMailAddressesTests >> schemaString [
 	^ '{"format":"idn-email"}'

@@ -6,11 +6,6 @@ Class {
 	#tag : 'IdnHostname'
 }
 
-{ #category : 'testing' }
-JSONSchemaValidationOfInternationalizedHostNamesTests >> expectedFailures [
-	^ #(#testAHostNameWithAComponentTooLong #testArabicIndicDigitsMixedWithExtendedArabicIndicDigits #testBeginsWithANonspacingMark #testBeginsWithASpacingCombiningMark #testBeginsWithAnEnclosingMark #testContainsIllegalCharU302EHangulSingleDotToneMark #testExceptionsThatAreDISALLOWEDLeftToRightChars #testExceptionsThatAreDISALLOWEDRightToLeftChars #testGreekKERAIANotFollowedByAnything #testGreekKERAIANotFollowedByGreek #testHebrewGERESHNotPrecededByAnything #testHebrewGERESHNotPrecededByHebrew #testHebrewGERSHAYIMNotPrecededByAnything #testHebrewGERSHAYIMNotPrecededByHebrew #testIllegalFirstCharU302EHangulSingleDotToneMark #testInvalidLabelCorrectPunycode #testInvalidPunycode #testKATAKANAMIDDLEDOTWithNoHiraganaKatakanaOrHan #testKATAKANAMIDDLEDOTWithNoOtherCharacters #testMIDDLEDOTWithNoFollowingL #testMIDDLEDOTWithNoPrecedingL #testMIDDLEDOTWithNothingFollowing #testMIDDLEDOTWithNothingPreceding #testULabelContainsInThe3rdAnd4thPosition #testULabelEndsWithADash #testULabelStartsAndEndsWithADash #testULabelStartsWithADash #testZEROWIDTHJOINERNotPrecededByAnything #testZEROWIDTHJOINERNotPrecededByVirama)
-]
-
 { #category : 'accessing' }
 JSONSchemaValidationOfInternationalizedHostNamesTests >> schemaString [
 	^ '{"format":"idn-hostname"}'
