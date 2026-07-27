@@ -8,7 +8,7 @@ Class {
 
 { #category : 'testing' }
 JSONSchemaValidationOfRelativeJSONPointersRJPTests >> expectedFailures [
-	^ #(#testAValidUpwardsRJP #testAValidDownwardsRJP #testAValidUpAndThenDownRJPWithArrayIndex #testNegativePrefix #testAnInvalidRJPThatIsAValidJSONPointer #testAValidRJPTakingTheMemberOrIndexName)
+	^ #(#testAnInvalidRJPThatIsAValidJSONPointer #testNegativePrefix)
 ]
 
 { #category : 'accessing' }

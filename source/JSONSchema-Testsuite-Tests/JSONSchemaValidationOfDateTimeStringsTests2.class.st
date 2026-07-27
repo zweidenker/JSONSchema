@@ -8,7 +8,7 @@ Class {
 
 { #category : 'testing' }
 JSONSchemaValidationOfDateTimeStringsTests2 >> expectedFailures [
-	^ #(#testAnInvalidDateTimeString #testAnInvalidOffsetInDateTimeString #testAInvalidDayInDateTimeString #testOnlyRFC3339NotAllOfISO8601AreValid)
+	^ #(#testAInvalidDayInDateTimeString #testAnInvalidDateTimeString #testAnInvalidOffsetInDateTimeString #testOnlyRFC3339NotAllOfISO8601AreValid)
 ]
 
 { #category : 'accessing' }

@@ -6,11 +6,6 @@ Class {
 	#tag : 'Format'
 }
 
-{ #category : 'testing' }
-JSONSchemaValidationOfTimeStringsTests1 >> expectedFailures [
-	^ #(#testIgnoresBooleans #testIgnoresArrays #testIgnoresNull #testIgnoresFloats #testIgnoresIntegers #testIgnoresObjects)
-]
-
 { #category : 'accessing' }
 JSONSchemaValidationOfTimeStringsTests1 >> schemaString [
 	^ '{"format":"time"}'

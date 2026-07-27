@@ -6,11 +6,6 @@ Class {
 	#tag : 'Format'
 }
 
-{ #category : 'testing' }
-JSONSchemaValidationOfJSONPointersTests >> expectedFailures [
-	^ #(#testIgnoresArrays #testIgnoresBooleans #testIgnoresFloats #testIgnoresNull #testIgnoresIntegers #testIgnoresObjects)
-]
-
 { #category : 'accessing' }
 JSONSchemaValidationOfJSONPointersTests >> schemaString [
 	^ '{"format":"json-pointer"}'

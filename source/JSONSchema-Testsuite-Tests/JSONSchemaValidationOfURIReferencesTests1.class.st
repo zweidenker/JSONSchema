@@ -6,11 +6,6 @@ Class {
 	#tag : 'Format'
 }
 
-{ #category : 'testing' }
-JSONSchemaValidationOfURIReferencesTests1 >> expectedFailures [
-	^ #(#testIgnoresObjects #testIgnoresBooleans #testIgnoresNull #testIgnoresFloats #testIgnoresIntegers #testIgnoresArrays)
-]
-
 { #category : 'accessing' }
 JSONSchemaValidationOfURIReferencesTests1 >> schemaString [
 	^ '{"format":"uri-reference"}'

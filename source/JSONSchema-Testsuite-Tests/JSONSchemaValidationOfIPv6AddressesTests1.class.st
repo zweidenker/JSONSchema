@@ -6,11 +6,6 @@ Class {
 	#tag : 'Format'
 }
 
-{ #category : 'testing' }
-JSONSchemaValidationOfIPv6AddressesTests1 >> expectedFailures [
-	^ #(#testIgnoresArrays #testIgnoresBooleans #testIgnoresFloats #testIgnoresNull #testIgnoresIntegers #testIgnoresObjects)
-]
-
 { #category : 'accessing' }
 JSONSchemaValidationOfIPv6AddressesTests1 >> schemaString [
 	^ '{"format":"ipv6"}'

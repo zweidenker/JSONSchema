@@ -8,7 +8,7 @@ Class {
 
 { #category : 'testing' }
 JSONSchemaFormatUriTemplateTests >> expectedFailures [
-	^ #(#testAValidUriTemplate #testAValidRelativeUriTemplate #testAValidUriTemplateWithoutVariables #testAnInvalidUriTemplate)
+	^ #(#testAnInvalidUriTemplate)
 ]
 
 { #category : 'accessing' }

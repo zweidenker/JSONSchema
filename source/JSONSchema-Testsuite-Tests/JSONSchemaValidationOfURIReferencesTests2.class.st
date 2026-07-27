@@ -8,7 +8,7 @@ Class {
 
 { #category : 'testing' }
 JSONSchemaValidationOfURIReferencesTests2 >> expectedFailures [
-	^ #(#testAnInvalidURIFragment #testAnInvalidURIReference #testAValidURIFragment #testAValidURI #testAValidProtocolRelativeURIReference #testAValidRelativeURIReference #testAValidURIReference)
+	^ #(#testAnInvalidURIFragment #testAnInvalidURIReference)
 ]
 
 { #category : 'accessing' }

@@ -8,7 +8,7 @@ Class {
 
 { #category : 'testing' }
 JSONSchemaValidationOfEMailAddressesTests2 >> expectedFailures [
-	^ #(#testAnInvalidEMailAddress #testDotAfterLocalPartIsNotValid #testTwoSubsequentDotsInsideLocalPartAreNotValid #testDotBeforeLocalPartIsNotValid)
+	^ #(#testAnInvalidEMailAddress #testDotAfterLocalPartIsNotValid #testDotBeforeLocalPartIsNotValid #testTwoSubsequentDotsInsideLocalPartAreNotValid)
 ]
 
 { #category : 'accessing' }

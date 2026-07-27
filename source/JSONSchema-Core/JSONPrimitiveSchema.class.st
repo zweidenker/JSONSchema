@@ -63,8 +63,9 @@ JSONPrimitiveSchema >> formatString [
 ]
 
 { #category : 'formatting' }
-JSONPrimitiveSchema >> formatString: aString [ 
-	format := JSONFormat formatNamed: aString
+JSONPrimitiveSchema >> formatString: aString [
+	"Unknown/unsupported formats are tolerated (ignored) rather than raising."
+	format := JSONFormat formatNamed: aString ifAbsent: [ nil ]
 ]
 
 { #category : 'initializing' }

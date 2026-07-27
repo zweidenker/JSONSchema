@@ -6,11 +6,6 @@ Class {
 	#tag : 'Format'
 }
 
-{ #category : 'testing' }
-JSONSchemaValidationOfEMailAddressesTests1 >> expectedFailures [
-	^ #()
-]
-
 { #category : 'accessing' }
 JSONSchemaValidationOfEMailAddressesTests1 >> schemaString [
 	^ '{"format":"email"}'

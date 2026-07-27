@@ -6,11 +6,6 @@ Class {
 	#tag : 'Format'
 }
 
-{ #category : 'testing' }
-JSONSchemaValidationOfURIsTests1 >> expectedFailures [
-	^ #()
-]
-
 { #category : 'accessing' }
 JSONSchemaValidationOfURIsTests1 >> schemaString [
 	^ '{"format":"uri"}'

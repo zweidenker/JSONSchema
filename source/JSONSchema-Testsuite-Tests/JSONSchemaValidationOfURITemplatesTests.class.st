@@ -6,11 +6,6 @@ Class {
 	#tag : 'Format'
 }
 
-{ #category : 'testing' }
-JSONSchemaValidationOfURITemplatesTests >> expectedFailures [
-	^ #(#testIgnoresBooleans #testIgnoresObjects #testIgnoresFloats #testIgnoresNull #testIgnoresIntegers #testIgnoresArrays)
-]
-
 { #category : 'accessing' }
 JSONSchemaValidationOfURITemplatesTests >> schemaString [
 	^ '{"format":"uri-template"}'
