@@ -8,7 +8,7 @@ Class {
 
 { #category : 'testing' }
 JSONSchemaECMA262SMatchesEverythingButWhitespaceTests >> expectedFailures [
-	^ #(#testLineTabulationDoesNotMatch #testCharacterTabulationDoesNotMatch #testLatin1NonBreakingSpaceDoesNotMatch #testFormFeedDoesNotMatch #testASCIISpaceDoesNotMatch #testZeroWidthWhitespaceDoesNotMatch #testLineFeedDoesNotMatchLineTerminator #testParagraphSeparatorDoesNotMatchLineTerminator #testNonWhitespaceControlMatches #testEMSPACEDoesNotMatchSpaceSeparator #testNonWhitespaceMatches)
+	^ #(#testLineTabulationDoesNotMatch #testLatin1NonBreakingSpaceDoesNotMatch #testParagraphSeparatorDoesNotMatchLineTerminator #testEMSPACEDoesNotMatchSpaceSeparator)
 ]
 
 { #category : 'accessing' }

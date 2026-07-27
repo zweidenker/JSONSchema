@@ -8,7 +8,7 @@ Class {
 
 { #category : 'testing' }
 JSONSchemaForbiddenPropertyTests >> expectedFailures [
-	^ #(#testPropertyPresent #testPropertyAbsent)
+	^ #(  )
 ]
 
 { #category : 'accessing' }

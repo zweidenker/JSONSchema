@@ -8,7 +8,7 @@ Class {
 
 { #category : 'testing' }
 JSONSchemaOneOfWithEmptySchemaTests >> expectedFailures [
-	^ #(#testOneValidValid #testBothValidInvalid)
+	^ #(  )
 ]
 
 { #category : 'accessing' }

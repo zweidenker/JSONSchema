@@ -32,7 +32,7 @@ JSONSchemaAllOfConstraint >> validate [
 { #category : 'validation' }
 JSONSchemaAllOfConstraint >> validate: anObject [
 	| visitor |
-	visitor := JSONSchemaReferenceResolveVisitor new.
+	visitor := self resolveVisitor.
 	allOf do: [ :definition | (visitor visitSchemaSpec: definition) validate: anObject ]
 ]
 

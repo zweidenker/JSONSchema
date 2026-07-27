@@ -29,10 +29,17 @@ JSONSchemaReferenceResolveVisitor >> schemaRepository: anObject [
 
 { #category : 'visiting' }
 JSONSchemaReferenceResolveVisitor >> visit: anObject [
-	(seen includes: anObject) ifTrue: [ 
+	| result |
+	(seen includes: anObject) ifTrue: [
 		^ anObject ].
 	seen add: anObject.
-	^ super visit: anObject
+	result := super visit: anObject.
+	"Give every reachable schema's constraints access to the repository so that
+	composition/items sub-schemas containing a $ref can be resolved lazily at
+	validation time (see JSONSchemaConstraint>>resolveVisitor)."
+	(result isKindOf: JSONSchema) ifTrue: [
+		result constraints do: [ :each | each schemaRepository: schemaRepository ] ].
+	^ result
 ]
 
 { #category : 'visiting' }

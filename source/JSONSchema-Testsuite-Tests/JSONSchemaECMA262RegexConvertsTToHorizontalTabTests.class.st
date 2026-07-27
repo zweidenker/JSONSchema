@@ -8,7 +8,7 @@ Class {
 
 { #category : 'testing' }
 JSONSchemaECMA262RegexConvertsTToHorizontalTabTests >> expectedFailures [
-	^ #(#testMatches #testDoesNotMatch)
+	^ #(  )
 ]
 
 { #category : 'accessing' }

@@ -8,7 +8,7 @@ Class {
 
 { #category : 'testing' }
 JSONSchemaRefOverridesAnySiblingKeywordsTests >> expectedFailures [
-	^ #(#testRefInvalid)
+	^ #(  )
 ]
 
 { #category : 'accessing' }

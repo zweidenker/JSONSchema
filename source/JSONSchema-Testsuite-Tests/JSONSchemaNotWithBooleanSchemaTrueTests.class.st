@@ -8,7 +8,7 @@ Class {
 
 { #category : 'testing' }
 JSONSchemaNotWithBooleanSchemaTrueTests >> expectedFailures [
-	^ #(#testAnyValueIsInvalid)
+	^ #(  )
 ]
 
 { #category : 'accessing' }

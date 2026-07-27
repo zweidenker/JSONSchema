@@ -8,7 +8,7 @@ Class {
 
 { #category : 'testing' }
 JSONSchemaECMA262RegexDoesNotMatchTrailingNewlineTests >> expectedFailures [
-	^ #(#testMatchesInPythonButShouldNotInJsonschema #testShouldMatch)
+	^ #(#testMatchesInPythonButShouldNotInJsonschema)
 ]
 
 { #category : 'accessing' }

@@ -8,7 +8,7 @@ Class {
 
 { #category : 'testing' }
 JSONSchemaPropertiesWithBooleanSchemaTests >> expectedFailures [
-	^ #(#testOnlyTruePropertyPresentIsValid #testOnlyFalsePropertyPresentIsInvalid #testBothPropertiesPresentIsInvalid #testNoPropertyPresentIsValid)
+	^ #(  )
 ]
 
 { #category : 'accessing' }

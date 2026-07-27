@@ -8,7 +8,7 @@ Class {
 
 { #category : 'testing' }
 JSONSchemaNestedAllOfToCheckValidationSemanticsTests >> expectedFailures [
-	^ #(#testAnythingNonNullIsInvalid)
+	^ #(  )
 ]
 
 { #category : 'accessing' }

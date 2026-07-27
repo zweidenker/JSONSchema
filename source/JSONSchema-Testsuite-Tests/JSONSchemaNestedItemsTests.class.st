@@ -8,7 +8,7 @@ Class {
 
 { #category : 'testing' }
 JSONSchemaNestedItemsTests >> expectedFailures [
-	^ #(#testNotDeepEnough)
+	^ #(  )
 ]
 
 { #category : 'accessing' }

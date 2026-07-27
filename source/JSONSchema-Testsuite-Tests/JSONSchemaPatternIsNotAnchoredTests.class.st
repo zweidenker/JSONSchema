@@ -8,7 +8,7 @@ Class {
 
 { #category : 'testing' }
 JSONSchemaPatternIsNotAnchoredTests >> expectedFailures [
-	^ #(#testMatchesASubstring)
+	^ #(  )
 ]
 
 { #category : 'accessing' }
