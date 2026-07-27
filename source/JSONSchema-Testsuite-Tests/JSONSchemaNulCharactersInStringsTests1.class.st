@@ -6,11 +6,6 @@ Class {
 	#tag : 'Const'
 }
 
-{ #category : 'testing' }
-JSONSchemaNulCharactersInStringsTests1 >> expectedFailures [
-	^ #(#testDoNotMatchStringLackingNul)
-]
-
 { #category : 'accessing' }
 JSONSchemaNulCharactersInStringsTests1 >> schemaString [
 	^ '{"const":"hello\u0000there"}'

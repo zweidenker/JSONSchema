@@ -6,11 +6,6 @@ Class {
 	#tag : 'Const'
 }
 
-{ #category : 'testing' }
-JSONSchemaConstWithObjectTests >> expectedFailures [
-	^ #(#testAnotherObjectIsInvalid #testAnotherTypeIsInvalid)
-]
-
 { #category : 'accessing' }
 JSONSchemaConstWithObjectTests >> schemaString [
 	^ '{"const":{"foo":"bar","baz":"bax"}}'

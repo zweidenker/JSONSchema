@@ -6,11 +6,6 @@ Class {
 	#tag : 'Const'
 }
 
-{ #category : 'testing' }
-JSONSchemaConstValidationTests >> expectedFailures [
-	^ #(#testAnotherValueIsInvalid #testAnotherTypeIsInvalid)
-]
-
 { #category : 'accessing' }
 JSONSchemaConstValidationTests >> schemaString [
 	^ '{"const":2}'

@@ -6,11 +6,6 @@ Class {
 	#tag : 'Const'
 }
 
-{ #category : 'testing' }
-JSONSchemaConstWithFalseDoesNotMatch0Tests >> expectedFailures [
-	^ #(#testFloatZeroIsInvalid #testIntegerZeroIsInvalid)
-]
-
 { #category : 'accessing' }
 JSONSchemaConstWithFalseDoesNotMatch0Tests >> schemaString [
 	^ '{"const":false}'

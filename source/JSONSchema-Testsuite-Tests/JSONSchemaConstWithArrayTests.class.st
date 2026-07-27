@@ -6,11 +6,6 @@ Class {
 	#tag : 'Const'
 }
 
-{ #category : 'testing' }
-JSONSchemaConstWithArrayTests >> expectedFailures [
-	^ #(#testAnotherArrayItemIsInvalid #testArrayWithAdditionalItemsIsInvalid)
-]
-
 { #category : 'accessing' }
 JSONSchemaConstWithArrayTests >> schemaString [
 	^ '{"const":[{"foo":"bar"}]}'
