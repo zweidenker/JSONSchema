@@ -6,11 +6,6 @@ Class {
 	#tag : 'Iri'
 }
 
-{ #category : 'testing' }
-JSONSchemaValidationOfIRIsTests2 >> expectedFailures [
-	^ #(#testAnInvalidIRI #testAnInvalidIRIBasedOnIPv6 #testAnInvalidIRIThoughValidIRIReference #testAnInvalidRelativeIRIReference)
-]
-
 { #category : 'accessing' }
 JSONSchemaValidationOfIRIsTests2 >> schemaString [
 	^ '{"format":"iri"}'
