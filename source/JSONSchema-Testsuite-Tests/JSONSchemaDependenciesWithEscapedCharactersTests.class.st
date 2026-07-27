@@ -6,11 +6,6 @@ Class {
 	#tag : 'Dependencies'
 }
 
-{ #category : 'testing' }
-JSONSchemaDependenciesWithEscapedCharactersTests >> expectedFailures [
-	^ #()
-]
-
 { #category : 'accessing' }
 JSONSchemaDependenciesWithEscapedCharactersTests >> schemaString [
 	^ '{"dependencies":{"foo''bar":{"required":["foo\"bar"]},"foo\"bar":["foo''bar"],"foo\nbar":["foo\rbar"],"foo\tbar":{"minProperties":4}}}'

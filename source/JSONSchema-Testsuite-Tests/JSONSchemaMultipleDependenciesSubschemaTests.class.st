@@ -6,11 +6,6 @@ Class {
 	#tag : 'Dependencies'
 }
 
-{ #category : 'testing' }
-JSONSchemaMultipleDependenciesSubschemaTests >> expectedFailures [
-	^ #()
-]
-
 { #category : 'accessing' }
 JSONSchemaMultipleDependenciesSubschemaTests >> schemaString [
 	^ '{"dependencies":{"bar":{"properties":{"foo":{"type":"integer"},"bar":{"type":"integer"}}}}}'
