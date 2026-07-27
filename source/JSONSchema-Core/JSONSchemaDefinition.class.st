@@ -34,7 +34,8 @@ Class {
 		'const',
 		'constSpecified',
 		'typeArray',
-		'propertyNames'
+		'propertyNames',
+		'contains'
 	],
 	#category : 'JSONSchema-Core-Model',
 	#package : 'JSONSchema-Core',
@@ -84,6 +85,16 @@ JSONSchemaDefinition >> constSpecified [
 ]
 
 { #category : 'accessing' }
+JSONSchemaDefinition >> contains [
+	^ contains
+]
+
+{ #category : 'accessing' }
+JSONSchemaDefinition >> contains: aDefinition [
+	contains := aDefinition
+]
+
+{ #category : 'accessing' }
 JSONSchemaDefinition >> dependencies [
 	^ dependencies
 ]
@@ -119,6 +130,7 @@ JSONSchemaDefinition class >> neoJsonMapping: mapper [
 		(mapping mapAccessor: #oneOf) valueSchema: #SchemaList.
 		(mapping mapAccessor: #dependencies) valueSchema: #DependenciesMap.
 		(mapping mapAccessor: #propertyNames) valueSchema: #SingleSchema.
+		(mapping mapAccessor: #contains) valueSchema: #SingleSchema.
 		mapping mapAccessor: #const.
 		mapping mapAccessor: #typeString mutator: #typeString: to: #type.
 		 ].

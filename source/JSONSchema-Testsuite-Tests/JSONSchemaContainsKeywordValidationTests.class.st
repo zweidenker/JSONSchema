@@ -6,11 +6,6 @@ Class {
 	#tag : 'Contains'
 }
 
-{ #category : 'testing' }
-JSONSchemaContainsKeywordValidationTests >> expectedFailures [
-	^ #(#testArrayWithoutItemsMatchingSchemaIsInvalid #testEmptyArrayIsInvalid)
-]
-
 { #category : 'accessing' }
 JSONSchemaContainsKeywordValidationTests >> schemaString [
 	^ '{"contains":{"minimum":5}}'
