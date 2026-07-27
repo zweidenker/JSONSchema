@@ -14,7 +14,9 @@ Class {
 JSONSchemaDocument class >> neoJsonMapping: mapper [
 	super neoJsonMapping: mapper.
 	mapper for: self do: [ :mapping |
-		(mapping mapInstVar: #definitions) valueSchema: #SchemaMap ].
+		(mapping mapInstVar: #definitions) valueSchema: #SchemaMap.
+		"JSON Schema 2020-12 renamed 'definitions' to '$defs'; read both into the same ivar so a $ref like #/$defs/x resolves."
+		(mapping mapInstVar: #definitions to: '$defs') valueSchema: #SchemaMap ].
 		
 	mapper for: #SchemaMap customDo: [ :mapping |
 		mapping mapWithValueSchema: JSONSchemaDefinition ].
