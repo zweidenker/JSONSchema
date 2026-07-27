@@ -36,7 +36,10 @@ Class {
 		'typeArray',
 		'propertyNames',
 		'contains',
-		'patternProperties'
+		'patternProperties',
+		'ifSchema',
+		'thenSchema',
+		'elseSchema'
 	],
 	#category : 'JSONSchema-Core-Model',
 	#package : 'JSONSchema-Core',
@@ -134,6 +137,9 @@ JSONSchemaDefinition class >> neoJsonMapping: mapper [
 		(mapping mapAccessor: #propertyNames) valueSchema: #SingleSchema.
 		(mapping mapAccessor: #contains) valueSchema: #SingleSchema.
 		(mapping mapAccessor: #patternProperties) valueSchema: #PropertiesDictionary.
+		(mapping mapAccessor: #ifSchema mutator: #ifSchema: to: #if) valueSchema: #SingleSchema.
+		(mapping mapAccessor: #thenSchema mutator: #thenSchema: to: #then) valueSchema: #SingleSchema.
+		(mapping mapAccessor: #elseSchema mutator: #elseSchema: to: #else) valueSchema: #SingleSchema.
 		mapping mapAccessor: #const.
 		mapping mapAccessor: #typeString mutator: #typeString: to: #type.
 		 ].
@@ -235,6 +241,36 @@ JSONSchemaDefinition >> patternProperties [
 { #category : 'accessing' }
 JSONSchemaDefinition >> patternProperties: aDictionary [
 	patternProperties := aDictionary
+]
+
+{ #category : 'accessing' }
+JSONSchemaDefinition >> ifSchema [
+	^ ifSchema
+]
+
+{ #category : 'accessing' }
+JSONSchemaDefinition >> ifSchema: aDefinition [
+	ifSchema := aDefinition
+]
+
+{ #category : 'accessing' }
+JSONSchemaDefinition >> thenSchema [
+	^ thenSchema
+]
+
+{ #category : 'accessing' }
+JSONSchemaDefinition >> thenSchema: aDefinition [
+	thenSchema := aDefinition
+]
+
+{ #category : 'accessing' }
+JSONSchemaDefinition >> elseSchema [
+	^ elseSchema
+]
+
+{ #category : 'accessing' }
+JSONSchemaDefinition >> elseSchema: aDefinition [
+	elseSchema := aDefinition
 ]
 
 { #category : 'accessing' }

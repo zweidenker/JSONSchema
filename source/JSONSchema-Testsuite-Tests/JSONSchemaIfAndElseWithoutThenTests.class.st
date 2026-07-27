@@ -6,11 +6,6 @@ Class {
 	#tag : 'IfThenElse'
 }
 
-{ #category : 'testing' }
-JSONSchemaIfAndElseWithoutThenTests >> expectedFailures [
-	^ #(#testInvalidThroughElse)
-]
-
 { #category : 'accessing' }
 JSONSchemaIfAndElseWithoutThenTests >> schemaString [
 	^ '{"else":{"multipleOf":2},"if":{"exclusiveMaximum":0}}'
