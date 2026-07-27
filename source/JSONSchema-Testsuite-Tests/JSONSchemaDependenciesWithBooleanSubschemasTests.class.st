@@ -8,7 +8,7 @@ Class {
 
 { #category : 'testing' }
 JSONSchemaDependenciesWithBooleanSubschemasTests >> expectedFailures [
-	^ #(#testObjectWithBothPropertiesIsInvalid #testObjectWithPropertyHavingSchemaFalseIsInvalid)
+	^ #()
 ]
 
 { #category : 'accessing' }
