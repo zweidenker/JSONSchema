@@ -6,11 +6,6 @@ Class {
 	#tag : 'PropertyNames'
 }
 
-{ #category : 'testing' }
-JSONSchemaPropertyNamesValidationTests >> expectedFailures [
-	^ #(#testSomePropertyNamesInvalid)
-]
-
 { #category : 'accessing' }
 JSONSchemaPropertyNamesValidationTests >> schemaString [
 	^ '{"propertyNames":{"maxLength":3}}'
