@@ -8,7 +8,7 @@ Class {
 
 { #category : 'testing' }
 JSONSchemaValidationOfHostNamesTests2 >> expectedFailures [
-	^ #(#testAHostNameContainingIllegalCharacters #testEndsWithHyphen #testMaximumLabelLength #testAHostNameStartingWithAnIllegalCharacter #testAValidHostName #testContainsUnderscore #testStartsWithHyphen #testStartsWithUnderscore #testAValidPunycodedIDNHostname #testExceedsMaximumLabelLength #testEndsWithUnderscore #testAHostNameWithAComponentTooLong)
+	^ #(#testAHostNameContainingIllegalCharacters #testAHostNameStartingWithAnIllegalCharacter #testAHostNameWithAComponentTooLong #testContainsUnderscore #testEndsWithHyphen #testEndsWithUnderscore #testExceedsMaximumLabelLength #testStartsWithHyphen #testStartsWithUnderscore)
 ]
 
 { #category : 'accessing' }

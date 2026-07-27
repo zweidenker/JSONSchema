@@ -6,11 +6,6 @@ Class {
 	#tag : 'Format'
 }
 
-{ #category : 'testing' }
-JSONSchemaValidationOfRegexesTests >> expectedFailures [
-	^ #(#testIgnoresObjects #testIgnoresBooleans #testIgnoresFloats #testIgnoresNull #testIgnoresIntegers #testIgnoresArrays)
-]
-
 { #category : 'accessing' }
 JSONSchemaValidationOfRegexesTests >> schemaString [
 	^ '{"format":"regex"}'

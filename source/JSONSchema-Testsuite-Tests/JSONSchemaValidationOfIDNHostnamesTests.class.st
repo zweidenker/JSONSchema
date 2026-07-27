@@ -6,11 +6,6 @@ Class {
 	#tag : 'Format'
 }
 
-{ #category : 'testing' }
-JSONSchemaValidationOfIDNHostnamesTests >> expectedFailures [
-	^ #(#testIgnoresObjects #testIgnoresBooleans #testIgnoresNull #testIgnoresFloats #testIgnoresIntegers #testIgnoresArrays)
-]
-
 { #category : 'accessing' }
 JSONSchemaValidationOfIDNHostnamesTests >> schemaString [
 	^ '{"format":"idn-hostname"}'

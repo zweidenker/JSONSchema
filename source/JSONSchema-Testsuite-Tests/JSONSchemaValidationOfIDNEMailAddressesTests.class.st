@@ -6,11 +6,6 @@ Class {
 	#tag : 'Format'
 }
 
-{ #category : 'testing' }
-JSONSchemaValidationOfIDNEMailAddressesTests >> expectedFailures [
-	^ #(#testIgnoresBooleans #testIgnoresArrays #testIgnoresNull #testIgnoresFloats #testIgnoresIntegers #testIgnoresObjects)
-]
-
 { #category : 'accessing' }
 JSONSchemaValidationOfIDNEMailAddressesTests >> schemaString [
 	^ '{"format":"idn-email"}'

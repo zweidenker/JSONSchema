@@ -8,7 +8,7 @@ Class {
 
 { #category : 'testing' }
 JSONSchemaValidationOfIRIReferencesTests2 >> expectedFailures [
-	^ #(#testAValidIRIFragment #testAnInvalidIRIReference #testAValidRelativeIRIReference #testAValidIRIReference #testAnInvalidIRIFragment #testAValidProtocolRelativeIRIReference #testAValidIRI)
+	^ #(#testAnInvalidIRIFragment #testAnInvalidIRIReference)
 ]
 
 { #category : 'accessing' }

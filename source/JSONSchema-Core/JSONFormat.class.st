@@ -24,10 +24,19 @@ JSONFormat class >> formatName [
 ]
 
 { #category : 'instance creation' }
-JSONFormat class >> formatNamed: aString [ 
+JSONFormat class >> formatNamed: aString [
 	^ (self allSubclasses reject: #isAbstract)
 		detect: [ :each | each formatName = aString ]
 		ifNone: [ JSONInvalidFormatName signal: 'cannot find format with name ', aString asString ]
+]
+
+{ #category : 'instance creation' }
+JSONFormat class >> formatNamed: aString ifAbsent: aBlock [
+	"Tolerant lookup: evaluate aBlock when no format matches (format is an annotation
+	by default, so an unknown format should be ignored rather than rejected)."
+	^ (self allSubclasses reject: #isAbstract)
+		detect: [ :each | each formatName = aString ]
+		ifNone: aBlock
 ]
 
 { #category : 'testing' }

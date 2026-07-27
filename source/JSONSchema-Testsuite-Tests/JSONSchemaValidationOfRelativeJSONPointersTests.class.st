@@ -6,11 +6,6 @@ Class {
 	#tag : 'Format'
 }
 
-{ #category : 'testing' }
-JSONSchemaValidationOfRelativeJSONPointersTests >> expectedFailures [
-	^ #(#testIgnoresBooleans #testIgnoresArrays #testIgnoresNull #testIgnoresFloats #testIgnoresIntegers #testIgnoresObjects)
-]
-
 { #category : 'accessing' }
 JSONSchemaValidationOfRelativeJSONPointersTests >> schemaString [
 	^ '{"format":"relative-json-pointer"}'

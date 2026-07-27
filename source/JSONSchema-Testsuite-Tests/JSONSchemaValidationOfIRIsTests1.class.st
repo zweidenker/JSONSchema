@@ -6,11 +6,6 @@ Class {
 	#tag : 'Format'
 }
 
-{ #category : 'testing' }
-JSONSchemaValidationOfIRIsTests1 >> expectedFailures [
-	^ #(#testIgnoresBooleans #testIgnoresObjects #testIgnoresNull #testIgnoresFloats #testIgnoresIntegers #testIgnoresArrays)
-]
-
 { #category : 'accessing' }
 JSONSchemaValidationOfIRIsTests1 >> schemaString [
 	^ '{"format":"iri"}'

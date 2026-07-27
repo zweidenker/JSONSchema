@@ -8,7 +8,7 @@ Class {
 
 { #category : 'testing' }
 JSONSchemaValidationOfRegularExpressionsTests >> expectedFailures [
-	^ #(#testARegularExpressionWithUnclosedParensIsInvalid #testAValidRegularExpression)
+	^ #(#testARegularExpressionWithUnclosedParensIsInvalid)
 ]
 
 { #category : 'accessing' }

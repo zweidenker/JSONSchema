@@ -8,7 +8,7 @@ Class {
 
 { #category : 'testing' }
 JSONSchemaValidationOfIPAddressesTests2 >> expectedFailures [
-	^ #(#testAnIPAddressWithout4Components #testAValidIPAddress #testAnIPAddressAsAnIntegerDecimal #testAnIPAddressWithTooManyComponents #testAnIPAddressWithOutOfRangeValues #testAnIPAddressAsAnInteger)
+	^ #(#testAnIPAddressAsAnInteger #testAnIPAddressAsAnIntegerDecimal #testAnIPAddressWithOutOfRangeValues #testAnIPAddressWithTooManyComponents #testAnIPAddressWithout4Components)
 ]
 
 { #category : 'accessing' }

@@ -6,11 +6,6 @@ Class {
 	#tag : 'Format'
 }
 
-{ #category : 'testing' }
-JSONSchemaValidationOfDateStringsTests1 >> expectedFailures [
-	^ #()
-]
-
 { #category : 'accessing' }
 JSONSchemaValidationOfDateStringsTests1 >> schemaString [
 	^ '{"format":"date"}'

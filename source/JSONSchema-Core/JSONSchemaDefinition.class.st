@@ -397,9 +397,11 @@ JSONSchemaDefinition >> formatString [
 ]
 
 { #category : 'accessing' }
-JSONSchemaDefinition >> formatString: aString [ 
+JSONSchemaDefinition >> formatString: aString [
+	"Unknown/unsupported formats are tolerated (ignored) rather than raising - format
+	is annotation-only by default per JSON-Schema spec. 'string' is a no-op sentinel."
 	(aString = 'string') ifTrue: [ ^ self ].
-	format := JSONFormat formatNamed: aString
+	format := JSONFormat formatNamed: aString ifAbsent: [ nil ]
 ]
 
 { #category : 'initialization' }

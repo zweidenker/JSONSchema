@@ -8,7 +8,7 @@ Class {
 
 { #category : 'testing' }
 JSONSchemaValidationOfAnInternationalizedEMailAddressesTests >> expectedFailures [
-	^ #(#testAnInvalidIdnEMailAddress #testAValidEMailAddress #testAnInvalidEMailAddress #testAValidIdnEMailExampleExampleTestInHangul)
+	^ #(#testAnInvalidEMailAddress #testAnInvalidIdnEMailAddress)
 ]
 
 { #category : 'accessing' }

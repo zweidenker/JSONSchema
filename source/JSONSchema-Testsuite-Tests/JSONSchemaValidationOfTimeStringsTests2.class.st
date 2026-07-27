@@ -8,7 +8,7 @@ Class {
 
 { #category : 'testing' }
 JSONSchemaValidationOfTimeStringsTests2 >> expectedFailures [
-	^ #(#testAValidTimeString #testOnlyRFC3339NotAllOfISO8601AreValid #testAnInvalidTimeString)
+	^ #(#testAnInvalidTimeString #testOnlyRFC3339NotAllOfISO8601AreValid)
 ]
 
 { #category : 'accessing' }
