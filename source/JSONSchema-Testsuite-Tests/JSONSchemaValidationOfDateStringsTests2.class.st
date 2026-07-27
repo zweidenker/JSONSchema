@@ -6,11 +6,6 @@ Class {
 	#tag : 'Date'
 }
 
-{ #category : 'testing' }
-JSONSchemaValidationOfDateStringsTests2 >> expectedFailures [
-	^ #(#testAnInvalidDateTimeString #testOnlyRFC3339NotAllOfISO8601AreValid)
-]
-
 { #category : 'accessing' }
 JSONSchemaValidationOfDateStringsTests2 >> schemaString [
 	^ '{"format":"date"}'

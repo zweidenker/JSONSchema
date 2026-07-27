@@ -6,11 +6,6 @@ Class {
 	#tag : 'Email'
 }
 
-{ #category : 'testing' }
-JSONSchemaValidationOfEMailAddressesTests2 >> expectedFailures [
-	^ #(#testAnInvalidEMailAddress #testDotAfterLocalPartIsNotValid #testDotBeforeLocalPartIsNotValid #testTwoSubsequentDotsInsideLocalPartAreNotValid)
-]
-
 { #category : 'accessing' }
 JSONSchemaValidationOfEMailAddressesTests2 >> schemaString [
 	^ '{"format":"email"}'

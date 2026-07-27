@@ -6,11 +6,6 @@ Class {
 	#tag : 'Ipv4'
 }
 
-{ #category : 'testing' }
-JSONSchemaValidationOfIPAddressesTests2 >> expectedFailures [
-	^ #(#testAnIPAddressAsAnInteger #testAnIPAddressAsAnIntegerDecimal #testAnIPAddressWithOutOfRangeValues #testAnIPAddressWithTooManyComponents #testAnIPAddressWithout4Components)
-]
-
 { #category : 'accessing' }
 JSONSchemaValidationOfIPAddressesTests2 >> schemaString [
 	^ '{"format":"ipv4"}'
