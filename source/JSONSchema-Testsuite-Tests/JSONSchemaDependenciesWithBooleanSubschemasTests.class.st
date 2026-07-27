@@ -6,11 +6,6 @@ Class {
 	#tag : 'Dependencies'
 }
 
-{ #category : 'testing' }
-JSONSchemaDependenciesWithBooleanSubschemasTests >> expectedFailures [
-	^ #()
-]
-
 { #category : 'accessing' }
 JSONSchemaDependenciesWithBooleanSubschemasTests >> schemaString [
 	^ '{"dependencies":{"foo":true,"bar":false}}'

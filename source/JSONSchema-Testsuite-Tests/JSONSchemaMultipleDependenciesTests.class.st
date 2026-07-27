@@ -6,11 +6,6 @@ Class {
 	#tag : 'Dependencies'
 }
 
-{ #category : 'testing' }
-JSONSchemaMultipleDependenciesTests >> expectedFailures [
-	^ #()
-]
-
 { #category : 'accessing' }
 JSONSchemaMultipleDependenciesTests >> schemaString [
 	^ '{"dependencies":{"quux":["foo","bar"]}}'
