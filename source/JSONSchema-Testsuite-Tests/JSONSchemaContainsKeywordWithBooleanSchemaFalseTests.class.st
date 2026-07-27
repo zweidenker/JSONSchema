@@ -6,11 +6,6 @@ Class {
 	#tag : 'Contains'
 }
 
-{ #category : 'testing' }
-JSONSchemaContainsKeywordWithBooleanSchemaFalseTests >> expectedFailures [
-	^ #(#testEmptyArrayIsInvalid #testAnyNonEmptyArrayIsInvalid)
-]
-
 { #category : 'accessing' }
 JSONSchemaContainsKeywordWithBooleanSchemaFalseTests >> schemaString [
 	^ '{"contains":false}'

@@ -6,11 +6,6 @@ Class {
 	#tag : 'Contains'
 }
 
-{ #category : 'testing' }
-JSONSchemaItemsContainsTests >> expectedFailures [
-	^ #(#testDoesNotMatchItemsMatchesContains #testMatchesItemsDoesNotMatchContains #testMatchesNeitherItemsNorContains)
-]
-
 { #category : 'accessing' }
 JSONSchemaItemsContainsTests >> schemaString [
 	^ '{"items":{"multipleOf":2},"contains":{"multipleOf":3}}'

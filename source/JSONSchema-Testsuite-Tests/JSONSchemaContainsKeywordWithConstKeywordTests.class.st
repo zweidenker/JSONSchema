@@ -6,11 +6,6 @@ Class {
 	#tag : 'Contains'
 }
 
-{ #category : 'testing' }
-JSONSchemaContainsKeywordWithConstKeywordTests >> expectedFailures [
-	^ #(#testArrayWithoutItem5IsInvalid)
-]
-
 { #category : 'accessing' }
 JSONSchemaContainsKeywordWithConstKeywordTests >> schemaString [
 	^ '{"contains":{"const":5}}'
