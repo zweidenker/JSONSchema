@@ -33,6 +33,7 @@ Class {
 		'dependencies',
 		'const',
 		'constSpecified',
+		'typeArray',
 		'contains'
 	],
 	#category : 'JSONSchema-Core-Model',
@@ -506,8 +507,18 @@ JSONSchemaDefinition >> title: anObject [
 ]
 
 { #category : 'accessing' }
-JSONSchemaDefinition >> typeString: aString [ 
-	schemaClass := JSONSchema typeNamed: aString
+JSONSchemaDefinition >> typeArray [
+	^ typeArray
+]
+
+{ #category : 'accessing' }
+JSONSchemaDefinition >> typeString: aStringOrArray [
+	"type may be a single type name (sets the schema class, single-type path) or an
+	array of names (a union type, kept for JSONSchemaTypeUnionConstraint - the schema
+	class stays open/JSONSchemaAnyObject and the constraint does the type check)."
+	aStringOrArray isString
+		ifTrue: [ schemaClass := JSONSchema typeNamed: aStringOrArray ]
+		ifFalse: [ typeArray := aStringOrArray ]
 ]
 
 { #category : 'accessing' }
