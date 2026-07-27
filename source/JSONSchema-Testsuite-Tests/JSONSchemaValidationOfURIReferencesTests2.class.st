@@ -6,11 +6,6 @@ Class {
 	#tag : 'UriReference'
 }
 
-{ #category : 'testing' }
-JSONSchemaValidationOfURIReferencesTests2 >> expectedFailures [
-	^ #(#testAnInvalidURIFragment #testAnInvalidURIReference)
-]
-
 { #category : 'accessing' }
 JSONSchemaValidationOfURIReferencesTests2 >> schemaString [
 	^ '{"format":"uri-reference"}'

@@ -6,11 +6,6 @@ Class {
 	#tag : 'Regex'
 }
 
-{ #category : 'testing' }
-JSONSchemaValidationOfRegularExpressionsTests >> expectedFailures [
-	^ #(#testARegularExpressionWithUnclosedParensIsInvalid)
-]
-
 { #category : 'accessing' }
 JSONSchemaValidationOfRegularExpressionsTests >> schemaString [
 	^ '{"format":"regex"}'

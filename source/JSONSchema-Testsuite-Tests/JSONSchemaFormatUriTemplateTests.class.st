@@ -6,11 +6,6 @@ Class {
 	#tag : 'UriTemplate'
 }
 
-{ #category : 'testing' }
-JSONSchemaFormatUriTemplateTests >> expectedFailures [
-	^ #(#testAnInvalidUriTemplate)
-]
-
 { #category : 'accessing' }
 JSONSchemaFormatUriTemplateTests >> schemaString [
 	^ '{"format":"uri-template"}'
