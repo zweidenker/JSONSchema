@@ -6,11 +6,6 @@ Class {
 	#tag : 'Const'
 }
 
-{ #category : 'testing' }
-JSONSchemaConstWith0DoesNotMatchOtherZeroLikeTypesTests >> expectedFailures [
-	^ #(#testEmptyStringIsInvalid #testEmptyArrayIsInvalid #testFalseIsInvalid #testEmptyObjectIsInvalid)
-]
-
 { #category : 'accessing' }
 JSONSchemaConstWith0DoesNotMatchOtherZeroLikeTypesTests >> schemaString [
 	^ '{"const":0}'

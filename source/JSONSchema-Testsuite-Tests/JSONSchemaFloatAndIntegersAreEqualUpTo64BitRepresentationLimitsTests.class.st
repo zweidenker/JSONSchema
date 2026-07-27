@@ -6,11 +6,6 @@ Class {
 	#tag : 'Const'
 }
 
-{ #category : 'testing' }
-JSONSchemaFloatAndIntegersAreEqualUpTo64BitRepresentationLimitsTests >> expectedFailures [
-	^ #(#testFloatMinusOneIsInvalid #testIntegerMinusOneIsInvalid)
-]
-
 { #category : 'accessing' }
 JSONSchemaFloatAndIntegersAreEqualUpTo64BitRepresentationLimitsTests >> schemaString [
 	^ '{"const":9007199254740992}'

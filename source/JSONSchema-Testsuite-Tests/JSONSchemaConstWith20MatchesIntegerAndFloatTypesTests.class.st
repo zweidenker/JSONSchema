@@ -6,11 +6,6 @@ Class {
 	#tag : 'Const'
 }
 
-{ #category : 'testing' }
-JSONSchemaConstWith20MatchesIntegerAndFloatTypesTests >> expectedFailures [
-	^ #(#testInteger2IsInvalid #testFloat20IsInvalid #testFloat200001IsInvalid)
-]
-
 { #category : 'accessing' }
 JSONSchemaConstWith20MatchesIntegerAndFloatTypesTests >> schemaString [
 	^ '{"const":-2.0}'

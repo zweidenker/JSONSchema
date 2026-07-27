@@ -30,7 +30,9 @@ Class {
 		'anyOf',
 		'not',
 		'pattern',
-		'dependencies'
+		'dependencies',
+		'const',
+		'constSpecified'
 	],
 	#category : 'JSONSchema-Core-Model',
 	#package : 'JSONSchema-Core',
@@ -63,6 +65,23 @@ JSONSchemaDefinition class >> readDependencyValueFrom: jsonReader [
 ]
 
 { #category : 'accessing' }
+JSONSchemaDefinition >> const [
+	^ const
+]
+
+{ #category : 'accessing' }
+JSONSchemaDefinition >> const: aValue [
+	"const may legitimately be null, so track presence separately from the value."
+	constSpecified := true.
+	const := aValue
+]
+
+{ #category : 'accessing' }
+JSONSchemaDefinition >> constSpecified [
+	^ constSpecified ifNil: [ false ]
+]
+
+{ #category : 'accessing' }
 JSONSchemaDefinition >> dependencies [
 	^ dependencies
 ]
@@ -87,6 +106,7 @@ JSONSchemaDefinition class >> neoJsonMapping: mapper [
 		(mapping mapAccessor: #anyOf) valueSchema: #SchemaList.
 		(mapping mapAccessor: #oneOf) valueSchema: #SchemaList.
 		(mapping mapAccessor: #dependencies) valueSchema: #DependenciesMap.
+		mapping mapAccessor: #const.
 		mapping mapAccessor: #typeString mutator: #typeString: to: #type.
 		 ].
 	mapper for: #PropertiesDictionary customDo: [ :mapping |
