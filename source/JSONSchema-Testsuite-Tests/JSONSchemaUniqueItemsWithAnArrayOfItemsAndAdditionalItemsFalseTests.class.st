@@ -6,11 +6,6 @@ Class {
 	#tag : 'UniqueItems'
 }
 
-{ #category : 'testing' }
-JSONSchemaUniqueItemsWithAnArrayOfItemsAndAdditionalItemsFalseTests >> expectedFailures [
-	^ #(#testTrueFalseFromItemsArrayIsValid #testExtraItemsAreInvalidEvenIfUnique #testFalseTrueFromItemsArrayIsValid #testFalseFalseFromItemsArrayIsNotValid #testTrueTrueFromItemsArrayIsNotValid)
-]
-
 { #category : 'accessing' }
 JSONSchemaUniqueItemsWithAnArrayOfItemsAndAdditionalItemsFalseTests >> schemaString [
 	^ '{"items":[{"type":"boolean"},{"type":"boolean"}],"uniqueItems":true,"additionalItems":false}'

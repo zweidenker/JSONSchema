@@ -6,11 +6,6 @@ Class {
 	#tag : 'AdditionalItems'
 }
 
-{ #category : 'testing' }
-JSONSchemaAdditionalItemsAreAllowedByDefaultTests >> expectedFailures [
-	^ #(#testOnlyTheFirstItemIsValidated)
-]
-
 { #category : 'accessing' }
 JSONSchemaAdditionalItemsAreAllowedByDefaultTests >> schemaString [
 	^ '{"items":[{"type":"integer"}]}'

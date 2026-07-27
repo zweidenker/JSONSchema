@@ -6,11 +6,6 @@ Class {
 	#tag : 'AdditionalItems'
 }
 
-{ #category : 'testing' }
-JSONSchemaArrayOfItemsWithNoAdditionalItemsTests >> expectedFailures [
-	^ #(#testEqualNumberOfItemsPresent #testEmptyArray #testFewerNumberOfItemsPresent1 #testFewerNumberOfItemsPresent2 #testAdditionalItemsAreNotPermitted)
-]
-
 { #category : 'accessing' }
 JSONSchemaArrayOfItemsWithNoAdditionalItemsTests >> schemaString [
 	^ '{"items":[{},{},{}],"additionalItems":false}'
