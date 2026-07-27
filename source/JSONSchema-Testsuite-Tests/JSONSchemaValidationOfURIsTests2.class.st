@@ -6,11 +6,6 @@ Class {
 	#tag : 'Uri'
 }
 
-{ #category : 'testing' }
-JSONSchemaValidationOfURIsTests2 >> expectedFailures [
-	^ #(#testAnInvalidURIWithSpaces #testAnInvalidRelativeURIReference #testAnInvalidProtocolRelativeURIReference #testAnInvalidURIThoughValidURIReference #testAnInvalidURIWithCommaInScheme #testAnInvalidURI #testAnInvalidURIWithSpacesAndMissingScheme)
-]
-
 { #category : 'accessing' }
 JSONSchemaValidationOfURIsTests2 >> schemaString [
 	^ '{"format":"uri"}'

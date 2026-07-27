@@ -6,11 +6,6 @@ Class {
 	#tag : 'RelativeJsonPointer'
 }
 
-{ #category : 'testing' }
-JSONSchemaValidationOfRelativeJSONPointersRJPTests >> expectedFailures [
-	^ #(#testAnInvalidRJPThatIsAValidJSONPointer #testNegativePrefix)
-]
-
 { #category : 'accessing' }
 JSONSchemaValidationOfRelativeJSONPointersRJPTests >> schemaString [
 	^ '{"format":"relative-json-pointer"}'
