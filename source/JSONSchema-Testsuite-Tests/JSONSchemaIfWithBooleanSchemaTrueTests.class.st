@@ -6,11 +6,6 @@ Class {
 	#tag : 'IfThenElse'
 }
 
-{ #category : 'testing' }
-JSONSchemaIfWithBooleanSchemaTrueTests >> expectedFailures [
-	^ #(#testBooleanSchemaTrueInIfAlwaysChoosesTheThenPathInvalid)
-]
-
 { #category : 'accessing' }
 JSONSchemaIfWithBooleanSchemaTrueTests >> schemaString [
 	^ '{"else":{"const":"else"},"then":{"const":"then"},"if":true}'

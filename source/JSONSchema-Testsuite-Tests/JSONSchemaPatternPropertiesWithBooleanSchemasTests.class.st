@@ -6,11 +6,6 @@ Class {
 	#tag : 'PatternProperties'
 }
 
-{ #category : 'testing' }
-JSONSchemaPatternPropertiesWithBooleanSchemasTests >> expectedFailures [
-	^ #(#testObjectWithPropertyMatchingSchemaFalseIsInvalid #testObjectWithBothPropertiesIsInvalid #testObjectWithAPropertyMatchingBothTrueAndFalseIsInvalid)
-]
-
 { #category : 'accessing' }
 JSONSchemaPatternPropertiesWithBooleanSchemasTests >> schemaString [
 	^ '{"patternProperties":{"f.*":true,"b.*":false}}'

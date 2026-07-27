@@ -6,11 +6,6 @@ Class {
 	#tag : 'Properties'
 }
 
-{ #category : 'testing' }
-JSONSchemaPropertiesPatternPropertiesAdditionalPropertiesInteractionTests >> expectedFailures [
-	^ #(#testPatternPropertyInvalidatesProperty #testAdditionalPropertyInvalidatesOthers #testPatternPropertyInvalidatesNonproperty)
-]
-
 { #category : 'accessing' }
 JSONSchemaPropertiesPatternPropertiesAdditionalPropertiesInteractionTests >> schemaString [
 	^ '{"properties":{"foo":{"maxItems":3,"type":"array"},"bar":{"type":"array"}},"patternProperties":{"f.o":{"minItems":2}},"additionalProperties":{"type":"integer"}}'

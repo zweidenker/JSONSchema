@@ -6,11 +6,6 @@ Class {
 	#tag : 'PatternProperties'
 }
 
-{ #category : 'testing' }
-JSONSchemaMultipleSimultaneousPatternPropertiesAreValidatedTests >> expectedFailures [
-	^ #(#testAnInvalidDueToBothIsInvalid #testAnInvalidDueToTheOtherIsInvalid #testAnInvalidDueToOneIsInvalid)
-]
-
 { #category : 'accessing' }
 JSONSchemaMultipleSimultaneousPatternPropertiesAreValidatedTests >> schemaString [
 	^ '{"patternProperties":{"a*":{"type":"integer"},"aaa*":{"maximum":20}}}'

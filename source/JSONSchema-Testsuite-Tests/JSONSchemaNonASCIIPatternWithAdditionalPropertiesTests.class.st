@@ -6,11 +6,6 @@ Class {
 	#tag : 'AdditionalProperties'
 }
 
-{ #category : 'testing' }
-JSONSchemaNonASCIIPatternWithAdditionalPropertiesTests >> expectedFailures [
-	^ #(#testNotMatchingThePatternIsInvalid)
-]
-
 { #category : 'accessing' }
 JSONSchemaNonASCIIPatternWithAdditionalPropertiesTests >> schemaString [
 	^ '{"patternProperties":{"^á":{}},"additionalProperties":false}'

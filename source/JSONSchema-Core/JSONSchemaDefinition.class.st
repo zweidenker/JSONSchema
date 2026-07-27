@@ -35,7 +35,11 @@ Class {
 		'constSpecified',
 		'typeArray',
 		'propertyNames',
-		'contains'
+		'contains',
+		'patternProperties',
+		'ifSchema',
+		'thenSchema',
+		'elseSchema'
 	],
 	#category : 'JSONSchema-Core-Model',
 	#package : 'JSONSchema-Core',
@@ -124,13 +128,18 @@ JSONSchemaDefinition class >> neoJsonMapping: mapper [
 		(mapping mapAccessor: #properties) valueSchema: #PropertiesDictionary.
 		(mapping mapAccessor: #items) valueSchema: #SingleSchema.
 		(mapping mapAccessor: #not) valueSchema: #SingleSchema.
-		mapping mapAccessors: #( additionalProperties multipleOf maximum exclusiveMaximum minimum exclusiveMinimum maxLength minLength maxItems minItems uniqueItems maxProperties minProperties  ).
+		(mapping mapAccessor: #additionalProperties) valueSchema: #SingleSchema.
+		mapping mapAccessors: #( multipleOf maximum exclusiveMaximum minimum exclusiveMinimum maxLength minLength maxItems minItems uniqueItems maxProperties minProperties  ).
 		(mapping mapAccessor: #allOf) valueSchema: #SchemaList.
 		(mapping mapAccessor: #anyOf) valueSchema: #SchemaList.
 		(mapping mapAccessor: #oneOf) valueSchema: #SchemaList.
 		(mapping mapAccessor: #dependencies) valueSchema: #DependenciesMap.
 		(mapping mapAccessor: #propertyNames) valueSchema: #SingleSchema.
 		(mapping mapAccessor: #contains) valueSchema: #SingleSchema.
+		(mapping mapAccessor: #patternProperties) valueSchema: #PropertiesDictionary.
+		(mapping mapAccessor: #ifSchema mutator: #ifSchema: to: #if) valueSchema: #SingleSchema.
+		(mapping mapAccessor: #thenSchema mutator: #thenSchema: to: #then) valueSchema: #SingleSchema.
+		(mapping mapAccessor: #elseSchema mutator: #elseSchema: to: #else) valueSchema: #SingleSchema.
 		mapping mapAccessor: #const.
 		mapping mapAccessor: #typeString mutator: #typeString: to: #type.
 		 ].
@@ -211,10 +220,57 @@ JSONSchemaDefinition >> acceptJSONSchema: aVisitor [
 ]
 
 { #category : 'accessing' }
+JSONSchemaDefinition >> additionalProperties [
+	^ additionalProperties
+]
+
+{ #category : 'accessing' }
 JSONSchemaDefinition >> additionalProperties: anObject [
-	additionalProperties := (anObject isNil | (anObject isKindOf: Boolean)) 
-		ifTrue: [ JSONSchemaAnyObject new ]
-		ifFalse: [ anObject asJSONSchema ]
+	"Mapped via #SingleSchema, so anObject is a JSONSchemaDefinition (a bare
+	true/false becomes a booleanValue definition). asJSONSchema resolves it: an
+	object schema to its type class, true to JSONSchemaAnyObject (accept all),
+	false to JSONSchemaBooleanFalse (reject all)."
+	additionalProperties := anObject asJSONSchema
+]
+
+{ #category : 'accessing' }
+JSONSchemaDefinition >> patternProperties [
+	^ patternProperties
+]
+
+{ #category : 'accessing' }
+JSONSchemaDefinition >> patternProperties: aDictionary [
+	patternProperties := aDictionary
+]
+
+{ #category : 'accessing' }
+JSONSchemaDefinition >> ifSchema [
+	^ ifSchema
+]
+
+{ #category : 'accessing' }
+JSONSchemaDefinition >> ifSchema: aDefinition [
+	ifSchema := aDefinition
+]
+
+{ #category : 'accessing' }
+JSONSchemaDefinition >> thenSchema [
+	^ thenSchema
+]
+
+{ #category : 'accessing' }
+JSONSchemaDefinition >> thenSchema: aDefinition [
+	thenSchema := aDefinition
+]
+
+{ #category : 'accessing' }
+JSONSchemaDefinition >> elseSchema [
+	^ elseSchema
+]
+
+{ #category : 'accessing' }
+JSONSchemaDefinition >> elseSchema: aDefinition [
+	elseSchema := aDefinition
 ]
 
 { #category : 'accessing' }

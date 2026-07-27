@@ -6,11 +6,6 @@ Class {
 	#tag : 'PatternProperties'
 }
 
-{ #category : 'testing' }
-JSONSchemaRegexesAreNotAnchoredByDefaultAndAreCaseSensitiveTests >> expectedFailures [
-	^ #(#testRecognizedMembersAreAccountedFor #testRegexesAreCaseSensitive2)
-]
-
 { #category : 'accessing' }
 JSONSchemaRegexesAreNotAnchoredByDefaultAndAreCaseSensitiveTests >> schemaString [
 	^ '{"patternProperties":{"[0-9]{2,}":{"type":"boolean"},"X_":{"type":"string"}}}'
