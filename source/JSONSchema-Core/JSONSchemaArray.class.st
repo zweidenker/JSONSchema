@@ -61,15 +61,16 @@ JSONSchemaArray >> read: aString object: object [
 
 { #category : 'private' }
 JSONSchemaArray >> readUsing: aReader [
-	| index |
-	index := 0.
-	^ Array streamContents: [:stream |
+	^ self peekNullThenReadUsing: aReader ifNotNull: [
+		| index |
+		index := 0.
+		Array streamContents: [:stream |
 			aReader parseListDo: [ 
 				stream nextPut: (items isCollection 
 					ifTrue: [ 
 						index := index + 1.
 						(items at: index) readUsing: aReader ]
-					ifFalse: [ items readUsing: aReader ])]]
+					ifFalse: [ items readUsing: aReader ])]] ]
 ]
 
 { #category : 'accessing' }
