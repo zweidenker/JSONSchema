@@ -10,6 +10,11 @@ Class {
 }
 
 { #category : 'accessing' }
+JSONSchemaPatternConstraint >> definitionProperties [
+	^ #( pattern )
+]
+
+{ #category : 'accessing' }
 JSONSchemaPatternConstraint >> pattern [
 	^ pattern
 ]
@@ -17,11 +22,6 @@ JSONSchemaPatternConstraint >> pattern [
 { #category : 'accessing' }
 JSONSchemaPatternConstraint >> pattern: aString [
 	pattern := aString
-]
-
-{ #category : 'accessing' }
-JSONSchemaPatternConstraint >> definitionProperties [
-	^ #( pattern )
 ]
 
 { #category : 'validation' }

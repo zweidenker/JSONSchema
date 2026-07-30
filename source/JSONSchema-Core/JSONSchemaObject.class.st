@@ -181,7 +181,7 @@ JSONSchemaObject >> readObject: jsonObject [
 		readProperties: properties
 		from: jsonObject
 		writeTo: object.  
-	additionalProperties ifTrue: [ 
+	(additionalProperties isKindOf: JSONSchemaBooleanFalse) ifFalse: [ 
 		(jsonObject keys difference: properties keys) do: [ :each |
 			object at: each put: (jsonObject at: each) ] ].
 	^ object

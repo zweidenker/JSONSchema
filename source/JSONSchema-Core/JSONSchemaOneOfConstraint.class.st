@@ -10,6 +10,11 @@ Class {
 }
 
 { #category : 'accessing' }
+JSONSchemaOneOfConstraint >> definitionProperties [
+	^ #( oneOf )
+]
+
+{ #category : 'accessing' }
 JSONSchemaOneOfConstraint >> oneOf [
 	^ oneOf
 ]
@@ -17,11 +22,6 @@ JSONSchemaOneOfConstraint >> oneOf [
 { #category : 'accessing' }
 JSONSchemaOneOfConstraint >> oneOf: aCollection [
 	oneOf := aCollection
-]
-
-{ #category : 'accessing' }
-JSONSchemaOneOfConstraint >> definitionProperties [
-	^ #( oneOf )
 ]
 
 { #category : 'validation' }

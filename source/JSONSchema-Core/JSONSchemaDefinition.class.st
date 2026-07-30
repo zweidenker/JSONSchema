@@ -52,97 +52,6 @@ JSONSchemaDefinition class >> fromString: aString [
 	^ self readFrom: aString readStream
 ]
 
-{ #category : 'instance creation' }
-JSONSchemaDefinition class >> readDependencyValueFrom: jsonReader [
-	"A dependencies-map value is either an array of required property names
-	(property dependency) or a schema (schema dependency, which may itself be a
-	bare true/false). Returns an Array of Strings for the former, a
-	JSONSchemaDefinition for the latter."
-	| matched value names |
-	matched := false.
-	value := nil.
-	jsonReader parseConstantDo: [ :v | matched := true. value := v ].
-	matched ifTrue: [ ^ JSONSchemaDefinition new booleanValue: value; yourself ].
-	(jsonReader matchChar: $[) ifFalse: [ ^ jsonReader nextAs: JSONSchemaDefinition ].
-	names := OrderedCollection new.
-	(jsonReader matchChar: $]) ifFalse: [
-		[ names add: jsonReader parseString.
-		  jsonReader matchChar: $, ] whileTrue.
-		jsonReader expectChar: $] ].
-	^ names asArray
-]
-
-{ #category : 'instance creation' }
-JSONSchemaDefinition class >> readItemsValueFrom: jsonReader [
-	"items is either a single schema (object or bare true/false) or an array of
-	schemas (tuple/positional validation). Returns a JSONSchemaDefinition for the
-	former, an Array of JSONSchemaDefinition for the latter."
-	| matched value |
-	matched := false.
-	value := nil.
-	jsonReader parseConstantDo: [ :v | matched := true. value := v ].
-	matched ifTrue: [ ^ JSONSchemaDefinition new booleanValue: value; yourself ].
-	(jsonReader matchChar: $[) ifFalse: [ ^ jsonReader nextAs: JSONSchemaDefinition ].
-	^ Array streamContents: [ :stream |
-		(jsonReader matchChar: $]) ifFalse: [
-			[ | m v elem |
-			  m := false. v := nil.
-			  jsonReader parseConstantDo: [ :x | m := true. v := x ].
-			  elem := (m and: [ v isKindOf: Boolean ])
-				ifTrue: [ JSONSchemaDefinition new booleanValue: v; yourself ]
-				ifFalse: [ jsonReader nextAs: JSONSchemaDefinition ].
-			  stream nextPut: elem.
-			  jsonReader matchChar: $, ] whileTrue.
-			jsonReader expectChar: $] ] ]
-]
-
-{ #category : 'accessing' }
-JSONSchemaDefinition >> const [
-	^ const
-]
-
-{ #category : 'accessing' }
-JSONSchemaDefinition >> const: aValue [
-	"const may legitimately be null, so track presence separately from the value."
-	constSpecified := true.
-	const := aValue
-]
-
-{ #category : 'accessing' }
-JSONSchemaDefinition >> constSpecified [
-	^ constSpecified ifNil: [ false ]
-]
-
-{ #category : 'accessing' }
-JSONSchemaDefinition >> contains [
-	^ contains
-]
-
-{ #category : 'accessing' }
-JSONSchemaDefinition >> contains: aDefinition [
-	contains := aDefinition
-]
-
-{ #category : 'accessing' }
-JSONSchemaDefinition >> dependencies [
-	^ dependencies
-]
-
-{ #category : 'accessing' }
-JSONSchemaDefinition >> dependencies: aDictionary [
-	dependencies := aDictionary
-]
-
-{ #category : 'accessing' }
-JSONSchemaDefinition >> propertyNames [
-	^ propertyNames
-]
-
-{ #category : 'accessing' }
-JSONSchemaDefinition >> propertyNames: aDefinition [
-	propertyNames := aDefinition
-]
-
 { #category : 'accessing' }
 JSONSchemaDefinition class >> neoJsonMapping: mapper [
 	mapper for: self do: [ :mapping |
@@ -229,6 +138,26 @@ JSONSchemaDefinition class >> neoJsonMapping: mapper [
 ]
 
 { #category : 'instance creation' }
+JSONSchemaDefinition class >> readDependencyValueFrom: jsonReader [
+	"A dependencies-map value is either an array of required property names
+	(property dependency) or a schema (schema dependency, which may itself be a
+	bare true/false). Returns an Array of Strings for the former, a
+	JSONSchemaDefinition for the latter."
+	| matched value names |
+	matched := false.
+	value := nil.
+	jsonReader parseConstantDo: [ :v | matched := true. value := v ].
+	matched ifTrue: [ ^ JSONSchemaDefinition new booleanValue: value; yourself ].
+	(jsonReader matchChar: $[) ifFalse: [ ^ jsonReader nextAs: JSONSchemaDefinition ].
+	names := OrderedCollection new.
+	(jsonReader matchChar: $]) ifFalse: [
+		[ names add: jsonReader parseString.
+		  jsonReader matchChar: $, ] whileTrue.
+		jsonReader expectChar: $] ].
+	^ names asArray
+]
+
+{ #category : 'instance creation' }
 JSONSchemaDefinition class >> readFrom: stream [
 	"A JSON Schema document is either a JSON object (the common case, read via NeoJSON's
 	regular mapped-object reading) or a bare boolean literal (true = always valid, false =
@@ -246,9 +175,45 @@ JSONSchemaDefinition class >> readFrom: stream [
 	^ reader nextAs: self
 ]
 
+{ #category : 'instance creation' }
+JSONSchemaDefinition class >> readItemsValueFrom: jsonReader [
+	"items is either a single schema (object or bare true/false) or an array of
+	schemas (tuple/positional validation). Returns a JSONSchemaDefinition for the
+	former, an Array of JSONSchemaDefinition for the latter."
+	| matched value |
+	matched := false.
+	value := nil.
+	jsonReader parseConstantDo: [ :v | matched := true. value := v ].
+	matched ifTrue: [ ^ JSONSchemaDefinition new booleanValue: value; yourself ].
+	(jsonReader matchChar: $[) ifFalse: [ ^ jsonReader nextAs: JSONSchemaDefinition ].
+	^ Array streamContents: [ :stream |
+		(jsonReader matchChar: $]) ifFalse: [
+			[ | m v elem |
+			  m := false. v := nil.
+			  jsonReader parseConstantDo: [ :x | m := true. v := x ].
+			  elem := (m and: [ v isKindOf: Boolean ])
+				ifTrue: [ JSONSchemaDefinition new booleanValue: v; yourself ]
+				ifFalse: [ jsonReader nextAs: JSONSchemaDefinition ].
+			  stream nextPut: elem.
+			  jsonReader matchChar: $, ] whileTrue.
+			jsonReader expectChar: $] ] ]
+]
+
 { #category : 'visiting' }
 JSONSchemaDefinition >> acceptJSONSchema: aVisitor [ 
 	^ aVisitor visitSchemaSpec: self 
+]
+
+{ #category : 'accessing' }
+JSONSchemaDefinition >> additionalItems [
+	^ additionalItems
+]
+
+{ #category : 'accessing' }
+JSONSchemaDefinition >> additionalItems: anObject [
+	"Mapped via #SingleSchema (a bare true/false becomes a booleanValue definition);
+	asJSONSchema resolves it. nil = absent = extra items allowed."
+	additionalItems := anObject ifNotNil: [ anObject asJSONSchema ]
 ]
 
 { #category : 'accessing' }
@@ -266,46 +231,6 @@ JSONSchemaDefinition >> additionalProperties: anObject [
 ]
 
 { #category : 'accessing' }
-JSONSchemaDefinition >> patternProperties [
-	^ patternProperties
-]
-
-{ #category : 'accessing' }
-JSONSchemaDefinition >> patternProperties: aDictionary [
-	patternProperties := aDictionary
-]
-
-{ #category : 'accessing' }
-JSONSchemaDefinition >> ifSchema [
-	^ ifSchema
-]
-
-{ #category : 'accessing' }
-JSONSchemaDefinition >> ifSchema: aDefinition [
-	ifSchema := aDefinition
-]
-
-{ #category : 'accessing' }
-JSONSchemaDefinition >> thenSchema [
-	^ thenSchema
-]
-
-{ #category : 'accessing' }
-JSONSchemaDefinition >> thenSchema: aDefinition [
-	thenSchema := aDefinition
-]
-
-{ #category : 'accessing' }
-JSONSchemaDefinition >> elseSchema [
-	^ elseSchema
-]
-
-{ #category : 'accessing' }
-JSONSchemaDefinition >> elseSchema: aDefinition [
-	elseSchema := aDefinition
-]
-
-{ #category : 'accessing' }
 JSONSchemaDefinition >> allOf [
 	^ allOf
 ]
@@ -313,6 +238,16 @@ JSONSchemaDefinition >> allOf [
 { #category : 'accessing' }
 JSONSchemaDefinition >> allOf: aCollection [
 	allOf := aCollection
+]
+
+{ #category : 'accessing' }
+JSONSchemaDefinition >> anyOf [
+	^ anyOf
+]
+
+{ #category : 'accessing' }
+JSONSchemaDefinition >> anyOf: aCollection [
+	anyOf := aCollection
 ]
 
 { #category : 'accessing' }
@@ -337,6 +272,43 @@ JSONSchemaDefinition >> booleanValue: aBoolean [
 ]
 
 { #category : 'accessing' }
+JSONSchemaDefinition >> const [
+	^ const
+]
+
+{ #category : 'accessing' }
+JSONSchemaDefinition >> const: aValue [
+	"const may legitimately be null, so track presence separately from the value."
+	constSpecified := true.
+	const := aValue
+]
+
+{ #category : 'accessing' }
+JSONSchemaDefinition >> constSpecified [
+	^ constSpecified ifNil: [ false ]
+]
+
+{ #category : 'accessing' }
+JSONSchemaDefinition >> contains [
+	^ contains
+]
+
+{ #category : 'accessing' }
+JSONSchemaDefinition >> contains: aDefinition [
+	contains := aDefinition
+]
+
+{ #category : 'accessing' }
+JSONSchemaDefinition >> dependencies [
+	^ dependencies
+]
+
+{ #category : 'accessing' }
+JSONSchemaDefinition >> dependencies: aDictionary [
+	dependencies := aDictionary
+]
+
+{ #category : 'accessing' }
 JSONSchemaDefinition >> description [
 	^ description
 ]
@@ -344,6 +316,16 @@ JSONSchemaDefinition >> description [
 { #category : 'accessing' }
 JSONSchemaDefinition >> description: aString [ 
 	description := aString
+]
+
+{ #category : 'accessing' }
+JSONSchemaDefinition >> elseSchema [
+	^ elseSchema
+]
+
+{ #category : 'accessing' }
+JSONSchemaDefinition >> elseSchema: aDefinition [
+	elseSchema := aDefinition
 ]
 
 { #category : 'accessing' }
@@ -404,6 +386,16 @@ JSONSchemaDefinition >> formatString: aString [
 	format := JSONFormat formatNamed: aString ifAbsent: [ nil ]
 ]
 
+{ #category : 'accessing' }
+JSONSchemaDefinition >> ifSchema [
+	^ ifSchema
+]
+
+{ #category : 'accessing' }
+JSONSchemaDefinition >> ifSchema: aDefinition [
+	ifSchema := aDefinition
+]
+
 { #category : 'initialization' }
 JSONSchemaDefinition >> initialize [
 	super initialize.
@@ -413,18 +405,6 @@ JSONSchemaDefinition >> initialize [
 { #category : 'testing' }
 JSONSchemaDefinition >> isReference [
 	^ reference notNil
-]
-
-{ #category : 'accessing' }
-JSONSchemaDefinition >> additionalItems [
-	^ additionalItems
-]
-
-{ #category : 'accessing' }
-JSONSchemaDefinition >> additionalItems: anObject [
-	"Mapped via #SingleSchema (a bare true/false becomes a booleanValue definition);
-	asJSONSchema resolves it. nil = absent = extra items allowed."
-	additionalItems := anObject ifNotNil: [ anObject asJSONSchema ]
 ]
 
 { #category : 'accessing' }
@@ -548,16 +528,6 @@ JSONSchemaDefinition >> oneOf: aCollection [
 ]
 
 { #category : 'accessing' }
-JSONSchemaDefinition >> anyOf [
-	^ anyOf
-]
-
-{ #category : 'accessing' }
-JSONSchemaDefinition >> anyOf: aCollection [
-	anyOf := aCollection
-]
-
-{ #category : 'accessing' }
 JSONSchemaDefinition >> pattern [
 	^ pattern
 ]
@@ -565,6 +535,16 @@ JSONSchemaDefinition >> pattern [
 { #category : 'accessing' }
 JSONSchemaDefinition >> pattern: aString [
 	pattern := aString
+]
+
+{ #category : 'accessing' }
+JSONSchemaDefinition >> patternProperties [
+	^ patternProperties
+]
+
+{ #category : 'accessing' }
+JSONSchemaDefinition >> patternProperties: aDictionary [
+	patternProperties := aDictionary
 ]
 
 { #category : 'accessing' }
@@ -576,6 +556,16 @@ JSONSchemaDefinition >> properties [
 JSONSchemaDefinition >> properties: anObject [
 	self schemaClass: JSONSchemaObject.
 	properties := anObject
+]
+
+{ #category : 'accessing' }
+JSONSchemaDefinition >> propertyNames [
+	^ propertyNames
+]
+
+{ #category : 'accessing' }
+JSONSchemaDefinition >> propertyNames: aDefinition [
+	propertyNames := aDefinition
 ]
 
 { #category : 'accessing' }
@@ -608,6 +598,16 @@ JSONSchemaDefinition >> schemaClass: aClass [
 	(schemaClass isNil | (schemaClass = aClass)) ifFalse: [
 		Error signal: 'schema class is incompatible' ].
 	schemaClass := aClass
+]
+
+{ #category : 'accessing' }
+JSONSchemaDefinition >> thenSchema [
+	^ thenSchema
+]
+
+{ #category : 'accessing' }
+JSONSchemaDefinition >> thenSchema: aDefinition [
+	thenSchema := aDefinition
 ]
 
 { #category : 'accessing' }

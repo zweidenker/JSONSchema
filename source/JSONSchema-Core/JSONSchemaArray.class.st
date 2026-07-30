@@ -41,11 +41,13 @@ JSONSchemaArray >> items: aSchema [
 
 { #category : 'meta-object-protocol' }
 JSONSchemaArray >> read: aCollection [
-	items isCollection 
+	^ items isCollection 
 		ifTrue: [ 
-			items withIndexCollect: [ :item :idx |
+			"tuple validation: items is an array of per-position schemas"
+			aCollection withIndexCollect: [ :item :idx |
 				(items at: idx) read: item ] ]
 		ifFalse: [ 
+			"homogeneous array: items is a single schema applied to every element"
 			aCollection collect: [ :item | 
 				items read: item ] ]
 ]

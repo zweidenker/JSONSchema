@@ -16,6 +16,11 @@ JSONSchemaAnyObject >> acceptJSONSchema: aVisitor [
 	^ aVisitor visitAnyObject: self 
 ]
 
+{ #category : 'reading-primitive data' }
+JSONSchemaAnyObject >> read: anObject [
+	^ anObject
+]
+
 { #category : 'reading' }
 JSONSchemaAnyObject >> read: string object: object [
 	| json |

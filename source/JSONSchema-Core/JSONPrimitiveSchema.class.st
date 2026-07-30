@@ -75,8 +75,13 @@ JSONPrimitiveSchema >> initialize [
 ]
 
 { #category : 'accessing' }
-JSONPrimitiveSchema >> nullable: aBoolean [ 
-	nullable := aBoolean
+JSONPrimitiveSchema >> nullable [
+	"Unset (not explicitly declared) defaults to permissive: nested property
+	schemas are parsed via base JSONSchemaDefinition, which does not carry the
+	OpenAPI-3.0-only 'nullable' keyword, so most real-world nullable fields
+	never reach here as true. Erring towards accepting null is the safe
+	direction for a response reader; explicit false is still honored."
+	^ nullable ~~ false
 ]
 
 { #category : 'reading' }
@@ -111,7 +116,7 @@ JSONPrimitiveSchema >> readUsing: aReader [
 	| value |
 	value := aReader parseValue.
 	value ifNil: [ 
-		nullable 
+		self nullable
 			ifTrue: [ ^ nil ]
 			ifFalse: [ JSONTypeError signal: self class typeName, ' cannot be nil' ] ].
 	^ self read: value
@@ -138,7 +143,7 @@ JSONPrimitiveSchema >> write: anObject [
 { #category : 'writing' }
 JSONPrimitiveSchema >> write: anObject on: aWriter [ 
 	anObject ifNil: [ 
-		nullable ifTrue: [ 
+		self nullable ifTrue: [ 
 			^ aWriter writeNull ] ].
 	self validate: anObject.
 	aWriter nextPut: anObject
