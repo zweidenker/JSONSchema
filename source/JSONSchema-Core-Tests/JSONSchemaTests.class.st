@@ -58,6 +58,31 @@ JSONSchemaTests >> testSchemaReadArrayMultipleItems [
 ]
 
 { #category : 'tests' }
+JSONSchemaTests >> testSchemaReadArrayPropertyThatIsNull [
+	"A schema saying a property is an array does not forbid the actual
+	value being JSON null - readString: must not crash trying to parse
+	null as a list."
+	| schema object |
+	schema := {
+		#foo -> (JSONSchemaArray new items: JSONSchema string).
+	} asJSONSchema.
+	object := schema readString: '{"foo":null}'.
+	self assert: object foo equals: nil
+]
+
+{ #category : 'tests' }
+JSONSchemaTests >> testSchemaReadArrayPropertyThatIsWrongType [
+	"A literal true/false where an array was expected is invalid JSON for
+	this schema and should raise a clear type error, not an obscure parser
+	error from trying to read it as a list."
+	| schema |
+	schema := {
+		#foo -> (JSONSchemaArray new items: JSONSchema string).
+	} asJSONSchema.
+	self should: [ schema readString: '{"foo":true}' ] raise: JSONTypeError
+]
+
+{ #category : 'tests' }
 JSONSchemaTests >> testSchemaReadNested [
 
 	| schema object |
@@ -73,6 +98,17 @@ JSONSchemaTests >> testSchemaReadNested [
 
 	
 
+]
+
+{ #category : 'tests' }
+JSONSchemaTests >> testSchemaReadNestedObjectPropertyThatIsNull [
+	"Same as above for an object-typed property."
+	| schema object |
+	schema := {
+		#bar -> { #one -> JSONSchema string }
+	} asJSONSchema.
+	object := schema readString: '{"bar":null}'.
+	self assert: object bar equals: nil
 ]
 
 { #category : 'tests' }

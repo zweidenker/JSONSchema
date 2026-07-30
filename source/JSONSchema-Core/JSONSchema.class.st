@@ -164,6 +164,24 @@ JSONSchema >> neoJsonOn: jsonWriter [
 
 ]
 
+{ #category : 'private' }
+JSONSchema >> peekNullThenReadUsing: aReader ifNotNull: aBlock [
+	"Both object- and array-typed schemas hand off straight to a structural
+	parse (parseMapKeysDo:/parseListDo:), which expects { or [ and has no
+	concept of null - but any OpenAPI/JSON-Schema property can legitimately
+	be null regardless of its declared type. Peek for a null/true/false
+	literal first (parseConstantDo: does not consume the stream if there is
+	no match) before committing to the structural read."
+	| matched value |
+	matched := false.
+	value := nil.
+	aReader parseConstantDo: [ :v | matched := true. value := v ].
+	(matched and: [ value isNil ]) ifTrue: [ ^ nil ].
+	matched ifTrue: [ 
+		^ JSONTypeError signal: self class typeName, ' cannot be ', value printString ].
+	^ aBlock value
+]
+
 { #category : 'instance creation' }
 JSONSchema >> readFrom: aStream [
 	^ self readUsing: (NeoJSONReader on: aStream)
