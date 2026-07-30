@@ -33,18 +33,18 @@ JSONFormatDateTime class >> isValidDateTime: aString [
 	^ (JSONFormatDate isValidFullDate: datePart) and: [ JSONFormatTime isValidString: timePart ]
 ]
 
-{ #category : 'validation' }
-JSONFormatDateTime class >> validateString: aString [
-	(self isValidDateTime: aString) ifFalse: [
-		JSONConstraintError signal: aString printString, ' is not a valid date-time' ]
-]
-
 { #category : 'services' }
 JSONFormatDateTime class >> validate: aDate [
 	(aDate isKindOf: DateAndTime) ifFalse: [ 
 		JSONTypeError
 			signal: aDate printString , ' is not a date' ]
 	
+]
+
+{ #category : 'validation' }
+JSONFormatDateTime class >> validateString: aString [
+	(self isValidDateTime: aString) ifFalse: [
+		JSONConstraintError signal: aString printString, ' is not a valid date-time' ]
 ]
 
 { #category : 'writing' }

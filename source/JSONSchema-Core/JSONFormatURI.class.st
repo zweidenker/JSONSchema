@@ -22,14 +22,6 @@ JSONFormatURI class >> formatName [
 	^ #uri
 ]
 
-{ #category : 'services' }
-JSONFormatURI class >> validate: aUrl [
-	(aUrl isKindOf: ZnUrl) ifFalse: [ 
-		JSONTypeError
-			signal: aUrl printString , ' is not a URL' ]
-	
-]
-
 { #category : 'validation' }
 JSONFormatURI class >> isValidURIAuthority: anAuthority [
 	"authority = [ userinfo @ ] host [ : port ]. Necessary check: after stripping any
@@ -82,6 +74,14 @@ JSONFormatURI class >> isValidURIString: aString allowUnicode: allowUnicode [
 JSONFormatURI class >> legalURICharacters [
 	"The RFC 3986 character repertoire: unreserved, gen-/sub-delims and the pct marker."
 	^ 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._~:/?#[]@!$&''()*+,;=%'
+]
+
+{ #category : 'services' }
+JSONFormatURI class >> validate: aUrl [
+	(aUrl isKindOf: ZnUrl) ifFalse: [ 
+		JSONTypeError
+			signal: aUrl printString , ' is not a URL' ]
+	
 ]
 
 { #category : 'validation' }

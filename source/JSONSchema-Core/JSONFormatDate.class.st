@@ -11,17 +11,17 @@ JSONFormatDate class >> basicConvertString: aString [
 	^ Date fromString: aString
 ]
 
-{ #category : 'as yet unclassified' }
-JSONFormatDate class >> encodeJSON: aDate [
-	^ aDate yyyymmdd 
-]
-
 { #category : 'validation' }
 JSONFormatDate class >> daysInMonth: aMonth year: aYear [
 	| leap |
 	leap := (aYear \\ 4 = 0) and: [ (aYear \\ 100 ~= 0) or: [ aYear \\ 400 = 0 ] ].
 	aMonth = 2 ifTrue: [ ^ leap ifTrue: [ 29 ] ifFalse: [ 28 ] ].
 	^ #(31 28 31 30 31 30 31 31 30 31 30 31) at: aMonth
+]
+
+{ #category : 'as yet unclassified' }
+JSONFormatDate class >> encodeJSON: aDate [
+	^ aDate yyyymmdd 
 ]
 
 { #category : 'formatting' }
@@ -44,18 +44,18 @@ JSONFormatDate class >> isValidFullDate: aString [
 	^ (month between: 1 and: 12) and: [ day between: 1 and: (self daysInMonth: month year: year) ]
 ]
 
-{ #category : 'validation' }
-JSONFormatDate class >> validateString: aString [
-	(self isValidFullDate: aString) ifFalse: [
-		JSONConstraintError signal: aString printString, ' is not a valid date' ]
-]
-
 { #category : 'services' }
 JSONFormatDate class >> validate: aDate [
 	(aDate isKindOf: Date) ifFalse: [ 
 		JSONTypeError
 			signal: aDate printString , ' is not a date' ]
 	
+]
+
+{ #category : 'validation' }
+JSONFormatDate class >> validateString: aString [
+	(self isValidFullDate: aString) ifFalse: [
+		JSONConstraintError signal: aString printString, ' is not a valid date' ]
 ]
 
 { #category : 'writing' }

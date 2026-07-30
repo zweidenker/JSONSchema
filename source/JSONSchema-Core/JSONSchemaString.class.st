@@ -26,7 +26,7 @@ JSONSchemaString >> readUsing: aReader [
 	| value |
 	value := aReader parseValue.
 	value ifNil: [ 
-		nullable 
+		self nullable
 			ifTrue: [ ^ nil ]
 			ifFalse: [ JSONTypeError signal: self class typeName, ' cannot be nil' ] ].
 	^ self readString: value
@@ -39,9 +39,9 @@ JSONSchemaString >> validateType: aString [
 ]
 
 { #category : 'writing' }
-JSONSchemaString >> write: anObject on: writer [
+JSONSchemaString >> write: anObject on: writer [	
 	anObject ifNil: [ 
-		nullable ifTrue: [ 
+		self nullable ifTrue: [ 
 			^ writer writeNull ] ].
 	^ writer writeString: (self write: anObject)
 ]

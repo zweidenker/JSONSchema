@@ -10,6 +10,11 @@ Class {
 }
 
 { #category : 'accessing' }
+JSONSchemaNotConstraint >> definitionProperties [
+	^ #( not )
+]
+
+{ #category : 'accessing' }
 JSONSchemaNotConstraint >> not [
 	^ not
 ]
@@ -17,11 +22,6 @@ JSONSchemaNotConstraint >> not [
 { #category : 'accessing' }
 JSONSchemaNotConstraint >> not: aDefinition [
 	not := aDefinition
-]
-
-{ #category : 'accessing' }
-JSONSchemaNotConstraint >> definitionProperties [
-	^ #( not )
 ]
 
 { #category : 'validation' }

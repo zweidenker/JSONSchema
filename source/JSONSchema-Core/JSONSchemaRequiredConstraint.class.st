@@ -10,6 +10,11 @@ Class {
 }
 
 { #category : 'accessing' }
+JSONSchemaRequiredConstraint >> definitionProperties [
+	^ #( required )
+]
+
+{ #category : 'accessing' }
 JSONSchemaRequiredConstraint >> required [
 	^ required
 ]
@@ -17,11 +22,6 @@ JSONSchemaRequiredConstraint >> required [
 { #category : 'accessing' }
 JSONSchemaRequiredConstraint >> required: aCollection [
 	required := aCollection
-]
-
-{ #category : 'accessing' }
-JSONSchemaRequiredConstraint >> definitionProperties [
-	^ #( required )
 ]
 
 { #category : 'validation' }
