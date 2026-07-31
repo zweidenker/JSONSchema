@@ -84,6 +84,11 @@ JSONPrimitiveSchema >> nullable [
 	^ nullable ~~ false
 ]
 
+{ #category : 'accessing' }
+JSONPrimitiveSchema >> nullable: aBoolean [
+	nullable := aBoolean
+]
+
 { #category : 'reading' }
 JSONPrimitiveSchema >> read: anObject [
 	| value |
