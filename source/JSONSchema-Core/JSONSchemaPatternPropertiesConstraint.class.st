@@ -36,7 +36,7 @@ JSONSchemaPatternPropertiesConstraint >> validate: aDictionary [
 	is Boolean true = accept all)."
 	| resolvedPatterns |
 	resolvedPatterns := patternProperties associations collect: [ :assoc |
-		{ assoc key asRegex. self resolveVisitor visitSchemaSpec: assoc value } ].
+		{ assoc key asECMARegex. self resolveVisitor visitSchemaSpec: assoc value } ].
 	aDictionary keysAndValuesDo: [ :key :value |
 		| matchedPattern |
 		matchedPattern := false.

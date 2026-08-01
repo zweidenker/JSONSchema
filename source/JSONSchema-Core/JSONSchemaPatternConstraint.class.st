@@ -31,7 +31,7 @@ JSONSchemaPatternConstraint >> validate [
 
 { #category : 'validation' }
 JSONSchemaPatternConstraint >> validate: aString [
-	(pattern asRegex search: aString) ifFalse: [
+	(pattern asECMARegex search: aString) ifFalse: [
 		JSONConstraintError signal: aString, ' does not match pattern ', pattern ]
 ]
 
