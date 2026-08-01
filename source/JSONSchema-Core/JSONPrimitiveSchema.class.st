@@ -91,9 +91,16 @@ JSONPrimitiveSchema >> nullable: aBoolean [
 
 { #category : 'reading' }
 JSONPrimitiveSchema >> read: anObject [
+	"Gate constraint validation by validateType: (matching JSONSchema>>validate:'s own
+	pattern) instead of calling every constraint unconditionally - e.g.
+	JSONSchemaFormatConstraint>>validateType: says format only applies to strings, but
+	an unconditional validate: still reached it for any value, crashing for numeric
+	formats like int32/int64 (format validateString: anInteger)."
 	| value |
 	value := self readFormatted: anObject.
-	self constraints do: [ :each | each validate: value ].
+	self constraints
+		select: [ :constraint | constraint validateType: value ]
+		thenDo: [ :constraint | constraint validate: value ].
 	^ value
 ]
 
