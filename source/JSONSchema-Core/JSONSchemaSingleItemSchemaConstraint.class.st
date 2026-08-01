@@ -19,6 +19,11 @@ JSONSchemaSingleItemSchemaConstraint >> initializeFromDefinition: aDefinition [
 ]
 
 { #category : 'accessing' }
+JSONSchemaSingleItemSchemaConstraint >> definitionProperties [
+	^ #( items additionalItems )
+]
+
+{ #category : 'accessing' }
 JSONSchemaSingleItemSchemaConstraint >> items [
 	^ items
 ]
