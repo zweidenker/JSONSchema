@@ -1,7 +1,6 @@
 # JSONSchema
 
-[![Build Status](https://travis-ci.org/zweidenker/JSONSchema.svg?branch=master)](https://travis-ci.org/zweidenker/JSONSchema)
-[![Test Status](https://api.bob-bench.org/v1/badgeByUrl?branch=master&hosting=github&ci=travis-ci&repo=zweidenker%2FJSONSchema&subNumber=1)](https://bob-bench.org/r/gh/zweidenker/JSONSchema)
+[![Build Status](https://github.com/zweidenker/JSONSchema/actions/workflows/build.yml/badge.svg?branch=master)](https://github.com/zweidenker/JSONSchema/actions/workflows/build.yml)
 
 This is an implementation of [JSON Schema](https://json-schema.org/) for the [Pharo](http://pharo.org) language. It is used to define the structure and values of a JSON document, to validate a value against that structure, and to read/write values through it. A schema can also be externalized to JSON so it can be consumed by a third party.
 
