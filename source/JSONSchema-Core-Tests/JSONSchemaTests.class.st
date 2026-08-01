@@ -6,6 +6,55 @@ Class {
 }
 
 { #category : 'tests' }
+JSONSchemaTests >> testAllOfCompositionMergesRequiredAcrossBranches [
+	| definition schema |
+	definition := JSONSchemaDefinition new
+		allOf: {
+			(JSONSchemaDefinition new properties: { 'name' -> (JSONSchemaDefinition new typeString: 'string'; yourself) } asDictionary; required: #('name'); yourself).
+			(JSONSchemaDefinition new properties: { 'id' -> (JSONSchemaDefinition new typeString: 'integer'; yourself) } asDictionary; required: #('id'); yourself) };
+		yourself.
+	schema := definition asJSONSchema.
+	self should: [ schema readString: '{"name":"Rex"}' ] raise: JSONTypeError
+]
+
+{ #category : 'tests' }
+JSONSchemaTests >> testAllOfCompositionOfObjectSchemasMergesPropertiesForReading [
+	"A bare allOf of object-shaped branches (no direct type/properties keyword) resolves
+	to JSONSchemaAnyObject via #asJSONSchema since nothing sets schemaClass for a bare
+	allOf - a real-world 'extends' pattern (e.g. OpenAPI's Pet = allOf[NewPet, {id}]).
+	Reading against it must merge all branches' properties, not raw-passthrough."
+	| definition schema result |
+	definition := JSONSchemaDefinition new
+		allOf: {
+			(JSONSchemaDefinition new properties: { 'name' -> (JSONSchemaDefinition new typeString: 'string'; yourself) } asDictionary; yourself).
+			(JSONSchemaDefinition new properties: { 'id' -> (JSONSchemaDefinition new typeString: 'integer'; yourself) } asDictionary; yourself) };
+		yourself.
+	schema := definition asJSONSchema.
+	self assert: schema class equals: JSONSchemaAnyObject.
+	result := schema readString: '{"id":42,"name":"Rex"}'.
+	self assert: result class equals: NeoJSONObject.
+	self assert: result id equals: 42.
+	self assert: result name equals: 'Rex'
+]
+
+{ #category : 'tests' }
+JSONSchemaTests >> testAllOfCompositionWithNonObjectBranchFallsBackToPassthrough [
+	"Not every allOf is an object composition (e.g. mixing an object schema with a bare
+	string schema has no sensible single merged reading target) - must stay a raw
+	passthrough rather than guess, exactly like before this fix."
+	| definition schema result |
+	definition := JSONSchemaDefinition new
+		allOf: {
+			(JSONSchemaDefinition new properties: { 'name' -> (JSONSchemaDefinition new typeString: 'string'; yourself) } asDictionary; yourself).
+			(JSONSchemaDefinition new typeString: 'string'; yourself) };
+		yourself.
+	schema := definition asJSONSchema.
+	self assert: schema mergedAllOfObjectSchema isNil.
+	result := schema readString: '{"name":"Rex"}'.
+	self assert: result class equals: Dictionary
+]
+
+{ #category : 'tests' }
 JSONSchemaTests >> testMultipleConstraintsOnAnyObject [
 	| schema |
 	schema := JSONSchema
@@ -57,6 +106,19 @@ JSONSchemaTests >> testPatternWithNonCapturingGroupIsSupported [
 	self shouldnt: [ schema validate: '200' ] raise: Error.
 	self shouldnt: [ schema validate: '2XX' ] raise: Error.
 	self should: [ schema validate: '999' ] raise: JSONConstraintError
+]
+
+{ #category : 'tests' }
+JSONSchemaTests >> testReadDoesNotApplyFormatConstraintToNonStringValues [
+	"Regression: JSONPrimitiveSchema>>read: used to call every attached constraint's
+	validate: unconditionally, without first checking validateType: (unlike JSONSchema>>
+	validate:, which correctly gates on it). JSONSchemaFormatConstraint>>validateType:
+	says format only applies to strings, but its validate: still got called on any value -
+	crashing for numeric formats like int32/int64 (format validateString: anInteger)."
+	| schema |
+	schema := JSONSchema fromString: '{"type":"integer","format":"int64"}'.
+	self shouldnt: [ schema readString: '42' ] raise: Error.
+	self assert: (schema readString: '42') equals: 42
 ]
 
 { #category : 'tests' }
