@@ -26,6 +26,40 @@ JSONSchemaTests >> testMultipleConstraintsOnAnyObject [
 ]
 
 { #category : 'tests' }
+JSONSchemaTests >> testPatternPropertiesWithEscapedDotInCharacterClassIsSupported [
+	"Regression: the OAI OpenAPI-3.0 meta-schema uses [a-zA-Z0-9\.\-_]+ for component-name
+	patternProperties keys (components.schemas/responses/parameters/etc.) - Pharo's Regex
+	engine raised 'bad backslash escape' on the escaped dot inside the character class."
+	| schema |
+	schema := JSONSchema fromString: '{"type":"object","patternProperties":{"^[a-zA-Z0-9\\.\\-_]+$":{"type":"string"}},"additionalProperties":false}'.
+	self shouldnt: [ schema validate: {'Foo.Bar-1_2'->'ok'} asDictionary ] raise: Error.
+	self should: [ schema validate: {'has space'->'ok'} asDictionary ] raise: JSONSchemaError
+]
+
+{ #category : 'tests' }
+JSONSchemaTests >> testPatternPropertiesWithNonCapturingGroupIsSupported [
+	"Same regression as #testPatternWithNonCapturingGroupIsSupported, but for the
+	patternProperties keyword (matches property *names*, separate code path/call site)."
+	| schema |
+	schema := JSONSchema fromString: '{"type":"object","patternProperties":{"^[1-5](?:\\d{2}|XX)$":{"type":"string"}},"additionalProperties":false}'.
+	self shouldnt: [ schema validate: {'200'->'ok'} asDictionary ] raise: Error.
+	self shouldnt: [ schema validate: {'2XX'->'ok'} asDictionary ] raise: Error.
+	self should: [ schema validate: {'999'->'ok'} asDictionary ] raise: JSONSchemaError
+]
+
+{ #category : 'tests' }
+JSONSchemaTests >> testPatternWithNonCapturingGroupIsSupported [
+	"Regression: the OAI OpenAPI-3.0 meta-schema's Responses object uses the pattern
+	'^[1-5](?:\d{2}|XX)$' - Pharo's Regex engine used to raise 'Invalid lookaround
+	expression ?:' on the (?:...) syntax, crashing any validation that hit it."
+	| schema |
+	schema := JSONSchema fromString: '{"type":"string","pattern":"^[1-5](?:\\d{2}|XX)$"}'.
+	self shouldnt: [ schema validate: '200' ] raise: Error.
+	self shouldnt: [ schema validate: '2XX' ] raise: Error.
+	self should: [ schema validate: '999' ] raise: JSONConstraintError
+]
+
+{ #category : 'tests' }
 JSONSchemaTests >> testSchemaReadArray [
 
 	| schema object|
