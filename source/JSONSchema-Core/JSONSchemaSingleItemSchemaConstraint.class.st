@@ -10,17 +10,17 @@ Class {
 	#tag : 'Constraints'
 }
 
+{ #category : 'accessing' }
+JSONSchemaSingleItemSchemaConstraint >> definitionProperties [
+	^ #( items additionalItems )
+]
+
 { #category : 'initialization' }
 JSONSchemaSingleItemSchemaConstraint >> initializeFromDefinition: aDefinition [
 	"items may be a single schema or an array of schemas (tuple); additionalItems
 	governs positions beyond a tuple."
 	items := aDefinition items.
 	additionalItems := aDefinition additionalItems
-]
-
-{ #category : 'accessing' }
-JSONSchemaSingleItemSchemaConstraint >> definitionProperties [
-	^ #( items additionalItems )
 ]
 
 { #category : 'accessing' }

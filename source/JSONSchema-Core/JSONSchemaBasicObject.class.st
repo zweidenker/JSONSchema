@@ -8,6 +8,7 @@ Class {
 
 { #category : 'as yet unclassified' }
 JSONSchemaBasicObject >> readProperties: aDictionary from: jsonObject writeTo: object [
+	 aDictionary ifNil: [ ^ self ].
 	 aDictionary keysAndValuesDo: [ :key :schema |
 		self readProperty: key schema: schema from: jsonObject writeTo: object ]
 ]

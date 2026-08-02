@@ -6,6 +6,22 @@ Class {
 }
 
 { #category : 'tests' }
+JSONTypeTests >> testCheckRequiredKeysWithNilProperties [
+	"Regression: checkRequiredKeys: must not crash when properties is nil - see
+	JSONSchemaObject>>checkRequiredKeys:."
+	| schema obj |
+	schema := JSONSchemaObject new
+		additionalProperties: JSONSchema string;
+		required: #('foo');
+		yourself.
+	obj := NeoJSONObject new.
+	obj jsonSchemaAt: #foo put: 'bar'.
+	self
+		should: [ schema write: obj ]
+		raise: JSONTypeError
+]
+
+{ #category : 'tests' }
 JSONTypeTests >> testReadBooleanType [
 	| value |
 	self 
@@ -286,9 +302,38 @@ JSONTypeTests >> testReadObjectRequiredPropertiesNotMet [
 ]
 
 { #category : 'tests' }
+JSONTypeTests >> testReadObjectWithNilPropertiesAndAdditionalPropertiesSchema [
+	"Regression: Stripe's own OpenAPI spec defines some object properties (e.g. metadata on
+	POST /v1/products) with only additionalProperties and no properties keyword at all, so
+	properties stays nil rather than an empty Dictionary. readObject: must not crash on that -
+	see JSONSchemaBasicObject>>readProperties:from:writeTo:."
+	| schema value |
+	schema := JSONSchemaObject new
+		additionalProperties: JSONSchema string;
+		yourself.
+	self
+		shouldnt: [ value := schema readObject: (Dictionary new at: 'foo' put: 'bar'; yourself) ]
+		raise: Error.
+	self assert: (value at: 'foo') equals: 'bar'
+]
+
+{ #category : 'tests' }
 JSONTypeTests >> testReadStringTypeString [
 	self 
 		shouldnt: [ JSONSchemaString readString: '123' ]
 		raise: JSONTypeError  
 
+]
+
+{ #category : 'tests' }
+JSONTypeTests >> testWriteObjectWithNilProperties [
+	"Regression: write:on: must not crash when properties is nil (no properties keyword,
+	only additionalProperties) - see JSONSchemaObject>>write:on:."
+	| schema obj |
+	schema := JSONSchemaObject new
+		additionalProperties: JSONSchema string;
+		yourself.
+	obj := NeoJSONObject new.
+	obj jsonSchemaAt: #foo put: 'bar'.
+	self shouldnt: [ schema write: obj ] raise: Error
 ]

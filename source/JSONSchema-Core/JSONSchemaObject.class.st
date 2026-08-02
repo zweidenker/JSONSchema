@@ -47,7 +47,7 @@ JSONSchemaObject >> additionalProperties: anObject [
 JSONSchemaObject >> checkRequiredKeys: keys [ 
 	| containedKeys |
 	required ifNotNil: [  
-		containedKeys := keys intersection: properties keys.
+		containedKeys := keys intersection: (properties ifNil: [ Dictionary new ]) keys.
 		(containedKeys includesAll: required) ifFalse: [ 
 			 JSONTypeError signal: 'object is missing required properties ', ($, join: (required difference: containedKeys)) ] ]
 ]
@@ -179,7 +179,7 @@ JSONSchemaObject >> readObject: jsonObject [
 		from: jsonObject
 		writeTo: object.  
 	(additionalProperties isKindOf: JSONSchemaBooleanFalse) ifFalse: [ 
-		(jsonObject keys difference: properties keys) do: [ :each |
+		(jsonObject keys difference: (properties ifNil: [ Dictionary new ]) keys) do: [ :each |
 			object at: each put: (jsonObject at: each) ] ].
 	^ object
 ]
@@ -250,10 +250,11 @@ JSONSchemaObject >> write: anObject [
 JSONSchemaObject >> write: anObject on: writer [
 	self checkRequiredKeys: anObject jsonSchemaKeys.
 	writer writeMapStreamingDo: [ :streamWriter |
-		properties keysAndValuesDo: [ :key :schema | 
-			(anObject jsonSchemaKeys includes: key) ifTrue: [  
-				streamWriter
-					writeKey: key 
-					value: (anObject jsonSchemaAt: key)
-					as: schema ] ] ]
+		properties ifNotNil: [ 
+			properties keysAndValuesDo: [ :key :schema | 
+				(anObject jsonSchemaKeys includes: key) ifTrue: [  
+					streamWriter
+						writeKey: key 
+						value: (anObject jsonSchemaAt: key)
+						as: schema ] ] ] ]
 ]
