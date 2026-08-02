@@ -6,11 +6,6 @@ Class {
 	#tag : 'AdditionalProperties'
 }
 
-{ #category : 'testing' }
-JSONSchemaAdditionalPropertiesAllowsASchemaWhichShouldValidateTests >> expectedFailures [
-	^ #(#testAnAdditionalInvalidPropertyIsInvalid)
-]
-
 { #category : 'accessing' }
 JSONSchemaAdditionalPropertiesAllowsASchemaWhichShouldValidateTests >> schemaString [
 	^ '{"properties":{"foo":{},"bar":{}},"additionalProperties":{"type":"boolean"}}'

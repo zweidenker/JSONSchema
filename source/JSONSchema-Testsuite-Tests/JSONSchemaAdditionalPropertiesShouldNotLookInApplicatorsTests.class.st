@@ -6,11 +6,6 @@ Class {
 	#tag : 'AdditionalProperties'
 }
 
-{ #category : 'testing' }
-JSONSchemaAdditionalPropertiesShouldNotLookInApplicatorsTests >> expectedFailures [
-	^ #(#testPropertiesDefinedInAllOfAreNotExamined)
-]
-
 { #category : 'accessing' }
 JSONSchemaAdditionalPropertiesShouldNotLookInApplicatorsTests >> schemaString [
 	^ '{"allOf":[{"properties":{"foo":{}}}],"additionalProperties":{"type":"boolean"}}'

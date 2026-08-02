@@ -141,10 +141,7 @@ JSONPrimitiveSchema >> schema: aSchema [
 
 { #category : 'validation' }
 JSONPrimitiveSchema >> validate: anObject [
-	super validate: anObject.
-	format ifNotNil: [ 
-		format validate: anObject ]
-	
+	super validate: anObject
 ]
 
 { #category : 'writing' }

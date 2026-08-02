@@ -6,11 +6,6 @@ Class {
 	#tag : 'AdditionalProperties'
 }
 
-{ #category : 'testing' }
-JSONSchemaAdditionalPropertiesCanExistByItselfTests >> expectedFailures [
-	^ #(#testAnAdditionalInvalidPropertyIsInvalid)
-]
-
 { #category : 'accessing' }
 JSONSchemaAdditionalPropertiesCanExistByItselfTests >> schemaString [
 	^ '{"additionalProperties":{"type":"boolean"}}'

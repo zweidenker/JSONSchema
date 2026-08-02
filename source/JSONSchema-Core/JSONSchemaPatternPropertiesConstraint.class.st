@@ -24,7 +24,11 @@ JSONSchemaPatternPropertiesConstraint >> initializeFromDefinition: aDefinition [
 
 { #category : 'validation' }
 JSONSchemaPatternPropertiesConstraint >> validate [
-	^ patternProperties notNil
+	"Active whenever there is something to enforce beyond the schema's own declared
+	properties: either patternProperties itself, or a restricting additionalProperties
+	(false, or a schema) - the properties-only case (no patternProperties) still needs
+	this constraint to enforce additionalProperties."
+	^ patternProperties notNil or: [ additionalProperties notNil and: [ additionalProperties ~= true ] ]
 ]
 
 { #category : 'validation' }
@@ -33,10 +37,13 @@ JSONSchemaPatternPropertiesConstraint >> validate: aDictionary [
 	whose regex matches the name (unanchored search). A name is 'covered' if it is
 	in properties or matched at least one pattern; names covered by neither are
 	validated against additionalProperties when that is an actual schema (the default
-	is Boolean true = accept all)."
+	is Boolean true = accept all). patternProperties may be nil - a schema can declare
+	only properties/additionalProperties with no patternProperties at all."
 	| resolvedPatterns |
-	resolvedPatterns := patternProperties associations collect: [ :assoc |
-		{ assoc key asECMARegex. self resolveVisitor visitSchemaSpec: assoc value } ].
+	resolvedPatterns := patternProperties
+		ifNil: [ #() ]
+		ifNotNil: [ patternProperties associations collect: [ :assoc |
+			{ assoc key asECMARegex. self resolveVisitor visitSchemaSpec: assoc value } ] ].
 	aDictionary keysAndValuesDo: [ :key :value |
 		| matchedPattern |
 		matchedPattern := false.
