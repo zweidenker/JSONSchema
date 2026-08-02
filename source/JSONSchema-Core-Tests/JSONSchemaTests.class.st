@@ -6,6 +6,20 @@ Class {
 }
 
 { #category : 'tests' }
+JSONSchemaTests >> testAdditionalPropertiesFalseEnforcedWithoutPatternProperties [
+	"Regression: JSONSchemaPatternPropertiesConstraint (the constraint that enforces
+	additionalProperties) only activated when patternProperties was present -
+	validate:'s own logic already handled the no-patternProperties case correctly, it
+	just never got attached. A properties-only schema with additionalProperties:false
+	silently accepted extra properties. Found 2026-08-02 via the RecurringEvents schema
+	(schema/recurring-events.schema.json)."
+	| schema |
+	schema := JSONSchema fromString: '{"type":"object","properties":{"foo":{"type":"string"}},"required":["foo"],"additionalProperties":false}'.
+	self shouldnt: [ schema validate: {'foo'->'bar'} asDictionary ] raise: Error.
+	self should: [ schema validate: {'foo'->'bar'. 'extra'->1} asDictionary ] raise: JSONTypeError
+]
+
+{ #category : 'tests' }
 JSONSchemaTests >> testAllOfCompositionMergesRequiredAcrossBranches [
 	| definition schema |
 	definition := JSONSchemaDefinition new
@@ -280,4 +294,22 @@ JSONSchemaTests >> testSimpleObjectSchema [
 	object := schemaSpec asJSONSchema readString: '{ "foo" : "123", "bar" : 123 }'.
 	self assert: object foo equals: '123'.
 	self assert: object bar equals: 123
+]
+
+{ #category : 'tests' }
+JSONSchemaTests >> testValidateAcceptsValidDateTimeStringOnExplicitlyTypedSchema [
+	"Regression: JSONPrimitiveSchema>>validate: (a leftover from before the generic
+	JSONSchemaFormatConstraint - Tier G - existed) called the format class's own
+	validate: with the raw JSON string. JSONFormatDateTime/JSONFormatDate/JSONFormatURI's
+	class-side validate: expect an already-converted value (DateAndTime/Date/ZnUrl, as
+	produced by the read: pipeline), so this crashed with a bogus JSONTypeError for
+	*every* valid date-time/date/uri string whenever type was explicit alongside
+	format - JSONSchemaFormatConstraint's own validateString: (which does the real,
+	correct check against the raw string) already covers this generically, making the
+	call redundant as well as wrong. Found 2026-08-02 via the RecurringEvents schema,
+	where e.g. dateAndTime declares type:string/format:date-time for its at property."
+	| schema |
+	schema := JSONSchema fromString: '{"type":"string","format":"date-time"}'.
+	self shouldnt: [ schema validate: '2026-01-01T00:00:00Z' ] raise: Error.
+	self should: [ schema validate: 'not-a-date' ] raise: JSONConstraintError
 ]
